@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanışma ve Program Bilgilendirmesi — Upnext AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <!-- Üst Menü -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        aria-expanded="false"
+        aria-controls="mainNavWrapper"
+        aria-label="Menüyü aç veya kapat"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <div class="nav-wrapper" id="mainNavWrapper">
+        <nav class="main-nav" aria-label="Ana Menü">
+          <ul class="nav-list">
+            <li><a href="bootcampler.html" class="nav-link">Bootcamp’ler</a></li>
+            <li><a href="egitim-takvimi.html" class="nav-link">Eğitim Takvimi</a></li>
+            <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+            <li><a href="is-birliklerimiz.html" class="nav-link">İş Birliklerimiz</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="ogrenci-girisi.html" class="btn btn-secondary">
+            Öğrenci Girişi
+          </a>
+          <a href="on-basvuru.html" class="btn btn-primary">
+            Ön Başvuru Yap
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="application-page-section" aria-labelledby="info-page-heading">
+      <div class="container application-container">
+        <div class="application-card-shell" id="infoStepPage">
+          <div class="application-header">
+            <span class="section-badge">Başvuru Sonrası Süreç</span>
+            <h1 id="info-page-heading" class="page-title">
+              Tanışma ve program bilgilendirmesi
+            </h1>
+            <p class="page-lead">
+              Ön başvuru adımı kesin kayıt anlamına gelmez. Ön başvurunuzun ardından
+              eğitim ekibimiz, tanışma ve program bilgilendirme görüşmesi yapmak üzere
+              sizinle iletişime geçecektir.
+            </p>
+          </div>
+
+          <!-- Prototip Uyarısı -->
+          <div class="prototype-disclaimer-box" role="note">
+            <strong>Prototip Görünümü:</strong> Bu ekran, ön başvuru sonrasındaki bilgilendirme adımını gösteren bir prototiptir. Bu sayfa üzerinden randevu oluşturulmaz, mesaj gönderilmez veya ödeme alınmaz.
+          </div>
+
+          <!-- Seçilen Program ve Dönem Özeti (Kişisel bilgi taşınmaz) -->
+          <dl class="submitted-summary info-program-summary" aria-label="İlgilenilen Program ve Dönem Bilgisi">
+            <div class="summary-item">
+              <dt>Seçilen Program</dt>
+              <dd id="infoSelectedProgram">AI Forge</dd>
+            </div>
+            <div class="summary-item">
+              <dt>Dönem</dt>
+              <dd id="infoSelectedCohort">Tarih açıklanacak</dd>
+            </div>
+          </dl>
+
+          <!-- Görüşmede Konuşulacak Konular -->
+          <div class="info-topics-card">
+            <h2 class="info-card-title">Görüşmede Konuşulacak Konular</h2>
+            <ul class="check-list">
+              <li>
+                <strong>Eğitim takvimi:</strong> Dönem başlangıç süreci, canlı online ders günleri ve haftalık çalışma temposu.
+              </li>
+              <li>
+                <strong>Program ve proje süreci:</strong> Müfredat adımları, uygulamalı senaryolar ve portföy projesi beklentileri.
+              </li>
+              <li>
+                <strong>Ücret ve paket kapsamı:</strong> Dönem katılım ücreti, ödeme seçenekleri ve eğitim paketine dahil olan olanaklar.
+              </li>
+              <li>
+                <strong>Sertifika ve staj başvuru koşulları:</strong> Mezuniyet/sertifika kriterleri ile eğitimi tamamlama, staja başvurma ve ilgili şirketin kabul kararından oluşan bağımsız süreç adımları.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Görüşme Sonrası Kesin Kayıt ve Ödeme Açıklaması -->
+          <div class="next-steps-card" style="margin-top: 24px;">
+            <h2 class="info-card-title">Görüşme Sonrası Kayıt Adımı</h2>
+            <p class="info-card-text">
+              Gerçek süreçte ödeme bağlantısı, tanışma ve bilgilendirme görüşmesinden sonra programa katılmak isteyen öğrenciye ekibimiz tarafından ayrıca gönderilir.
+            </p>
+            <p class="info-card-text" style="margin-top: 10px;">
+              <strong>Tasarım İnceleme Notu:</strong> Aşağıdaki <em>“Ödeme Prototipini Gör”</em> bağlantısı yalnızca ödeme ekranı tasarımını ve işlem sonucu simülasyonlarını incelemek amacıyla eklenmiştir.
+            </p>
+          </div>
+
+          <div class="success-actions">
+            <a href="on-basvuru.html" id="backToFormLink" class="btn btn-secondary">
+              Ön Başvuru Formuna Dön
+            </a>
+            <a href="odeme.html" id="viewPaymentPrototypeLink" class="btn btn-primary">
+              Ödeme Prototipini Gör &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="stitch-footer">
+    <div class="container stitch-footer-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+      <div class="stitch-footer-links">
+        <a href="bootcampler.html">Bootcamp’ler</a>
+        <a href="egitim-takvimi.html">Eğitim Takvimi</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="is-birliklerimiz.html">İş Birliklerimiz</a>
+        <a href="blog.html">Blog</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="on-basvuru.html">Ön Başvuru Yap</a>
+        <a href="ogrenci-girisi.html">Öğrenci Girişi</a>
+      </div>
+      <p class="stitch-footer-note">
+        Upnext AI Web Prototipi · Uygulamalı Teknoloji Eğitimleri
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

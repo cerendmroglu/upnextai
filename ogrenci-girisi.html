@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Öğrenci Girişi — Upnext AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <!-- Üst Menü -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        aria-expanded="false"
+        aria-controls="mainNavWrapper"
+        aria-label="Menüyü aç veya kapat"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <div class="nav-wrapper" id="mainNavWrapper">
+        <nav class="main-nav" aria-label="Ana Menü">
+          <ul class="nav-list">
+            <li><a href="bootcampler.html" class="nav-link">Bootcamp’ler</a></li>
+            <li><a href="egitim-takvimi.html" class="nav-link">Eğitim Takvimi</a></li>
+            <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+            <li><a href="is-birliklerimiz.html" class="nav-link">İş Birliklerimiz</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="ogrenci-girisi.html" class="btn btn-secondary" aria-current="page">
+            Öğrenci Girişi
+          </a>
+          <a href="on-basvuru.html" class="btn btn-primary">
+            Ön Başvuru Yap
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="application-page-section" aria-labelledby="login-page-heading">
+      <div class="container login-container">
+        <!-- 1. Giriş Görünümü -->
+        <div class="application-card-shell" id="studentLoginCard">
+          <div class="application-header">
+            <span class="section-badge">Öğrenci Portalı (Prototip)</span>
+            <h1 id="login-page-heading" class="page-title">Öğrenci Girişi</h1>
+            <p class="page-lead">
+              Kesin kaydı tamamlanan öğrenciler eğitim içeriklerine, canlı ders bağlantılarına ve duyurulara buradan erişir.
+            </p>
+          </div>
+
+          <div class="prototype-disclaimer-box" role="note">
+            <strong>Prototip Bilgilendirmesi:</strong> Bu ekran bir tarayıcı prototipidir; gerçek hesap doğrulama, şifre saklama veya e-posta gönderimi yapılmaz. Tasarımı doğrudan incelemek için aşağıdaki <strong>“Demo Panele Gir”</strong> butonunu kullanabilirsiniz.
+          </div>
+
+          <!-- Demo Panele Doğrudan Giriş Kutusu -->
+          <div class="demo-entry-banner">
+            <div class="demo-entry-text">
+              <strong>Tasarımı Hemen Deneyin</strong>
+              <p>E-posta veya şifre girmeden örnek öğrenci panelini açabilirsiniz.</p>
+            </div>
+            <a href="ogrenci-paneli.html" class="btn btn-primary">
+              Demo Panele Gir &rarr;
+            </a>
+          </div>
+
+          <form id="studentLoginForm" class="login-form" novalidate>
+            <div class="form-field">
+              <label for="loginEmail" class="form-label">
+                E-posta <span class="required-mark" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="email"
+                id="loginEmail"
+                name="loginEmail"
+                class="form-control"
+                placeholder="ogrenci@ornek.com"
+                autocomplete="off"
+                required
+                aria-describedby="error-loginEmail"
+              />
+              <p id="error-loginEmail" class="field-error" role="alert" hidden></p>
+            </div>
+
+            <div class="form-field">
+              <div class="label-row-between">
+                <label for="loginPassword" class="form-label">
+                  Şifre <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <button
+                  type="button"
+                  id="forgotPasswordBtn"
+                  class="text-action-btn"
+                  aria-controls="forgotPasswordView"
+                >
+                  Şifremi Unuttum
+                </button>
+              </div>
+              <input
+                type="password"
+                id="loginPassword"
+                name="loginPassword"
+                class="form-control"
+                placeholder="••••••••"
+                autocomplete="off"
+                required
+                aria-describedby="error-loginPassword"
+              />
+              <p id="error-loginPassword" class="field-error" role="alert" hidden></p>
+            </div>
+
+            <div id="loginStatusNotice" class="coming-soon-inline" role="status" aria-live="polite" hidden></div>
+
+            <div class="login-actions-stack">
+              <button type="submit" class="btn btn-primary btn-lg btn-block">
+                Giriş Yap
+              </button>
+              <a href="ogrenci-paneli.html" class="btn btn-secondary btn-lg btn-block">
+                Demo Panele Gir
+              </a>
+            </div>
+          </form>
+        </div>
+
+        <!-- 2. Şifremi Unuttum Görünümü (Demo) -->
+        <div class="application-card-shell" id="forgotPasswordView" role="region" aria-labelledby="forgot-heading" hidden>
+          <div class="application-header">
+            <span class="section-badge">Şifre Yenileme Adımı · Demo</span>
+            <h2 id="forgot-heading" class="page-title">Şifremi Unuttum</h2>
+            <p class="page-lead">
+              Kayıtlı e-posta adresinizi girerek şifre yenileme adımı simülasyonunu deneyebilirsiniz.
+            </p>
+          </div>
+
+          <div class="prototype-disclaimer-box" role="note">
+            <strong>Prototip Bilgilendirmesi:</strong> Bu görünüm yalnızca tasarım kontrolü içindir. Gerçek e-posta gönderimi veya hesap işlemi yapılmaz.
+          </div>
+
+          <form id="forgotPasswordForm" class="login-form" novalidate>
+            <div class="form-field">
+              <label for="resetEmail" class="form-label">
+                Kayıtlı E-posta Adresi <span class="required-mark" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="email"
+                id="resetEmail"
+                name="resetEmail"
+                class="form-control"
+                placeholder="ogrenci@ornek.com"
+                autocomplete="off"
+                required
+                aria-describedby="error-resetEmail"
+              />
+              <p id="error-resetEmail" class="field-error" role="alert" hidden></p>
+            </div>
+
+            <div id="resetDemoResult" class="free-notice-banner" role="status" aria-live="polite" hidden></div>
+
+            <div class="login-actions-stack">
+              <button type="submit" class="btn btn-primary btn-lg btn-block">
+                Şifre Yenileme Bağlantısı İste (Demo)
+              </button>
+              <button type="button" id="backToLoginBtn" class="btn btn-secondary btn-lg btn-block">
+                &larr; Giriş Ekranına Dön
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="stitch-footer">
+    <div class="container stitch-footer-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+      <div class="stitch-footer-links">
+        <a href="bootcampler.html">Bootcamp’ler</a>
+        <a href="egitim-takvimi.html">Eğitim Takvimi</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="is-birliklerimiz.html">İş Birliklerimiz</a>
+        <a href="blog.html">Blog</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="on-basvuru.html">Ön Başvuru Yap</a>
+        <a href="ogrenci-girisi.html">Öğrenci Girişi</a>
+      </div>
+      <p class="stitch-footer-note">
+        Upnext AI Web Prototipi · Uygulamalı Teknoloji Eğitimleri
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ödeme ve Kesin Kayıt Prototipi — Upnext AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <!-- Üst Menü (Ödeme sayfası genel menüye bağlanmaz) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        aria-expanded="false"
+        aria-controls="mainNavWrapper"
+        aria-label="Menüyü aç veya kapat"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <div class="nav-wrapper" id="mainNavWrapper">
+        <nav class="main-nav" aria-label="Ana Menü">
+          <ul class="nav-list">
+            <li><a href="bootcampler.html" class="nav-link">Bootcamp’ler</a></li>
+            <li><a href="egitim-takvimi.html" class="nav-link">Eğitim Takvimi</a></li>
+            <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+            <li><a href="is-birliklerimiz.html" class="nav-link">İş Birliklerimiz</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="ogrenci-girisi.html" class="btn btn-secondary">
+            Öğrenci Girişi
+          </a>
+          <a href="on-basvuru.html" class="btn btn-primary">
+            Ön Başvuru Yap
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="application-page-section" aria-labelledby="payment-page-heading">
+      <div class="container application-container" id="paymentPrototypePage">
+        <!-- 1. Ödeme Özeti Görünümü -->
+        <div id="paymentSummaryView" class="application-card-shell">
+          <div class="application-header">
+            <span class="section-badge">Kesin Kayıt ve Ödeme Adımı (Prototip)</span>
+            <h1 id="payment-page-heading" class="page-title">Ödeme Özeti</h1>
+            <p class="page-lead">
+              Gerçek süreçte bu sayfa, bilgilendirme görüşmesinin ardından programa katılmak isteyen öğrenciye ekip tarafından özel bağlantı ile iletilir.
+            </p>
+          </div>
+
+          <div class="prototype-disclaimer-box" role="note">
+            <strong>Simülasyon Bilgilendirmesi:</strong> Bu ekran yalnızca tasarım ve akış kontrolü içindir. Kart bilgisi istenmez, gerçek ödeme alınmaz ve kayıt oluşturulmaz.
+          </div>
+
+          <!-- Özet Alanları: Program Adı, Dönem, Paket Kapsamı, Toplam Ücret -->
+          <dl class="payment-summary-grid" aria-label="Ödeme Özeti Bilgileri">
+            <div class="payment-summary-row">
+              <dt>Program Adı</dt>
+              <dd id="paymentProgramName">AI Forge</dd>
+            </div>
+            <div class="payment-summary-row">
+              <dt>Dönem</dt>
+              <dd id="paymentCohort">Açıklanacak</dd>
+            </div>
+            <div class="payment-summary-row">
+              <dt>Paket Kapsamı</dt>
+              <dd>
+                Canlı online eğitim oturumları, uygulamalı proje geliştirme, portföy değerlendirmesi ve program materyallerine erişim
+              </dd>
+            </div>
+            <div class="payment-summary-row payment-total-row">
+              <dt>Toplam Ücret</dt>
+              <dd id="paymentTotalAmount">Açıklanacak</dd>
+            </div>
+          </dl>
+
+          <!-- Üç Deneme Sonucu Seçenekleri -->
+          <div class="simulation-controls-card">
+            <h2 class="info-card-title">İşlem Sonucu Simülasyonunu Deneyin</h2>
+            <p class="info-card-text" style="margin-bottom: 18px;">
+              Kart bilgisi girmeden aşağıdaki üç olası işlem sonucunu tek tıkla görüntüleyebilirsiniz:
+            </p>
+            <div class="simulation-btn-grid">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-payment-simulate="success"
+              >
+                Başarılı Sonucu Gör
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-payment-simulate="pending"
+              >
+                Beklemede Sonucu Gör
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-payment-simulate="failed"
+              >
+                Başarısız Sonucu Gör
+              </button>
+            </div>
+          </div>
+
+          <div class="success-actions" style="margin-top: 24px;">
+            <a href="bilgilendirme.html" id="backToInfoLink" class="btn btn-secondary">
+              &larr; Bilgilendirme Adımına Dön
+            </a>
+          </div>
+        </div>
+
+        <!-- 2A. Başarılı İşlem Sonucu Görünümü -->
+        <div
+          id="paymentResultSuccess"
+          class="application-card-shell payment-result-shell"
+          role="region"
+          aria-labelledby="result-success-heading"
+          hidden
+        >
+          <div class="success-badge-row">
+            <span class="status-pill status-pill-success">Simülasyon · Başarılı</span>
+          </div>
+          <h2 id="result-success-heading" class="page-title">
+            Ödeme onaylandı. Kesin kaydın tamamlandı.
+          </h2>
+
+          <div class="prototype-disclaimer-box" role="note">
+            <strong>Simülasyon Bilgilendirmesi:</strong> Bu görünüm bir tarayıcı simülasyonudur; gerçek ödeme alınmamış ve gerçek öğrenci kaydı oluşturulmamıştır.
+          </div>
+
+          <dl class="submitted-summary info-program-summary" aria-label="Onaylanan Kayıt Özeti">
+            <div class="summary-item">
+              <dt>Program Adı</dt>
+              <dd class="js-result-program">AI Forge</dd>
+            </div>
+            <div class="summary-item">
+              <dt>Dönem / Toplam Ücret</dt>
+              <dd><span class="js-result-cohort">Açıklanacak</span> · Açıklanacak</dd>
+            </div>
+          </dl>
+
+          <div class="next-steps-card">
+            <h3 class="info-card-title">Sonraki Adım: Öğrenci Paneli</h3>
+            <p class="info-card-text">
+              Kesin kaydın tamamlanmasının ardından bir sonraki adım <strong>Öğrenci Paneline erişimdir</strong>. Eğitim hazırlık materyalleri, canlı ders bağlantıları ve dönem duyuruları öğrenci paneli üzerinden paylaşılır.
+            </p>
+          </div>
+
+          <div class="success-actions">
+            <button type="button" class="btn btn-secondary" data-payment-reset>
+              Ödeme Özetine Dön
+            </button>
+            <a href="ogrenci-girisi.html" class="btn btn-primary">
+              Öğrenci Panelini İncele &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 2B. Beklemede İşlem Sonucu Görünümü -->
+        <div
+          id="paymentResultPending"
+          class="application-card-shell payment-result-shell"
+          role="region"
+          aria-labelledby="result-pending-heading"
+          hidden
+        >
+          <div class="success-badge-row">
+            <span class="status-pill status-pill-pending">Simülasyon · Beklemede</span>
+          </div>
+          <h2 id="result-pending-heading" class="page-title">
+            Ödeme doğrulanıyor. Kesin kaydın henüz tamamlanmadı.
+          </h2>
+
+          <div class="prototype-disclaimer-box" role="note">
+            <strong>Simülasyon Bilgilendirmesi:</strong> Bu görünüm bir tarayıcı simülasyonudur; gerçek ödeme işlemi yürütülmemektedir.
+          </div>
+
+          <dl class="submitted-summary info-program-summary" aria-label="Bekleyen İşlem Özeti">
+            <div class="summary-item">
+              <dt>Program Adı</dt>
+              <dd class="js-result-program">AI Forge</dd>
+            </div>
+            <div class="summary-item">
+              <dt>İşlem Durumu</dt>
+              <dd>Doğrulama Bekleniyor</dd>
+            </div>
+          </dl>
+
+          <div class="next-steps-card">
+            <h3 class="info-card-title">Ne Anlama Gelir?</h3>
+            <p class="info-card-text">
+              Ödeme doğrulama süreci tamamlandığında kesin kaydınız onaylanır ve bilgilendirme yapılır. Doğrulama tamamlanana kadar kesin kaydınız henüz oluşmamıştır.
+            </p>
+          </div>
+
+          <div class="success-actions">
+            <button type="button" class="btn btn-primary" data-payment-reset>
+              Ödeme Özetine Dön
+            </button>
+            <button type="button" class="btn btn-secondary" data-payment-simulate="success">
+              Başarılı Sonucu Dene
+            </button>
+            <button type="button" class="btn btn-secondary" data-payment-simulate="failed">
+              Başarısız Sonucu Dene
+            </button>
+          </div>
+        </div>
+
+        <!-- 2C. Başarısız İşlem Sonucu Görünümü -->
+        <div
+          id="paymentResultFailed"
+          class="application-card-shell payment-result-shell"
+          role="region"
+          aria-labelledby="result-failed-heading"
+          hidden
+        >
+          <div class="success-badge-row">
+            <span class="status-pill status-pill-failed">Simülasyon · Başarısız</span>
+          </div>
+          <h2 id="result-failed-heading" class="page-title">
+            Ödeme tamamlanmadı. Kesin kaydın oluşturulmadı.
+          </h2>
+
+          <div class="prototype-disclaimer-box" role="note">
+            <strong>Simülasyon Bilgilendirmesi:</strong> Bu görünüm bir tarayıcı simülasyonudur; herhangi bir karttan çekim yapılmamış ve kayıt oluşturulmamıştır.
+          </div>
+
+          <dl class="submitted-summary info-program-summary" aria-label="Başarısız İşlem Özeti">
+            <div class="summary-item">
+              <dt>Program Adı</dt>
+              <dd class="js-result-program">AI Forge</dd>
+            </div>
+            <div class="summary-item">
+              <dt>Kayıt Durumu</dt>
+              <dd>Kesin Kayıt Oluşturulmadı</dd>
+            </div>
+          </dl>
+
+          <div class="next-steps-card">
+            <h3 class="info-card-title">Ne Yapabilirsiniz?</h3>
+            <p class="info-card-text">
+              İşlem tamamlanmadığı için kesin kaydınız oluşturulmadı. Ödeme özetine dönerek işlemi tekrar deneyebilir veya eğitim ekibimizle iletişime geçebilirsiniz.
+            </p>
+          </div>
+
+          <div class="success-actions">
+            <button type="button" class="btn btn-primary" data-payment-reset>
+              Ödeme Özetine Dön
+            </button>
+            <button type="button" class="btn btn-secondary" data-payment-simulate="success">
+              Başarılı Sonucu Dene
+            </button>
+            <button type="button" class="btn btn-secondary" data-payment-simulate="pending">
+              Beklemede Sonucu Dene
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="stitch-footer">
+    <div class="container stitch-footer-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+      <div class="stitch-footer-links">
+        <a href="bootcampler.html">Bootcamp’ler</a>
+        <a href="egitim-takvimi.html">Eğitim Takvimi</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="is-birliklerimiz.html">İş Birliklerimiz</a>
+        <a href="blog.html">Blog</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="on-basvuru.html">Ön Başvuru Yap</a>
+      </div>
+      <p class="stitch-footer-note">
+        Upnext AI Web Prototipi · Uygulamalı Teknoloji Eğitimleri
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

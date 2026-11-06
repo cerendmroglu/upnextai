@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootcamp’ler — Upnext AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <!-- Üst Menü -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        aria-expanded="false"
+        aria-controls="mainNavWrapper"
+        aria-label="Menüyü aç veya kapat"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <div class="nav-wrapper" id="mainNavWrapper">
+        <nav class="main-nav" aria-label="Ana Menü">
+          <ul class="nav-list">
+            <li><a href="bootcampler.html" class="nav-link is-active" aria-current="page">Bootcamp’ler</a></li>
+            <li><a href="egitim-takvimi.html" class="nav-link">Eğitim Takvimi</a></li>
+            <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+            <li><a href="is-birliklerimiz.html" class="nav-link">İş Birliklerimiz</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="ogrenci-girisi.html" class="btn btn-secondary">
+            Öğrenci Girişi
+          </a>
+          <a href="on-basvuru.html" class="btn btn-primary">
+            Ön Başvuru Yap
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Sayfa Başlığı -->
+    <section class="page-intro-section" aria-labelledby="page-heading">
+      <div class="container">
+        <span class="section-badge">Eğitim Programları</span>
+        <h1 id="page-heading" class="page-title">Bootcamp Programlarımız</h1>
+        <p class="page-lead">
+          Gerçek iş senaryoları, canlı online oturumlar ve proje odaklı müfredatla
+          tasarlanan teknoloji eğitim programlarımızı inceleyin.
+        </p>
+      </div>
+    </section>
+
+    <!-- Bootcamp Listesi -->
+    <section class="bootcamps-list-section" aria-label="Bootcamp Kartları">
+      <div class="container">
+        <div class="bootcamps-grid">
+          <!-- 1. Kart: AI Forge -->
+          <article class="bootcamp-card bootcamp-list-card bootcamp-card-featured">
+            <div class="bootcamp-card-body">
+              <div class="bootcamp-tag-row">
+                <span class="badge-accent">Bootcamp · Öne Çıkan</span>
+                <div class="bootcamp-icon-box bootcamp-icon-forge" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                    <path d="M2 17l10 5 10-5" />
+                    <path d="M2 12l10 5 10-5" />
+                  </svg>
+                </div>
+              </div>
+              <!-- 1. Program Adı -->
+              <h2 class="bootcamp-title">AI Forge</h2>
+              <!-- 2. Kısa Açıklama -->
+              <p class="bootcamp-description">
+                Üretken yapay zeka çözümlerini, uçtan uca uygulama geliştirme ve
+                portföy projeleriyle gerçek iş senaryolarında hayata geçirme programı.
+              </p>
+
+              <!-- 3. Eğitim Formatı, 4. Tarih, 5. Seviye (Aynı Sırada) -->
+              <dl class="bootcamp-specs">
+                <div class="spec-row">
+                  <dt>Eğitim Formatı</dt>
+                  <dd>Canlı Online</dd>
+                </div>
+                <div class="spec-row">
+                  <dt>Tarih</dt>
+                  <dd>Açıklanacak</dd>
+                </div>
+                <div class="spec-row">
+                  <dt>Seviye</dt>
+                  <dd>Açıklanacak</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="bootcamp-card-actions">
+              <div class="card-button-group">
+                <a href="ai-forge.html" class="btn btn-secondary">Detayları İncele</a>
+                <a href="on-basvuru.html?program=ai-forge" class="btn btn-primary">
+                  Ön Başvuru Yap
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Kart: AI Agent -->
+          <article class="bootcamp-card bootcamp-list-card">
+            <div class="bootcamp-card-body">
+              <div class="bootcamp-tag-row">
+                <span class="badge-accent">Bootcamp</span>
+                <div class="bootcamp-icon-box bootcamp-icon-agent" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                    <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                    <rect x="8.5" y="14" width="7" height="7" rx="1.5" />
+                    <path d="M6.5 10v2a2 2 0 002 2h7a2 2 0 002-2v-2" />
+                  </svg>
+                </div>
+              </div>
+              <!-- 1. Program Adı -->
+              <h2 class="bootcamp-title">AI Agent</h2>
+              <!-- 2. Kısa Açıklama -->
+              <p class="bootcamp-description">
+                Otonom yapay zeka ajanları tasarlama, araç kullanımı ve çok adımlı
+                iş akışlarını gerçek iş problemlerine uyarlama eğitimi.
+              </p>
+
+              <!-- 3. Eğitim Formatı, 4. Tarih, 5. Seviye (Aynı Sırada) -->
+              <dl class="bootcamp-specs">
+                <div class="spec-row">
+                  <dt>Eğitim Formatı</dt>
+                  <dd>Canlı Online</dd>
+                </div>
+                <div class="spec-row">
+                  <dt>Tarih</dt>
+                  <dd>Açıklanacak</dd>
+                </div>
+                <div class="spec-row">
+                  <dt>Seviye</dt>
+                  <dd>Açıklanacak</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="bootcamp-card-actions">
+              <div class="card-button-group">
+                <a href="ai-agent.html" class="btn btn-secondary">Detayları İncele</a>
+                <a href="on-basvuru.html?program=ai-agent" class="btn btn-primary">
+                  Ön Başvuru Yap
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Kart: System & Network -->
+          <article class="bootcamp-card bootcamp-list-card">
+            <div class="bootcamp-card-body">
+              <div class="bootcamp-tag-row">
+                <span class="badge-accent">Bootcamp</span>
+                <div class="bootcamp-icon-box bootcamp-icon-network" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="6" rx="1.5" />
+                    <rect x="2" y="15" width="20" height="6" rx="1.5" />
+                    <circle cx="6" cy="6" r="1" fill="currentColor" />
+                    <circle cx="6" cy="18" r="1" fill="currentColor" />
+                    <path d="M10 6h8M10 18h8" />
+                  </svg>
+                </div>
+              </div>
+              <!-- 1. Program Adı -->
+              <h2 class="bootcamp-title">System &amp; Network</h2>
+              <!-- 2. Kısa Açıklama -->
+              <p class="bootcamp-description">
+                Modern sistem yönetimi, ağ mimarileri ve altyapı operasyonlarını
+                uygulamalı laboratuvar senaryolarıyla pekiştirme programı.
+              </p>
+
+              <!-- 3. Eğitim Formatı, 4. Tarih, 5. Seviye (Aynı Sırada) -->
+              <dl class="bootcamp-specs">
+                <div class="spec-row">
+                  <dt>Eğitim Formatı</dt>
+                  <dd>Canlı Online</dd>
+                </div>
+                <div class="spec-row">
+                  <dt>Tarih</dt>
+                  <dd>Açıklanacak</dd>
+                </div>
+                <div class="spec-row">
+                  <dt>Seviye</dt>
+                  <dd>Açıklanacak</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="bootcamp-card-actions">
+              <div class="card-button-group">
+                <a href="system-network.html" class="btn btn-secondary">Detayları İncele</a>
+                <a href="on-basvuru.html?program=system-network" class="btn btn-primary">
+                  Ön Başvuru Yap
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="stitch-footer">
+    <div class="container stitch-footer-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+      <div class="stitch-footer-links">
+        <a href="bootcampler.html">Bootcamp’ler</a>
+        <a href="egitim-takvimi.html">Eğitim Takvimi</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="is-birliklerimiz.html">İş Birliklerimiz</a>
+        <a href="blog.html">Blog</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="on-basvuru.html">Ön Başvuru Yap</a>
+        <a href="ogrenci-girisi.html">Öğrenci Girişi</a>
+      </div>
+      <p class="stitch-footer-note">
+        Upnext AI Web Prototipi · Uygulamalı Teknoloji Eğitimleri
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

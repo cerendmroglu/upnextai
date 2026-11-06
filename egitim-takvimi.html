@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eğitim Takvimi — Upnext AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <!-- Üst Menü -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        aria-expanded="false"
+        aria-controls="mainNavWrapper"
+        aria-label="Menüyü aç veya kapat"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <div class="nav-wrapper" id="mainNavWrapper">
+        <nav class="main-nav" aria-label="Ana Menü">
+          <ul class="nav-list">
+            <li><a href="bootcampler.html" class="nav-link">Bootcamp’ler</a></li>
+            <li><a href="egitim-takvimi.html" class="nav-link is-active" aria-current="page">Eğitim Takvimi</a></li>
+            <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+            <li><a href="is-birliklerimiz.html" class="nav-link">İş Birliklerimiz</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="ogrenci-girisi.html" class="btn btn-secondary">
+            Öğrenci Girişi
+          </a>
+          <a href="on-basvuru.html" class="btn btn-primary">
+            Ön Başvuru Yap
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro-section" aria-labelledby="schedule-page-heading">
+      <div class="container">
+        <span class="section-badge">Dönem Planlaması</span>
+        <h1 id="schedule-page-heading" class="page-title">Eğitim Takvimi</h1>
+        <p class="page-lead">
+          Bootcamp programlarımızın dönem, başlangıç ve bitiş tarihleri, canlı ders
+          ve proje sunumu saatleri ile kontenjan durumunu buradan takip edebilirsiniz.
+          Kesinleşmeyen tarihler <strong>“Tarih açıklanacak”</strong> olarak belirtilmiştir.
+        </p>
+      </div>
+    </section>
+
+    <section class="detail-section" aria-label="Program Takvim Kartları">
+      <div class="container">
+        <div class="curriculum-list">
+          <!-- 1. AI Forge -->
+          <article class="schedule-card" id="takvim-ai-forge">
+            <div class="schedule-card-top">
+              <div>
+                <div class="curriculum-header">
+                  <span class="badge-accent">Canlı Online</span>
+                  <span class="stitch-code-tag">Dönem: Açıklanacak</span>
+                </div>
+                <h2 class="bootcamp-title">AI Forge</h2>
+                <p class="curriculum-desc">
+                  Üretken yapay zeka çözümleri, model API entegrasyonları ve uçtan uca portföy projesi geliştirme programı.
+                </p>
+              </div>
+              <div class="schedule-actions">
+                <a href="ai-forge.html" class="btn btn-secondary">Programı İncele</a>
+                <a href="on-basvuru.html?program=ai-forge" class="btn btn-primary">Ön Başvuru Yap</a>
+              </div>
+            </div>
+
+            <dl class="schedule-meta-grid">
+              <div class="curriculum-meta-item">
+                <dt>Program / Dönem</dt>
+                <dd>AI Forge · Tarih açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Başlangıç ve Bitiş Tarihi</dt>
+                <dd>Tarih açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Ders ve Proje Sunumu Saatleri</dt>
+                <dd>Tarih açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Kontenjan Durumu</dt>
+                <dd>Açıklanacak</dd>
+              </div>
+            </dl>
+          </article>
+
+          <!-- 2. AI Agent -->
+          <article class="schedule-card" id="takvim-ai-agent">
+            <div class="schedule-card-top">
+              <div>
+                <div class="curriculum-header">
+                  <span class="badge-accent">Canlı Online</span>
+                  <span class="stitch-code-tag">Dönem: Açıklanacak</span>
+                </div>
+                <h2 class="bootcamp-title">AI Agent</h2>
+                <p class="curriculum-desc">
+                  Otonom yapay zeka ajanları, araç kullanımı (tool-use) ve çok adımlı iş akışları geliştirme eğitimi.
+                </p>
+              </div>
+              <div class="schedule-actions">
+                <a href="ai-agent.html" class="btn btn-secondary">Programı İncele</a>
+                <a href="on-basvuru.html?program=ai-agent" class="btn btn-primary">Ön Başvuru Yap</a>
+              </div>
+            </div>
+
+            <dl class="schedule-meta-grid">
+              <div class="curriculum-meta-item">
+                <dt>Program / Dönem</dt>
+                <dd>AI Agent · Tarih açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Başlangıç ve Bitiş Tarihi</dt>
+                <dd>Tarih açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Ders ve Proje Sunumu Saatleri</dt>
+                <dd>Tarih açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Kontenjan Durumu</dt>
+                <dd>Açıklanacak</dd>
+              </div>
+            </dl>
+          </article>
+
+          <!-- 3. System & Network -->
+          <article class="schedule-card" id="takvim-system-network">
+            <div class="schedule-card-top">
+              <div>
+                <div class="curriculum-header">
+                  <span class="badge-accent">Canlı Online</span>
+                  <span class="stitch-code-tag">Dönem: Açıklanacak</span>
+                </div>
+                <h2 class="bootcamp-title">System &amp; Network</h2>
+                <p class="curriculum-desc">
+                  Modern sistem yönetimi, Linux altyapısı, ağ mimarileri ve uygulamalı laboratuvar operasyonları programı.
+                </p>
+              </div>
+              <div class="schedule-actions">
+                <a href="system-network.html" class="btn btn-secondary">Programı İncele</a>
+                <a href="on-basvuru.html?program=system-network" class="btn btn-primary">Ön Başvuru Yap</a>
+              </div>
+            </div>
+
+            <dl class="schedule-meta-grid">
+              <div class="curriculum-meta-item">
+                <dt>Program / Dönem</dt>
+                <dd>System &amp; Network · Tarih açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Başlangıç ve Bitiş Tarihi</dt>
+                <dd>Tarih açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Ders ve Proje Sunumu Saatleri</dt>
+                <dd>Tarih açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Kontenjan Durumu</dt>
+                <dd>Açıklanacak</dd>
+              </div>
+            </dl>
+          </article>
+
+          <!-- 4. Demo: Dolu Dönem Senaryosu Örneği -->
+          <article class="schedule-card schedule-card-demo" aria-label="Demo Dolu Dönem Senaryosu">
+            <div class="schedule-card-top">
+              <div>
+                <div class="curriculum-header">
+                  <span class="status-pill status-pill-pending">Demo · Dolu Dönem Senaryosu</span>
+                  <span class="stitch-code-tag">Örnek Görünüm</span>
+                </div>
+                <h2 class="bootcamp-title">AI Forge (Örnek Dolu Dönem Görünümü — Demo)</h2>
+                <p class="curriculum-desc">
+                  Bu kart, bir dönemin kontenjanı dolduğunda adayların nasıl bilgilendirileceğini ve sonraki uygun döneme nasıl yönlendirileceğini gösteren <strong>Demo</strong> senaryodur.
+                </p>
+              </div>
+              <div class="schedule-actions">
+                <a href="#takvim-ai-forge" class="btn btn-secondary">Yeni Dönem Alanına Git</a>
+                <a href="on-basvuru.html?program=ai-forge" class="btn btn-primary">Yeni Dönem İçin Ön Başvuru</a>
+              </div>
+            </div>
+
+            <dl class="schedule-meta-grid">
+              <div class="curriculum-meta-item">
+                <dt>Program / Dönem</dt>
+                <dd>AI Forge · Demo Dönem Örneği</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Başlangıç ve Bitiş Tarihi</dt>
+                <dd>Tarih açıklanacak (Yeni dönem bekleniyor)</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Ders ve Proje Sunumu Saatleri</dt>
+                <dd>Tarih açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Kontenjan Durumu</dt>
+                <dd>Dolu (Demo) · Yeni dönem tarihi açıklanacak</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="stitch-footer">
+    <div class="container stitch-footer-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+      <div class="stitch-footer-links">
+        <a href="bootcampler.html">Bootcamp’ler</a>
+        <a href="egitim-takvimi.html">Eğitim Takvimi</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="is-birliklerimiz.html">İş Birliklerimiz</a>
+        <a href="blog.html">Blog</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="on-basvuru.html">Ön Başvuru Yap</a>
+        <a href="ogrenci-girisi.html">Öğrenci Girişi</a>
+      </div>
+      <p class="stitch-footer-note">
+        Upnext AI Web Prototipi · Uygulamalı Teknoloji Eğitimleri
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

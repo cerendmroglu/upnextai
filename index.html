@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upnext AI — Uygulamalı Teknoloji Eğitimleri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top" class="stitch-home">
+  <!-- Üst Menü -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        aria-expanded="false"
+        aria-controls="mainNavWrapper"
+        aria-label="Menüyü aç veya kapat"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <div class="nav-wrapper" id="mainNavWrapper">
+        <nav class="main-nav" aria-label="Ana Menü">
+          <ul class="nav-list">
+            <li><a href="bootcampler.html" class="nav-link">Bootcamp’ler</a></li>
+            <li><a href="egitim-takvimi.html" class="nav-link">Eğitim Takvimi</a></li>
+            <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+            <li><a href="is-birliklerimiz.html" class="nav-link">İş Birliklerimiz</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="ogrenci-girisi.html" class="btn btn-secondary">
+            Öğrenci Girişi
+          </a>
+          <a href="on-basvuru.html" class="btn btn-primary">
+            Ön Başvuru Yap
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. İlk Ekran (Hero) -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="section-badge stitch-pill-badge">
+            <svg class="stitch-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6h16v12H4V6zm2 3l3 3-3 3 1.4 1.4L11.8 12 7.4 7.6 6 9zm6 5h5v-2h-5v2z" fill="currentColor" />
+            </svg>
+            <span>Uygulamalı Teknoloji Eğitimleri</span>
+          </span>
+
+          <h1 id="hero-heading" class="hero-title">
+            Öğrendiğini <span class="hero-title-accent">gerçek bir iş senaryosunda</span> uygula.
+          </h1>
+
+          <p class="hero-description">
+            Upnext AI, üniversite öğrencileri ve yeni mezunları canlı online
+            eğitim oturumları, gerçek iş senaryolarına dayalı proje geliştirme ve
+            somut portföy çalışmalarıyla iş hayatına hazırlar.
+          </p>
+
+          <!-- Staj Başvuru Bilgilendirme Kutusu (Staj veya işe yerleşme garantisi içermez) -->
+          <div class="stitch-info-callout" role="note">
+            <svg class="stitch-callout-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor" />
+            </svg>
+            <p>
+              Programı ve proje kriterlerini başarıyla tamamlayan uygun öğrenciler staj fırsatlarına başvurabilir; staj veya işe yerleşme garantisi verilmez.
+            </p>
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#bootcampler" class="btn btn-primary btn-lg stitch-cta-btn">
+              <span>Bootcamp’leri İncele</span>
+              <svg class="stitch-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" transform="rotate(90 12 12)" fill="currentColor" />
+              </svg>
+            </a>
+            <a href="egitim-takvimi.html" class="btn btn-secondary btn-lg">
+              <span>Eğitim Takvimini Gör</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card-wrap">
+          <article class="hero-preview-card stitch-hero-card" aria-label="Örnek Bootcamp Kartı: AI Forge">
+            <div class="preview-card-top">
+              <span class="badge-accent stitch-pill-badge">Öne Çıkan Program</span>
+              <span class="stitch-online-indicator">
+                <span class="stitch-online-dot" aria-hidden="true"></span>
+                <span>Online</span>
+              </span>
+            </div>
+
+            <div class="preview-card-header-row">
+              <div class="bootcamp-icon-box bootcamp-icon-forge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5" />
+                  <path d="M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <div>
+                <h2 class="preview-card-title">AI Forge</h2>
+              </div>
+            </div>
+            <p class="preview-card-text">
+              Yapay zeka araçlarını ve modern model entegrasyonlarını gerçek iş
+              senaryoları üzerinden uygulamalı olarak deneyimleyin.
+            </p>
+
+            <dl class="preview-card-meta stitch-well-meta">
+              <div class="meta-item">
+                <dt>Eğitim Formatı</dt>
+                <dd>Online</dd>
+              </div>
+              <div class="meta-item">
+                <dt>Başlangıç Tarihi</dt>
+                <dd>Tarih açıklanacak</dd>
+              </div>
+            </dl>
+
+            <div class="preview-card-footer">
+              <a href="ai-forge.html" class="btn btn-secondary btn-block stitch-card-btn">
+                <span>Programı İncele</span>
+                <svg class="stitch-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9.29 6.71a1 1 0 000 1.41L13.17 12l-3.88 3.88a1 1 0 101.41 1.41l4.59-4.59a1 1 0 000-1.41L10.7 6.7a1 1 0 00-1.41.01z" fill="currentColor" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. İş Birliklerimiz -->
+    <section id="is-birliklerimiz" class="partners-section" aria-labelledby="partners-heading">
+      <div class="container">
+        <div class="section-header section-header-center">
+          <span class="stitch-neutral-pill">Ekosistem &amp; Paydaşlar</span>
+          <h2 id="partners-heading" class="section-title">İş Birliklerimiz</h2>
+          <p class="section-subtitle">
+            Şirketler, üniversiteler ve öğrenci toplulukları ile eğitim, mentorluk ve staj süreçleri için ayrılan taslak paydaş alanı.
+          </p>
+        </div>
+
+        <div class="partners-grid" aria-label="Şirket logoları için taslak alanlar">
+          <div class="partner-placeholder">
+            <span class="partner-dot" aria-hidden="true"></span>
+            <span>Logo Alanı</span>
+          </div>
+          <div class="partner-placeholder">
+            <span class="partner-dot" aria-hidden="true"></span>
+            <span>Logo Alanı</span>
+          </div>
+          <div class="partner-placeholder">
+            <span class="partner-dot" aria-hidden="true"></span>
+            <span>Logo Alanı</span>
+          </div>
+          <div class="partner-placeholder">
+            <span class="partner-dot" aria-hidden="true"></span>
+            <span>Logo Alanı</span>
+          </div>
+          <div class="partner-placeholder">
+            <span class="partner-dot" aria-hidden="true"></span>
+            <span>Logo Alanı</span>
+          </div>
+        </div>
+
+        <div class="section-center-action">
+          <a href="is-birliklerimiz.html" class="btn btn-secondary">
+            <span>İş Birliklerimizi ve Modelleri İncele</span>
+            <svg class="stitch-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9.29 6.71a1 1 0 000 1.41L13.17 12l-3.88 3.88a1 1 0 101.41 1.41l4.59-4.59a1 1 0 000-1.41L10.7 6.7a1 1 0 00-1.41.01z" fill="currentColor" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Öne Çıkan Bootcamp’ler -->
+    <section id="bootcampler" class="bootcamps-section" aria-labelledby="bootcamps-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="stitch-neutral-pill">Programlarımız</span>
+          <h2 id="bootcamps-heading" class="section-title">Öne Çıkan Bootcamp’ler</h2>
+          <p class="section-subtitle">
+            Proje odaklı müfredat ve canlı online çalışma düzeniyle hazırlanan eğitim programlarımız.
+          </p>
+        </div>
+
+        <div class="bootcamps-grid">
+          <!-- Kart 1: AI Forge -->
+          <article class="bootcamp-card bootcamp-card-featured">
+            <div class="bootcamp-card-body">
+              <div class="bootcamp-tag-row stitch-tag-row">
+                <span class="badge-accent stitch-pill-badge">Canlı Online · Öne Çıkan</span>
+                <span class="stitch-code-tag">Seviye: Açıklanacak</span>
+              </div>
+              <div class="bootcamp-card-title-row">
+                <div class="bootcamp-icon-box bootcamp-icon-forge" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                    <path d="M2 17l10 5 10-5" />
+                    <path d="M2 12l10 5 10-5" />
+                  </svg>
+                </div>
+                <h3 class="bootcamp-title">AI Forge</h3>
+              </div>
+              <p class="bootcamp-description">
+                Üretken yapay zeka çözümlerini, uçtan uca uygulama geliştirme ve
+                portföy projeleriyle gerçek senaryolarda hayata geçirme programı.
+              </p>
+            </div>
+
+            <div class="bootcamp-card-bottom">
+              <dl class="bootcamp-specs stitch-specs-well">
+                <div class="spec-row">
+                  <dt>Eğitim Formatı</dt>
+                  <dd>Canlı Online</dd>
+                </div>
+                <div class="spec-row">
+                  <dt>Tarih / Seviye</dt>
+                  <dd>Tarih açıklanacak · Seviye açıklanacak</dd>
+                </div>
+              </dl>
+
+              <div class="bootcamp-card-link-row">
+                <a href="ai-forge.html" class="btn btn-primary btn-block stitch-card-btn">
+                  <span>Programı İncele</span>
+                  <svg class="stitch-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9.29 6.71a1 1 0 000 1.41L13.17 12l-3.88 3.88a1 1 0 101.41 1.41l4.59-4.59a1 1 0 000-1.41L10.7 6.7a1 1 0 00-1.41.01z" fill="currentColor" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kart 2: AI Agent -->
+          <article class="bootcamp-card">
+            <div class="bootcamp-card-body">
+              <div class="bootcamp-tag-row stitch-tag-row">
+                <span class="badge-accent stitch-pill-badge">Canlı Online</span>
+                <span class="stitch-code-tag">Seviye: Açıklanacak</span>
+              </div>
+              <div class="bootcamp-card-title-row">
+                <div class="bootcamp-icon-box bootcamp-icon-agent" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                    <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                    <rect x="8.5" y="14" width="7" height="7" rx="1.5" />
+                    <path d="M6.5 10v2a2 2 0 002 2h7a2 2 0 002-2v-2" />
+                  </svg>
+                </div>
+                <h3 class="bootcamp-title">AI Agent</h3>
+              </div>
+              <p class="bootcamp-description">
+                Otonom yapay zeka ajanları tasarlama, araç kullanımı ve çok adımlı
+                iş akışlarını gerçek iş problemlerine uyarlama eğitimi.
+              </p>
+            </div>
+
+            <div class="bootcamp-card-bottom">
+              <dl class="bootcamp-specs stitch-specs-well">
+                <div class="spec-row">
+                  <dt>Eğitim Formatı</dt>
+                  <dd>Canlı Online</dd>
+                </div>
+                <div class="spec-row">
+                  <dt>Tarih / Seviye</dt>
+                  <dd>Tarih açıklanacak · Seviye açıklanacak</dd>
+                </div>
+              </dl>
+
+              <div class="bootcamp-card-link-row">
+                <a href="ai-agent.html" class="btn btn-secondary btn-block stitch-card-btn">
+                  <span>Detayları İncele</span>
+                  <svg class="stitch-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9.29 6.71a1 1 0 000 1.41L13.17 12l-3.88 3.88a1 1 0 101.41 1.41l4.59-4.59a1 1 0 000-1.41L10.7 6.7a1 1 0 00-1.41.01z" fill="currentColor" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kart 3: System & Network -->
+          <article class="bootcamp-card">
+            <div class="bootcamp-card-body">
+              <div class="bootcamp-tag-row stitch-tag-row">
+                <span class="badge-accent stitch-pill-badge">Canlı Online</span>
+                <span class="stitch-code-tag">Seviye: Açıklanacak</span>
+              </div>
+              <div class="bootcamp-card-title-row">
+                <div class="bootcamp-icon-box bootcamp-icon-network" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="6" rx="1.5" />
+                    <rect x="2" y="15" width="20" height="6" rx="1.5" />
+                    <circle cx="6" cy="6" r="1" fill="currentColor" />
+                    <circle cx="6" cy="18" r="1" fill="currentColor" />
+                    <path d="M10 6h8M10 18h8" />
+                  </svg>
+                </div>
+                <h3 class="bootcamp-title">System &amp; Network</h3>
+              </div>
+              <p class="bootcamp-description">
+                Modern sistem yönetimi, ağ mimarileri ve altyapı operasyonlarını
+                uygulamalı laboratuvar senaryolarıyla pekiştirme programı.
+              </p>
+            </div>
+
+            <div class="bootcamp-card-bottom">
+              <dl class="bootcamp-specs stitch-specs-well">
+                <div class="spec-row">
+                  <dt>Eğitim Formatı</dt>
+                  <dd>Canlı Online</dd>
+                </div>
+                <div class="spec-row">
+                  <dt>Tarih / Seviye</dt>
+                  <dd>Tarih açıklanacak · Seviye açıklanacak</dd>
+                </div>
+              </dl>
+
+              <div class="bootcamp-card-link-row">
+                <a href="system-network.html" class="btn btn-secondary btn-block stitch-card-btn">
+                  <span>Detayları İncele</span>
+                  <svg class="stitch-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9.29 6.71a1 1 0 000 1.41L13.17 12l-3.88 3.88a1 1 0 101.41 1.41l4.59-4.59a1 1 0 000-1.41L10.7 6.7a1 1 0 00-1.41.01z" fill="currentColor" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Neden Upnext AI? -->
+    <section id="neden-upnext" class="stitch-features-section" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge stitch-pill-badge">Metodoloji</span>
+          <h2 id="why-heading" class="section-title">Neden Upnext AI?</h2>
+          <p class="section-subtitle">
+            Üniversite öğrencileri ve yeni mezunları teorik anlatımın ötesine taşıyan, gerçek iş senaryosu ve portföy odaklı eğitim modeli.
+          </p>
+        </div>
+
+        <div class="stitch-features-grid">
+          <article class="stitch-feature-card">
+            <div class="stitch-feature-icon" aria-hidden="true">01</div>
+            <div>
+              <h3 class="stitch-feature-title">Uygulamalı Canlı Online Eğitim</h3>
+              <p class="stitch-feature-text">
+                Kayıtlı videolarla sınırlı kalmayan; eğitmenle etkileşimli, gerçek zamanlı kodlama ve mimari tasarım yapılan canlı oturumlar.
+              </p>
+            </div>
+          </article>
+
+          <article class="stitch-feature-card">
+            <div class="stitch-feature-icon" aria-hidden="true">02</div>
+            <div>
+              <h3 class="stitch-feature-title">Gerçek İş Senaryosu Projeleri</h3>
+              <p class="stitch-feature-text">
+                Sektörde karşılaşılan somut teknik problemlere dayalı, uçtan uca çalışan uygulama geliştirme pratiği.
+              </p>
+            </div>
+          </article>
+
+          <article class="stitch-feature-card">
+            <div class="stitch-feature-icon" aria-hidden="true">03</div>
+            <div>
+              <h3 class="stitch-feature-title">Somut Portföy Çalışması</h3>
+              <p class="stitch-feature-text">
+                Teknik mülakatlarda ve iş başvurularında doğrudan sunabileceğiniz, dokümante edilmiş proje çıktıları.
+              </p>
+            </div>
+          </article>
+
+          <article class="stitch-feature-card">
+            <div class="stitch-feature-icon" aria-hidden="true">04</div>
+            <div>
+              <h3 class="stitch-feature-title">Staj Fırsatlarına Başvuru ve Mentorluk</h3>
+              <p class="stitch-feature-text">
+                Eğitimi ve bitirme projesini başarıyla tamamlayan uygun öğrenciler staj fırsatlarına başvurabilir; kabul kararı ilgili şirketin değerlendirmesine bağlıdır.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Nasıl İşliyor? -->
+    <section id="nasil-isliyor" class="detail-section detail-section-alt" aria-labelledby="how-it-works-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge stitch-pill-badge">Süreç Haritası</span>
+          <h2 id="how-it-works-heading" class="section-title">Nasıl İşliyor?</h2>
+          <p class="section-subtitle">
+            Ücretsiz ön başvurudan proje teslimine ve staj başvurularına uzanan 5 adımlı süreç.
+          </p>
+        </div>
+
+        <div class="roadmap-timeline">
+          <article class="roadmap-step-card">
+            <span class="roadmap-step-badge">1. Adım</span>
+            <h3 class="info-card-title">Ücretsiz Ön Başvuru</h3>
+            <p class="info-card-text">
+              İlgilendiğiniz programı seçerek ön başvuru formunu doldurursunuz. Ön başvuru ücretsizdir ve kesin kayıt anlamına gelmez.
+            </p>
+          </article>
+
+          <article class="roadmap-step-card">
+            <span class="roadmap-step-badge">2. Adım</span>
+            <h3 class="info-card-title">Tanışma ve Program Bilgilendirmesi</h3>
+            <p class="info-card-text">
+              Ekibimiz eğitim takvimi, proje süreci, paket kapsamı ve beklentileri değerlendirmek üzere sizinle iletişime geçer.
+            </p>
+          </article>
+
+          <article class="roadmap-step-card">
+            <span class="roadmap-step-badge">3. Adım</span>
+            <h3 class="info-card-title">Kesin Kayıt ve Canlı Online Eğitim</h3>
+            <p class="info-card-text">
+              Görüşme sonrası katılmak isteyen öğrenciye ödeme bağlantısı iletilir; kaydı tamamlanan öğrenciler canlı derslere ve öğrenci paneline erişir.
+            </p>
+          </article>
+
+          <article class="roadmap-step-card">
+            <span class="roadmap-step-badge">4. Adım</span>
+            <h3 class="info-card-title">Bitirme Projesi ve Portföy Üretimi</h3>
+            <p class="info-card-text">
+              Gerçek iş senaryosuna dayalı bitirme projenizi geliştirir, mentor geri bildirimleriyle portföy çıktınızı tamamlarsınız.
+            </p>
+          </article>
+
+          <article class="roadmap-step-card">
+            <span class="roadmap-step-badge">5. Adım</span>
+            <h3 class="info-card-title">Sertifika ve Staj Fırsatlarına Başvuru</h3>
+            <p class="info-card-text">
+              Mezuniyet kriterlerini sağlayan katılımcılar sertifikalarını alır ve uygun staj ilanlarına kendi portföyleriyle başvurabilir.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Eğitmenler ve Mentorlar (Teyitsiz isim veya deneyim yılı uydurulmadan) -->
+    <section id="egitmenler-mentorlar" class="detail-section" aria-labelledby="home-instructors-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="stitch-neutral-pill">Akademik &amp; Sektörel Kadro</span>
+          <h2 id="home-instructors-heading" class="section-title">Eğitmenler ve Mentorlar</h2>
+          <p class="section-subtitle">
+            Canlı online eğitimleri ve proje incelemelerini yürütecek dönem kadrosu kesinleştiğinde açıklanacaktır.
+          </p>
+        </div>
+
+        <div class="three-col-grid">
+          <article class="info-card">
+            <span class="badge-accent">AI Forge Kadrosu</span>
+            <h3 class="info-card-title" style="margin-top: 12px;">Eğitmen &amp; Mentor: Açıklanacak</h3>
+            <p class="info-card-text">
+              Üretken yapay zekâ uygulamaları, model API entegrasyonları ve RAG mimarileri oturumlarını yürütecek uzman bilgisi açıklanacaktır.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="badge-accent">AI Agent Kadrosu</span>
+            <h3 class="info-card-title" style="margin-top: 12px;">Eğitmen &amp; Mentor: Açıklanacak</h3>
+            <p class="info-card-text">
+              Otonom ajan iş akışları, araç kullanımı ve çok adımlı görev orkestrasyonu projelerine rehberlik edecek uzman bilgisi açıklanacaktır.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="badge-accent">System &amp; Network Kadrosu</span>
+            <h3 class="info-card-title" style="margin-top: 12px;">Eğitmen &amp; Mentor: Açıklanacak</h3>
+            <p class="info-card-text">
+              Sistem yönetimi, ağ topolojileri ve altyapı laboratuvar uygulamalarını yönetecek uzman bilgisi açıklanacaktır.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Öğrenci Başarı Hikâyeleri (Teyitsiz öğrenci yorumu uydurulmadan taslak/demo yapı) -->
+    <section id="basari-hikayeleri" class="detail-section detail-section-alt" aria-labelledby="stories-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="stitch-neutral-pill">Mezun Çıktıları · Taslak Görünüm</span>
+          <h2 id="stories-heading" class="section-title">Öğrenci Başarı Hikâyeleri</h2>
+          <p class="section-subtitle">
+            Dönem mezuniyetleri tamamlandığında katılımcıların geliştirdiği gerçek proje çıktıları ve kariyer adımları bu alanda paylaşılacaktır.
+          </p>
+        </div>
+
+        <div class="two-col-grid">
+          <article class="info-card">
+            <div class="preview-card-top">
+              <span class="badge-accent">Örnek Portföy Çıktısı (Taslak)</span>
+              <span class="stitch-code-tag">AI Forge &amp; AI Agent</span>
+            </div>
+            <h3 class="info-card-title">Gerçek Senaryo Uygulama ve Proje Sunumları</h3>
+            <p class="info-card-text">
+              Katılımcıların dönem sonunda tamamladığı çalışan yapay zekâ servisleri, mimari dokümantasyonlar ve teknik sunum özetleri doğrulanmış mezun verileriyle burada yer alacaktır.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <div class="preview-card-top">
+              <span class="badge-accent">Mezun Deneyimi Alanı (Taslak)</span>
+              <span class="stitch-code-tag">System &amp; Network</span>
+            </div>
+            <h3 class="info-card-title">Laboratuvar Pratiği ve Kariyere Hazırlık</h3>
+            <p class="info-card-text">
+              Üniversite öğrencileri ve yeni mezunların canlı online eğitim, mentor geri bildirimi ve staj başvuru hazırlığı süreçlerindeki doğrulanmış deneyimleri dönem sonunda eklenecektir.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Sıkça Sorulan Sorular -->
+    <section id="sss" class="detail-section" aria-labelledby="home-faq-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge stitch-pill-badge">Merak Edilenler</span>
+          <h2 id="home-faq-heading" class="section-title">Sıkça Sorulan Sorular</h2>
+          <p class="section-subtitle">
+            Ön başvuru, eğitim modeli ve staj başvuru süreci hakkında temel sorular.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">Ön başvuru ücretli midir veya kesin kayıt anlamına gelir mi?</summary>
+            <div class="faq-answer">
+              <p>Hayır. Ön başvuru tamamen ücretsizdir ve kesin kayıt anlamına gelmez. Ön başvuru sonrasında ekibimiz bilgilendirme görüşmesi için sizinle iletişime geçer.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Program sonunda staj veya işe yerleşme garantisi veriliyor mu?</summary>
+            <div class="faq-answer">
+              <p>Hayır, doğrudan staj veya işe yerleşme garantisi verilmez. Eğitimi ve projeyi başarıyla tamamlamak, uygun staj fırsatlarına başvurmak ve ilgili şirketin kabul kararı birbirinden ayrı adımlardır.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Eğitim tarihleri ve ücret bilgileri ne zaman açıklanacak?</summary>
+            <div class="faq-answer">
+              <p>Dönem başlangıç tarihleri, ders saatleri ve program ücreti kesinleştiğinde Eğitim Takvimi ve ilgili program detay sayfalarında duyurulacaktır.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Ön Başvuru Çağrısı -->
+    <section class="stitch-bottom-cta" aria-labelledby="home-cta-heading">
+      <div class="container">
+        <div class="stitch-cta-box">
+          <div class="stitch-cta-copy">
+            <span class="section-badge stitch-pill-badge">Ücretsiz Ön Başvuru</span>
+            <h2 id="home-cta-heading" class="section-title">
+              Kariyerine gerçek projelerle başla.
+            </h2>
+            <p class="section-subtitle">
+              Ön başvuru ücretsizdir ve kesin kayıt anlamına gelmez. İlgilendiğiniz programı seçerek ön başvuru adımını tamamlayabilirsiniz.
+            </p>
+          </div>
+          <div class="stitch-cta-actions">
+            <a href="on-basvuru.html" class="btn btn-primary btn-lg stitch-cta-btn">
+              <span>Ön Başvuru Yap</span>
+            </a>
+            <a href="bootcampler.html" class="btn btn-secondary btn-lg">
+              Tüm Programları Gör
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 10. Footer -->
+  <footer class="stitch-footer">
+    <div class="container stitch-footer-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+      <div class="stitch-footer-links">
+        <a href="bootcampler.html">Bootcamp’ler</a>
+        <a href="egitim-takvimi.html">Eğitim Takvimi</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="is-birliklerimiz.html">İş Birliklerimiz</a>
+        <a href="blog.html">Blog</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="on-basvuru.html">Ön Başvuru Yap</a>
+        <a href="ogrenci-girisi.html">Öğrenci Girişi</a>
+      </div>
+      <p class="stitch-footer-note">
+        Upnext AI Web Prototipi · Uygulamalı Teknoloji Eğitimleri
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

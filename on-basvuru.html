@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ön Başvuru Formu — Upnext AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <!-- Üst Menü -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        aria-expanded="false"
+        aria-controls="mainNavWrapper"
+        aria-label="Menüyü aç veya kapat"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <div class="nav-wrapper" id="mainNavWrapper">
+        <nav class="main-nav" aria-label="Ana Menü">
+          <ul class="nav-list">
+            <li><a href="bootcampler.html" class="nav-link">Bootcamp’ler</a></li>
+            <li><a href="egitim-takvimi.html" class="nav-link">Eğitim Takvimi</a></li>
+            <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+            <li><a href="is-birliklerimiz.html" class="nav-link">İş Birliklerimiz</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="ogrenci-girisi.html" class="btn btn-secondary">
+            Öğrenci Girişi
+          </a>
+          <a href="on-basvuru.html" class="btn btn-primary" aria-current="page">
+            Ön Başvuru Yap
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="application-page-section" aria-labelledby="form-page-heading">
+      <div class="container application-container">
+        <!-- Form Görünümü -->
+        <div id="applicationFormView" class="application-card-shell">
+          <div class="application-header">
+            <span class="section-badge">Ön Başvuru Adımı</span>
+            <h1 id="form-page-heading" class="page-title">Bootcamp Ön Başvuru Formu</h1>
+            <div class="free-notice-banner" role="note">
+              <strong>Ön başvuru ücretsizdir ve kesin kayıt anlamına gelmez.</strong>
+            </div>
+          </div>
+
+          <form id="preApplicationForm" class="application-form" novalidate>
+            <div class="form-grid">
+              <!-- 1. Ad Soyad -->
+              <div class="form-field" id="field-fullName">
+                <label for="fullName" class="form-label">
+                  Ad Soyad <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  class="form-control"
+                  placeholder="Örn. Deniz Yılmaz"
+                  autocomplete="name"
+                  required
+                  aria-describedby="error-fullName"
+                />
+                <p id="error-fullName" class="field-error" role="alert" hidden></p>
+              </div>
+
+              <!-- 2. E-posta -->
+              <div class="form-field" id="field-email">
+                <label for="email" class="form-label">
+                  E-posta <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="ornek@eposta.com"
+                  autocomplete="email"
+                  required
+                  aria-describedby="error-email"
+                />
+                <p id="error-email" class="field-error" role="alert" hidden></p>
+              </div>
+
+              <!-- 3. Telefon -->
+              <div class="form-field" id="field-phone">
+                <label for="phone" class="form-label">
+                  Telefon <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-control"
+                  placeholder="05XX XXX XX XX"
+                  autocomplete="tel"
+                  required
+                  aria-describedby="error-phone"
+                />
+                <p id="error-phone" class="field-error" role="alert" hidden></p>
+              </div>
+
+              <!-- 4. Eğitim Durumu -->
+              <div class="form-field" id="field-education">
+                <label for="education" class="form-label">
+                  Eğitim Durumu <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <select
+                  id="education"
+                  name="education"
+                  class="form-control"
+                  required
+                  aria-describedby="error-education"
+                >
+                  <option value="">Eğitim durumunuzu seçiniz</option>
+                  <option value="Ön Lisans / Lisans Öğrencisi">Ön Lisans / Lisans Öğrencisi</option>
+                  <option value="Lisans Mezunu">Lisans Mezunu</option>
+                  <option value="Yüksek Lisans / Doktora Öğrencisi">Yüksek Lisans / Doktora Öğrencisi</option>
+                  <option value="Yüksek Lisans / Doktora Mezunu">Yüksek Lisans / Doktora Mezunu</option>
+                  <option value="Diğer">Diğer</option>
+                </select>
+                <p id="error-education" class="field-error" role="alert" hidden></p>
+              </div>
+
+              <!-- 5. İlgilenilen Program -->
+              <div class="form-field" id="field-program">
+                <label for="program" class="form-label">
+                  İlgilenilen Program <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <select
+                  id="program"
+                  name="program"
+                  class="form-control"
+                  required
+                  aria-describedby="programAutoHint error-program"
+                >
+                  <option value="">Program seçiniz</option>
+                  <option value="AI Forge">AI Forge</option>
+                  <option value="AI Agent">AI Agent</option>
+                  <option value="System & Network">System &amp; Network</option>
+                </select>
+                <p id="programAutoHint" class="field-hint" hidden>
+                  Seçtiğiniz program bağlantısından geldiğiniz için <strong>AI Forge</strong> otomatik seçildi. Dilerseniz değiştirebilirsiniz.
+                </p>
+                <p id="error-program" class="field-error" role="alert" hidden></p>
+              </div>
+
+              <!-- 6. Dönem (Tarih açıklanacak — kullanıcıdan tarih seçmesi istenmez) -->
+              <div class="form-field" id="field-cohort">
+                <label for="cohort" class="form-label">
+                  Dönem
+                </label>
+                <input
+                  type="text"
+                  id="cohort"
+                  name="cohort"
+                  class="form-control form-control-readonly"
+                  value="Tarih açıklanacak"
+                  readonly
+                  aria-readonly="true"
+                  aria-describedby="cohortHint"
+                />
+                <p id="cohortHint" class="field-hint">
+                  Dönem takvimi henüz kesinleşmediği için tarih seçimi gerekmemektedir.
+                </p>
+              </div>
+            </div>
+
+            <!-- Bilgilendirme ve İletişim İzni İçin Ayrı Taslak Alanlar -->
+            <div class="consent-group" aria-label="Bilgilendirme ve İletişim İzinleri">
+              <!-- Ayrı Alan 1: Bilgilendirme (KVKK / Ön Başvuru Aydınlatma Taslağı) -->
+              <div class="consent-box" id="field-infoNotice">
+                <span class="consent-tag">Bilgilendirme Alanı (Taslak)</span>
+                <p class="consent-draft-text">
+                  Ön başvuru sürecinde paylaştığınız bilgiler, yalnızca ilgili eğitim programı hakkında bilgilendirme görüşmesi planlanması kapsamında değerlendirilir.
+                </p>
+                <label class="checkbox-label" for="infoNotice">
+                  <input
+                    type="checkbox"
+                    id="infoNotice"
+                    name="infoNotice"
+                    required
+                    aria-describedby="error-infoNotice"
+                  />
+                  <span>
+                    Ön başvuru bilgilendirme metnini (taslak) okudum ve anladım.
+                    <span class="required-mark" aria-hidden="true">*</span>
+                  </span>
+                </label>
+                <p id="error-infoNotice" class="field-error" role="alert" hidden></p>
+              </div>
+
+              <!-- Ayrı Alan 2: İletişim İzni (Önceden İşaretli Değil) -->
+              <div class="consent-box" id="field-contactConsent">
+                <span class="consent-tag">İletişim İzni Alanı (Taslak)</span>
+                <p class="consent-draft-text">
+                  Yeni açılacak dönemler, eğitim takvimi güncellemeleri ve duyurular hakkında tarafımla iletişime geçilmesine ilişkin tercih alanıdır.
+                </p>
+                <label class="checkbox-label" for="contactConsent">
+                  <input
+                    type="checkbox"
+                    id="contactConsent"
+                    name="contactConsent"
+                  />
+                  <span>
+                    Upnext AI program duyuruları ve yeni dönem bilgilendirmeleri için iletişim izni veriyorum (isteğe bağlı).
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn btn-primary btn-lg btn-submit">
+                Ön Başvuruyu Gönder
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Gönderim Sonrası Onay Görünümü -->
+        <div id="applicationSuccessView" class="application-card-shell success-view-shell" role="region" aria-labelledby="success-heading" hidden>
+          <div class="success-badge-row">
+            <span class="section-badge">Başvuru Simülasyonu</span>
+          </div>
+          <h2 id="success-heading" class="page-title">Ön başvuru adımı tamamlandı</h2>
+
+          <div class="prototype-disclaimer-box" role="note">
+            <strong>Prototip Bilgilendirmesi:</strong> Bu ekran bir tarayıcı prototipidir; girdiğiniz bilgiler hiçbir sunucuya gönderilmemiş ve kaydedilmemiştir.
+          </div>
+
+          <dl class="submitted-summary" aria-label="Simüle Edilen Başvuru Özeti">
+            <div class="summary-item">
+              <dt>Aday</dt>
+              <dd id="summaryFullName">—</dd>
+            </div>
+            <div class="summary-item">
+              <dt>İlgilenilen Program</dt>
+              <dd id="summaryProgram">—</dd>
+            </div>
+            <div class="summary-item">
+              <dt>Dönem</dt>
+              <dd id="summaryCohort">Tarih açıklanacak</dd>
+            </div>
+          </dl>
+
+          <div class="next-steps-card">
+            <h3 class="info-card-title">Sonraki Gerçek Süreç Nasıl İşler?</h3>
+            <ol class="next-steps-list">
+              <li>
+                <strong>Bilgilendirme Görüşmesi:</strong> Eğitim ekibimiz, program kapsamı, takvim ve beklentileri değerlendirmek üzere bilgilendirme görüşmesi için sizinle iletişime geçer.
+              </li>
+              <li>
+                <strong>Kesin Kayıt ve Ödeme Bağlantısı:</strong> Görüşme sonrasında programa katılmak isteyen öğrenciye ödeme bağlantısı gönderilir ve kayıt işlemi bu adımda tamamlanır.
+              </li>
+            </ol>
+          </div>
+
+          <div class="success-actions">
+            <button type="button" id="resetSimulationBtn" class="btn btn-secondary">
+              Yeni Deneme Başvurusu Yap
+            </button>
+            <a href="bilgilendirme.html" id="nextStepLink" class="btn btn-primary">
+              Sonraki Adımı İncele &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="stitch-footer">
+    <div class="container stitch-footer-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+      <div class="stitch-footer-links">
+        <a href="bootcampler.html">Bootcamp’ler</a>
+        <a href="egitim-takvimi.html">Eğitim Takvimi</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="is-birliklerimiz.html">İş Birliklerimiz</a>
+        <a href="blog.html">Blog</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="on-basvuru.html">Ön Başvuru Yap</a>
+        <a href="ogrenci-girisi.html">Öğrenci Girişi</a>
+      </div>
+      <p class="stitch-footer-note">
+        Upnext AI Web Prototipi · Uygulamalı Teknoloji Eğitimleri
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

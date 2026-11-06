@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Örnek Blog Yazısı — Upnext AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <!-- Üst Menü -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        aria-expanded="false"
+        aria-controls="mainNavWrapper"
+        aria-label="Menüyü aç veya kapat"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <div class="nav-wrapper" id="mainNavWrapper">
+        <nav class="main-nav" aria-label="Ana Menü">
+          <ul class="nav-list">
+            <li><a href="bootcampler.html" class="nav-link">Bootcamp’ler</a></li>
+            <li><a href="egitim-takvimi.html" class="nav-link">Eğitim Takvimi</a></li>
+            <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+            <li><a href="is-birliklerimiz.html" class="nav-link">İş Birliklerimiz</a></li>
+            <li><a href="blog.html" class="nav-link is-active">Blog</a></li>
+            <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="ogrenci-girisi.html" class="btn btn-secondary">
+            Öğrenci Girişi
+          </a>
+          <a href="on-basvuru.html" class="btn btn-primary">
+            Ön Başvuru Yap
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="application-page-section" aria-labelledby="blog-detail-title">
+      <div class="container application-container" id="blogDetailPage">
+        <article class="application-card-shell">
+          <nav class="breadcrumb" aria-label="Sayfa Konumu">
+            <a href="blog.html">Blog</a>
+            <span aria-hidden="true">/</span>
+            <span id="blogDetailBreadcrumb">Yapay Zekâ</span>
+          </nav>
+
+          <div class="preview-card-top">
+            <span id="blogDetailCategoryBadge" class="section-badge">Yapay Zekâ</span>
+            <span class="stitch-code-tag">Örnek Yazı (Demo)</span>
+          </div>
+
+          <h1 id="blogDetailTitle" class="page-title">
+            Üretken Yapay Zekâ Projelerinde Gerçek İş Senaryosu Kurgulama
+          </h1>
+
+          <div class="prototype-disclaimer-box" role="note">
+            <strong>Örnek İçerik (Demo):</strong> Bu sayfa, Upnext AI blog detay görünümünü göstermek üzere hazırlanmış örnek bir eğitim yazısıdır.
+          </div>
+
+          <div id="blogDetailContent" class="blog-article-body">
+            <p class="info-card-text" style="margin-bottom: 16px;">
+              Modern yazılım geliştirme süreçlerinde büyük dil modellerini (LLM) bir projeye dahil etmek, yalnızca tekil bir API çağrısı yapmaktan ibaret değildir. Gerçek iş senaryolarında başarılı bir uygulama; net bir problem tanımı, yapılandırılmış veri akışı ve ölçülebilir çıktı doğrulaması gerektirir.
+            </p>
+            <h2 class="info-card-title" style="margin-top: 22px;">1. Problem Tanımı ve Kapsam</h2>
+            <p class="info-card-text" style="margin-bottom: 16px;">
+              Portföy projesi geliştirirken ilk adım, çözümün hangi iş problemini hedeflediğini açıkça ortaya koymaktır. Kullanıcının girdisi, sistemin uygulayacağı kurallar ve beklenen çıktı şeması baştan tanımlandığında hem mimari tasarım hem de test süreci çok daha sağlıklı ilerler.
+            </p>
+            <h2 class="info-card-title" style="margin-top: 22px;">2. Yapılandırılmış Çıktı ve Doğrulama</h2>
+            <p class="info-card-text" style="margin-bottom: 16px;">
+              Serbest metin yanıtları yerine şema doğrulamalı JSON çıktılar üretmek ve harici bilgi kaynaklarıyla (RAG) yanıtları desteklemek, kurumsal senaryolarda güvenilirliği artırır.
+            </p>
+            <h2 class="info-card-title" style="margin-top: 22px;">3. Portföy Sunumu</h2>
+            <p class="info-card-text">
+              Geliştirdiğiniz projeyi teknik dokümantasyon, mimari diyagram ve örnek senaryo çıktılarıyla bir araya getirdiğinizde, iş ve staj başvurularında somut bir mühendislik çıktısı sunabilirsiniz.
+            </p>
+          </div>
+
+          <!-- Diğer Örnek Yazılara Geçiş -->
+          <div class="next-steps-card" style="margin-top: 28px;">
+            <h2 class="info-card-title">Diğer Örnek Blog Yazıları (Demo)</h2>
+            <div class="simulation-btn-grid" style="margin-top: 12px;">
+              <a href="blog-detay.html?yazi=yapay-zeka" class="btn btn-secondary">
+                Yapay Zekâ Yazısı
+              </a>
+              <a href="blog-detay.html?yazi=proje-gelistirme" class="btn btn-secondary">
+                Proje Geliştirme Yazısı
+              </a>
+              <a href="blog-detay.html?yazi=kariyere-hazirlik" class="btn btn-secondary">
+                Kariyere Hazırlık Yazısı
+              </a>
+            </div>
+          </div>
+
+          <div class="success-actions">
+            <a href="blog.html" class="btn btn-secondary">
+              &larr; Blog Listesine Dön
+            </a>
+            <a href="bootcampler.html" class="btn btn-primary">
+              Bootcamp’leri İncele
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="stitch-footer">
+    <div class="container stitch-footer-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+      <div class="stitch-footer-links">
+        <a href="bootcampler.html">Bootcamp’ler</a>
+        <a href="egitim-takvimi.html">Eğitim Takvimi</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="is-birliklerimiz.html">İş Birliklerimiz</a>
+        <a href="blog.html">Blog</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="on-basvuru.html">Ön Başvuru Yap</a>
+        <a href="ogrenci-girisi.html">Öğrenci Girişi</a>
+      </div>
+      <p class="stitch-footer-note">
+        Upnext AI Web Prototipi · Uygulamalı Teknoloji Eğitimleri
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Agent Bootcamp — Upnext AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <!-- Üst Menü -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        aria-expanded="false"
+        aria-controls="mainNavWrapper"
+        aria-label="Menüyü aç veya kapat"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <div class="nav-wrapper" id="mainNavWrapper">
+        <nav class="main-nav" aria-label="Ana Menü">
+          <ul class="nav-list">
+            <li><a href="bootcampler.html" class="nav-link is-active">Bootcamp’ler</a></li>
+            <li><a href="egitim-takvimi.html" class="nav-link">Eğitim Takvimi</a></li>
+            <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+            <li><a href="is-birliklerimiz.html" class="nav-link">İş Birliklerimiz</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="ogrenci-girisi.html" class="btn btn-secondary">
+            Öğrenci Girişi
+          </a>
+          <a href="on-basvuru.html" class="btn btn-primary">
+            Ön Başvuru Yap
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- İlk Ekran: Program Özeti ve Başvuru Kartı -->
+    <section class="hero-section detail-hero-section" aria-labelledby="program-title">
+      <div class="container hero-grid">
+        <!-- Sol: Program Başlığı, Kısa Açıklama ve Temel Bilgiler (Sol tarafta başvuru butonu yok) -->
+        <div class="hero-content">
+          <nav class="breadcrumb" aria-label="Sayfa Konumu">
+            <a href="bootcampler.html">Bootcamp’ler</a>
+            <span aria-hidden="true">/</span>
+            <span>AI Agent</span>
+          </nav>
+
+          <span class="section-badge">Uygulamalı Bootcamp Programı</span>
+          <h1 id="program-title" class="hero-title">AI Agent</h1>
+          <p class="hero-description">
+            Otonom yapay zeka ajanları tasarlama, araç kullanımı (tool-use), bellek
+            yönetimi ve çok adımlı iş akışlarını gerçek iş problemlerine uyarlama
+            üzerine kurgulanan canlı online eğitim programı.
+          </p>
+
+          <dl class="detail-basic-info" aria-label="Temel Program Bilgileri">
+            <div class="basic-info-item">
+              <dt>Eğitim Formatı</dt>
+              <dd>Canlı Online</dd>
+            </div>
+            <div class="basic-info-item">
+              <dt>Başlangıç Tarihi</dt>
+              <dd>Açıklanacak</dd>
+            </div>
+            <div class="basic-info-item">
+              <dt>Program Süresi</dt>
+              <dd>Açıklanacak</dd>
+            </div>
+            <div class="basic-info-item">
+              <dt>Seviye</dt>
+              <dd>Açıklanacak</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Sağ: Başvuru Kartı (Masaüstünde sağda, mobilde ana metnin altında) -->
+        <div class="hero-card-wrap">
+          <aside class="hero-preview-card application-summary-card" aria-label="AI Agent Başvuru Kartı">
+            <div class="preview-card-top">
+              <span class="badge-accent stitch-pill-badge">Ücretsiz Ön Başvuru</span>
+              <span class="stitch-online-indicator">
+                <span class="stitch-online-dot" aria-hidden="true"></span>
+                <span>Canlı Online</span>
+              </span>
+            </div>
+            <div class="preview-card-header-row">
+              <div class="bootcamp-icon-box bootcamp-icon-agent" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                  <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                  <rect x="8.5" y="14" width="7" height="7" rx="1.5" />
+                  <path d="M6.5 10v2a2 2 0 002 2h7a2 2 0 002-2v-2" />
+                </svg>
+              </div>
+              <h2 class="preview-card-title">Program Başvuru Bilgileri</h2>
+            </div>
+            <p class="preview-card-text">
+              Dönem ve kontenjan detayları kesinleştiğinde ön başvuru süreci
+              bu kart üzerinden yürütülecektir.
+            </p>
+
+            <dl class="application-card-specs">
+              <div class="spec-row">
+                <dt>Dönem</dt>
+                <dd>Açıklanacak</dd>
+              </div>
+              <div class="spec-row">
+                <dt>Kontenjan Durumu</dt>
+                <dd>Açıklanacak</dd>
+              </div>
+              <div class="spec-row">
+                <dt>Eğitim Modeli</dt>
+                <dd>Canlı Online · Proje Odaklı</dd>
+              </div>
+            </dl>
+
+            <div class="application-card-action">
+              <a
+                href="on-basvuru.html?program=ai-agent"
+                class="btn btn-primary btn-lg btn-block"
+              >
+                Ön Başvuru Yap
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. Hedef Kitle ve Ön Koşullar -->
+    <section id="hedef-kitle" class="detail-section detail-section-alt" aria-labelledby="heading-hedef-kitle">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">1. Bölüm</span>
+          <h2 id="heading-hedef-kitle" class="section-title">Hedef Kitle ve Ön Koşullar</h2>
+          <p class="section-subtitle">
+            Programa kimlerin katılabileceği ve eğitimden verim almak için beklenen temel hazırlık düzeyi.
+          </p>
+        </div>
+
+        <div class="two-col-grid">
+          <article class="info-card">
+            <h3 class="info-card-title">Kimler İçin Uygun?</h3>
+            <ul class="check-list">
+              <li>Çok adımlı karar alma ve otomasyon senaryolarını yapay zeka ajanlarıyla çözmek isteyen üniversite öğrencileri ve yeni mezunlar.</li>
+              <li>Standart sohbet arayüzlerinin ötesine geçip harici API ve araç çağıran otonom iş akışları kurmak isteyen geliştirici adayları.</li>
+              <li>Portföyüne gerçek bir iş senaryosunu çözen ajan mimarisi projesi eklemek isteyen katılımcılar.</li>
+            </ul>
+          </article>
+
+          <article class="info-card">
+            <h3 class="info-card-title">Ön Koşullar</h3>
+            <ul class="check-list">
+              <li>Temel programlama bilgisine, veri yapılarına ve REST API kavramlarına aşina olmak.</li>
+              <li>Canlı online oturumlara ve uygulamalı proje geliştirme çalışmalarına düzenli katılabilmek.</li>
+              <li>Detaylı teknik seviye ve ön değerlendirme kriterleri: <strong>Açıklanacak</strong>.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Kazanımlar -->
+    <section id="kazanimlar" class="detail-section" aria-labelledby="heading-kazanimlar">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">2. Bölüm</span>
+          <h2 id="heading-kazanimlar" class="section-title">Kazanımlar</h2>
+          <p class="section-subtitle">
+            AI Agent programı sonunda katılımcıların edineceği pratik yetkinlikler ve portföy çıktıları.
+          </p>
+        </div>
+
+        <div class="three-col-grid">
+          <article class="info-card">
+            <h3 class="info-card-title">Ajan Mimarisi ve Planlama</h3>
+            <p class="info-card-text">
+              Görev ayrıştırma, adım adım akıl yürütme (reasoning) ve durum yönetimi kurgulama becerisi.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3 class="info-card-title">Araç Kullanımı ve Entegrasyon</h3>
+            <p class="info-card-text">
+              Veritabanı sorguları, harici servis çağrıları ve kontrollü fonksiyon yürütme mekanizmalarını güvenli biçimde entegre etme pratiği.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3 class="info-card-title">Çalışan Ajan Portföy Projesi</h3>
+            <p class="info-card-text">
+              İş dünyası senaryolarına uyarlanmış, test edilebilir ve mülakatlarda sunulabilir otonom ajan projesi.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Müfredat -->
+    <section id="mufredat" class="detail-section detail-section-alt" aria-labelledby="heading-mufredat">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">3. Bölüm</span>
+          <h2 id="heading-mufredat" class="section-title">Müfredat</h2>
+          <p class="section-subtitle">
+            Oturum bazlı modül yapısı. Kesinleşmeyen gün ve saat bilgileri “Açıklanacak” olarak işaretlenmiştir.
+          </p>
+        </div>
+
+        <div class="curriculum-list">
+          <article class="curriculum-card">
+            <div class="curriculum-header">
+              <span class="badge-accent">Modül 1</span>
+              <h3 class="curriculum-title">Ajan Sistemleri Temelleri ve Görev Modelleme</h3>
+            </div>
+            <p class="curriculum-desc">
+              Otonom ajan kavramları, durum döngüleri (plan-act-observe) ve gerçek iş senaryolarının ajan görevlerine dönüştürülmesi.
+            </p>
+            <dl class="curriculum-meta">
+              <div class="curriculum-meta-item">
+                <dt>Gün</dt>
+                <dd>Açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Oturum Saati</dt>
+                <dd>Açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Oturum Çıktısı</dt>
+                <dd>Adım adım karar akışı tanımlanmış ajan mimari şeması</dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="curriculum-card">
+            <div class="curriculum-header">
+              <span class="badge-accent">Modül 2</span>
+              <h3 class="curriculum-title">Araç Kullanımı (Tool-Use) ve Fonksiyon Çağırma</h3>
+            </div>
+            <p class="curriculum-desc">
+              Ajanların harici API, arama ve veri işleme araçlarını güvenli şemalarla çağırması ve hata yönetimi.
+            </p>
+            <dl class="curriculum-meta">
+              <div class="curriculum-meta-item">
+                <dt>Gün</dt>
+                <dd>Açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Oturum Saati</dt>
+                <dd>Açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Oturum Çıktısı</dt>
+                <dd>Harici araçları kullanarak veri doğrulayan ajan servisi prototipi</dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="curriculum-card">
+            <div class="curriculum-header">
+              <span class="badge-accent">Modül 3</span>
+              <h3 class="curriculum-title">Bellek Yönetimi ve Çoklu Ajan İş Akışları</h3>
+            </div>
+            <p class="curriculum-desc">
+              Kısa/uzun süreli bellek yapıları ve farklı uzmanlık rollerine sahip ajanlar arası görev koordinasyonu.
+            </p>
+            <dl class="curriculum-meta">
+              <div class="curriculum-meta-item">
+                <dt>Gün</dt>
+                <dd>Açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Oturum Saati</dt>
+                <dd>Açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Oturum Çıktısı</dt>
+                <dd>Çok adımlı iş akışını tamamlayan koordineli ajan uygulaması</dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="curriculum-card">
+            <div class="curriculum-header">
+              <span class="badge-accent">Modül 4</span>
+              <h3 class="curriculum-title">Güvenilirlik, Değerlendirme ve Portföy Sunumu</h3>
+            </div>
+            <p class="curriculum-desc">
+              Ajan çıktılarının izlenmesi, sınırlandırılması (guardrails) ve bitirme projesinin canlı sunuma hazırlanması.
+            </p>
+            <dl class="curriculum-meta">
+              <div class="curriculum-meta-item">
+                <dt>Gün</dt>
+                <dd>Açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Oturum Saati</dt>
+                <dd>Açıklanacak</dd>
+              </div>
+              <div class="curriculum-meta-item">
+                <dt>Oturum Çıktısı</dt>
+                <dd>Dokümante edilmiş AI Agent portföy projesi ve sunumu</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Eğitmenler ve Mentorlar -->
+    <section id="egitmenler" class="detail-section" aria-labelledby="heading-egitmenler">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">4. Bölüm</span>
+          <h2 id="heading-egitmenler" class="section-title">Eğitmenler ve Mentorlar</h2>
+          <p class="section-subtitle">
+            Dönem eğitmen ve mentor kadrosu kesinleştiğinde bu alanda duyurulacaktır.
+          </p>
+        </div>
+
+        <div class="two-col-grid">
+          <article class="info-card">
+            <span class="badge-accent">Program Eğitmeni</span>
+            <h3 class="info-card-title" style="margin-top: 12px;">Açıklanacak</h3>
+            <p class="info-card-text">
+              Otonom ajan mimarileri, araç entegrasyonları ve canlı uygulama oturumlarını yürütecek eğitmen bilgisi açıklanacaktır.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="badge-accent">Proje Mentoru</span>
+            <h3 class="info-card-title" style="margin-top: 12px;">Açıklanacak</h3>
+            <p class="info-card-text">
+              Ajan iş akışı tasarımı, kod değerlendirmesi ve portföy sunumu sürecinde geri bildirim verecek mentor kadrosu açıklanacaktır.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Proje ve Değerlendirme -->
+    <section id="proje-degerlendirme" class="detail-section detail-section-alt" aria-labelledby="heading-proje">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">5. Bölüm</span>
+          <h2 id="heading-proje" class="section-title">Proje ve Değerlendirme</h2>
+          <p class="section-subtitle">
+            Eğitim boyunca geliştirilecek uygulamalar ve mezuniyet değerlendirme ölçütleri.
+          </p>
+        </div>
+
+        <div class="two-col-grid">
+          <article class="info-card">
+            <h3 class="info-card-title">Gerçek Senaryo Ajan Projesi</h3>
+            <p class="info-card-text">
+              Katılımcılar, çok adımlı bir iş problemini otonom veya yarı otonom şekilde çözen, araç kullanımına sahip çalışan bir ajan projesi teslim eder.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3 class="info-card-title">Değerlendirme Kriterleri</h3>
+            <p class="info-card-text">
+              Canlı derslere katılım, modül görevleri, ajan hata yönetimi kalitesi ve dönem sonu proje sunumu üzerinden değerlendirme yapılır.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Sertifika ve Staj -->
+    <section id="sertifika-staj" class="detail-section" aria-labelledby="heading-sertifika">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">6. Bölüm</span>
+          <h2 id="heading-sertifika" class="section-title">Sertifika ve Staj</h2>
+          <p class="section-subtitle">
+            Katılım/başarı belgelendirmesi ve staj başvuru sürecinin işleyiş adımları.
+          </p>
+        </div>
+
+        <div class="info-card" style="margin-bottom: 20px;">
+          <h3 class="info-card-title">Sertifika Süreci</h3>
+          <p class="info-card-text">
+            Canlı online derslere katılım şartını sağlayan ve bitirme projesini değerlendirme kriterlerine uygun biçimde tamamlayan katılımcılar tamamlama/başarı sertifikası almaya hak kazanır.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3 class="info-card-title">Staj Süreci Nasıl İşler? (3 Ayrı Adım)</h3>
+          <p class="info-card-text" style="margin-bottom: 18px;">
+            Programa katılmak doğrudan staj veya işe yerleşme garantisi sağlamaz. Eğitimi tamamlama, staja başvurma ve ilgili şirketin kabul kararı birbirinden bağımsız adımlardır:
+          </p>
+
+          <div class="three-col-grid">
+            <div class="step-box">
+              <span class="step-number">1. Adım</span>
+              <h4 class="step-title">Eğitimi Tamamlama</h4>
+              <p class="step-text">
+                Katılımcı, bootcamp müfredatını ve bitirme projesini başarıyla tamamlayarak portföy çıktısını hazırlar.
+              </p>
+            </div>
+
+            <div class="step-box">
+              <span class="step-number">2. Adım</span>
+              <h4 class="step-title">Staja Başvurma</h4>
+              <p class="step-text">
+                Mezun adaylar, açılan uygun staj fırsatlarına kendi portföyleriyle ayrıca başvuru yapar.
+              </p>
+            </div>
+
+            <div class="step-box">
+              <span class="step-number">3. Adım</span>
+              <h4 class="step-title">Şirketin Kabul Kararı</h4>
+              <p class="step-text">
+                Mülakat, teknik değerlendirme ve nihai staj kabul kararı tamamen ilgili şirketin kendi değerlendirme sürecine bağlıdır.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Ücret ve Paket Kapsamı -->
+    <section id="ucret-paket" class="detail-section detail-section-alt" aria-labelledby="heading-ucret">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">7. Bölüm</span>
+          <h2 id="heading-ucret" class="section-title">Ücret ve Paket Kapsamı</h2>
+          <p class="section-subtitle">
+            Program katılım ücreti ve eğitim paketine dahil olan temel olanaklar.
+          </p>
+        </div>
+
+        <div class="two-col-grid">
+          <article class="info-card">
+            <h3 class="info-card-title">Program Ücreti</h3>
+            <p class="price-placeholder">Açıklanacak</p>
+            <p class="info-card-text">
+              Dönem ücreti ve ödeme seçenekleri başvuru takvimiyle birlikte duyurulacaktır.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <h3 class="info-card-title">Paket Kapsamı</h3>
+            <ul class="check-list">
+              <li>Canlı online eğitim oturumlarına katılım</li>
+              <li>Uygulamalı ajan geliştirme ve senaryo çalışmaları</li>
+              <li>Proje değerlendirme ve portföy geri bildirim oturumları</li>
+              <li>Program materyalleri ve örnek çalışma şablonlarına erişim</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Sıkça Sorulan Sorular -->
+    <section id="sss" class="detail-section" aria-labelledby="heading-sss">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">8. Bölüm</span>
+          <h2 id="heading-sss" class="section-title">Sıkça Sorulan Sorular</h2>
+          <p class="section-subtitle">
+            AI Agent programı hakkında en çok merak edilen konular.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">Eğitimler hangi formatta gerçekleştiriliyor?</summary>
+            <div class="faq-answer">
+              <p>Tüm oturumlar canlı online formatta yürütülür ve uygulamalı proje çalışmalarıyla desteklenir.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Başlangıç tarihi, süre ve ücret bilgileri ne zaman paylaşılacak?</summary>
+            <div class="faq-answer">
+              <p>Dönem takvimi, toplam süre, kontenjan ve ücret bilgileri kesinleştiğinde bu sayfa üzerinden açıklanacaktır.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Program sonunda doğrudan staj garantisi var mı?</summary>
+            <div class="faq-answer">
+              <p>Hayır. Eğitimi başarıyla tamamlamak, staj ilanlarına başvurmak ve ilgili şirketin kendi mülakat/kabul kararı birbirinden ayrı adımlardır; doğrudan staj garantisi verilmez.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Ön Başvuru (Sayfa Sonu Çağrısı) -->
+    <section id="on-basvuru" class="detail-section bottom-cta-section" aria-labelledby="heading-on-basvuru">
+      <div class="container">
+        <div class="bottom-cta-card">
+          <div class="bottom-cta-content">
+            <span class="section-badge">9. Bölüm · Ön Başvuru</span>
+            <h2 id="heading-on-basvuru" class="section-title">AI Agent İçin Ön Başvuru</h2>
+            <p class="section-subtitle">
+              Otonom yapay zekâ ajanları üzerine gerçek senaryo projeleri geliştirmek için ön başvuru adımını takip edin.
+              Dönem ve kontenjan bilgileri: <strong>Açıklanacak</strong>.
+            </p>
+          </div>
+          <div class="bottom-cta-action">
+            <a
+              href="on-basvuru.html?program=ai-agent"
+              class="btn btn-primary btn-lg"
+            >
+              Ön Başvuru Yap
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="stitch-footer">
+    <div class="container stitch-footer-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+      <div class="stitch-footer-links">
+        <a href="bootcampler.html">Bootcamp’ler</a>
+        <a href="egitim-takvimi.html">Eğitim Takvimi</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="is-birliklerimiz.html">İş Birliklerimiz</a>
+        <a href="blog.html">Blog</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="on-basvuru.html">Ön Başvuru Yap</a>
+        <a href="ogrenci-girisi.html">Öğrenci Girişi</a>
+      </div>
+      <p class="stitch-footer-note">
+        Upnext AI Web Prototipi · Uygulamalı Teknoloji Eğitimleri
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Öğrenci Paneli (Demo) — Upnext AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <!-- Üst Menü -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        aria-expanded="false"
+        aria-controls="mainNavWrapper"
+        aria-label="Menüyü aç veya kapat"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <div class="nav-wrapper" id="mainNavWrapper">
+        <nav class="main-nav" aria-label="Ana Menü">
+          <ul class="nav-list">
+            <li><a href="bootcampler.html" class="nav-link">Bootcamp’ler</a></li>
+            <li><a href="egitim-takvimi.html" class="nav-link">Eğitim Takvimi</a></li>
+            <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+            <li><a href="is-birliklerimiz.html" class="nav-link">İş Birliklerimiz</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="ogrenci-girisi.html" class="btn btn-secondary">
+            Giriş Ekranına Dön
+          </a>
+          <a href="on-basvuru.html" class="btn btn-primary">
+            Ön Başvuru Yap
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel-page-section" aria-label="Öğrenci Paneli">
+      <div class="container panel-layout" id="studentPanelPage">
+        <!-- Sol / Üst Panel Menüsü -->
+        <aside class="panel-sidebar" aria-label="Öğrenci Paneli Menüsü">
+          <div class="panel-sidebar-card">
+            <span class="badge-accent">Demo öğrenci görünümü</span>
+            <p class="panel-sidebar-caption">Öğrenci Menü Alanı</p>
+            <nav aria-label="Panel Bölümleri">
+              <ul class="panel-nav-list">
+                <li>
+                  <button
+                    type="button"
+                    class="panel-nav-btn is-active"
+                    aria-current="page"
+                    data-panel-tab="egitimim"
+                  >
+                    Eğitimim
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="panel-nav-btn"
+                    data-panel-tab="takvim"
+                  >
+                    Takvim
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="panel-nav-btn"
+                    data-panel-tab="materyaller"
+                  >
+                    Materyaller
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="panel-nav-btn"
+                    data-panel-tab="projeler"
+                  >
+                    Projeler
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="panel-nav-btn"
+                    data-panel-tab="staj"
+                  >
+                    Staj Fırsatları
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="panel-nav-btn"
+                    data-panel-tab="destek"
+                  >
+                    Destek
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </aside>
+
+        <!-- Sağ Ana İçerik Alanı -->
+        <div class="panel-main">
+          <!-- ============================================================
+               BÖLÜM 1: EĞİTİMİM (Varsayılan Açık Görünüm)
+               ============================================================ -->
+          <div class="panel-tab-view" data-panel-view="egitimim">
+            <div class="panel-header-card">
+              <div class="panel-badge-row">
+                <span class="section-badge">Demo öğrenci görünümü</span>
+                <span class="badge-outline">Örnek Kayıt (Demo)</span>
+              </div>
+              <h1 id="panel-heading" class="page-title">Eğitimim</h1>
+              <p class="page-lead">
+                Kayıtlı olduğunuz programın genel durumunu, sıradaki canlı ders bilgisini ve güncel duyuruları bu ekrandan takip edebilirsiniz.
+              </p>
+            </div>
+
+            <!-- 1A. Örnek AI Forge Kaydı -->
+            <article class="panel-content-card" aria-labelledby="enrolled-program-heading">
+              <div class="panel-card-top">
+                <div>
+                  <span class="badge-accent">Aktif Program Kaydı (Demo)</span>
+                  <h2 id="enrolled-program-heading" class="panel-card-title">AI Forge</h2>
+                </div>
+                <a href="ai-forge.html" class="btn btn-secondary">Program Detayını Gör</a>
+              </div>
+              <p class="info-card-text" style="margin-bottom: 18px;">
+                Üretken yapay zeka çözümlerini, uçtan uca uygulama geliştirme ve portföy projeleriyle gerçek iş senaryolarında hayata geçirme programı.
+              </p>
+              <dl class="panel-meta-grid">
+                <div class="basic-info-item">
+                  <dt>Eğitim Formatı</dt>
+                  <dd>Canlı Online</dd>
+                </div>
+                <div class="basic-info-item">
+                  <dt>Dönem / Başlangıç Tarihi</dt>
+                  <dd>Açıklanacak</dd>
+                </div>
+                <div class="basic-info-item">
+                  <dt>Eğitmen / Mentor</dt>
+                  <dd>Açıklanacak</dd>
+                </div>
+                <div class="basic-info-item">
+                  <dt>Görünüm Modu</dt>
+                  <dd>Demo öğrenci görünümü</dd>
+                </div>
+              </dl>
+            </article>
+
+            <!-- 1B. Sıradaki Canlı Ders -->
+            <article class="panel-content-card" aria-labelledby="next-session-heading">
+              <span class="badge-accent">Sıradaki Canlı Ders (Demo)</span>
+              <h2 id="next-session-heading" class="panel-card-title">
+                Modül 1: Üretken Yapay Zeka Temelleri ve Problem Tanımlama
+              </h2>
+              <p class="info-card-text" style="margin-bottom: 18px;">
+                Büyük dil modellerinin çalışma prensipleri, gerçek iş senaryosu analizi ve doğru kullanım alanı seçimi üzerine ilk canlı oturum.
+              </p>
+              <dl class="curriculum-meta">
+                <div class="curriculum-meta-item">
+                  <dt>Ders Tarihi ve Saati</dt>
+                  <dd>Açıklanacak</dd>
+                </div>
+                <div class="curriculum-meta-item">
+                  <dt>Canlı Ders Bağlantısı</dt>
+                  <dd>Açıklanacak</dd>
+                </div>
+                <div class="curriculum-meta-item">
+                  <dt>Hedeflenen Oturum Çıktısı</dt>
+                  <dd>Örnek iş problemi analizi ve teknik çözüm taslağı dokümanı</dd>
+                </div>
+              </dl>
+            </article>
+
+            <!-- 1C. Duyurular -->
+            <article class="panel-content-card" aria-labelledby="announcements-heading">
+              <span class="badge-accent">Güncel Bilgilendirmeler (Demo)</span>
+              <h2 id="announcements-heading" class="panel-card-title">
+                Duyurular
+              </h2>
+
+              <div class="announcement-list">
+                <div class="announcement-item">
+                  <div class="announcement-meta">
+                    <strong>Dönem Takvimi ve Canlı Ders Bağlantıları</strong>
+                    <span class="badge-outline">Tarih: Açıklanacak</span>
+                  </div>
+                  <p class="info-card-text">
+                    AI Forge dönemi kesin başlangıç tarihi ve canlı ders katılım bağlantıları netleştiğinde bu alanda paylaşılacaktır (Bağlantı: <strong>Açıklanacak</strong>).
+                  </p>
+                </div>
+
+                <div class="announcement-item">
+                  <div class="announcement-meta">
+                    <strong>Eğitim Öncesi Hazırlık ve Çalışma Düzeni</strong>
+                    <span class="badge-outline">Demo Duyuru</span>
+                  </div>
+                  <p class="info-card-text">
+                    Canlı online oturumlar başlamadan önce örnek çalışma ortamı kurulum adımları ve proje yönergeleri Materyaller sekmesinde paylaşılır.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- ============================================================
+               BÖLÜM 2: TAKVİM (Demo)
+               ============================================================ -->
+          <div class="panel-tab-view" data-panel-view="takvim" hidden>
+            <div class="panel-header-card">
+              <div class="panel-badge-row">
+                <span class="section-badge">Demo öğrenci görünümü</span>
+                <span class="badge-outline">Örnek Takvim (Demo)</span>
+              </div>
+              <h2 class="page-title">Takvim</h2>
+              <p class="page-lead">
+                Sıradaki canlı ders, ara kontrol ve bitirme projesi sunum/teslim tarihleri. Teyitli canlı ders bağlantısı henüz bulunmadığı için sahte bağlantı açılmaz.
+              </p>
+            </div>
+
+            <article class="panel-content-card">
+              <span class="badge-accent">Canlı Ders ve Proje Takvimi (Demo)</span>
+              <h3 class="panel-card-title">AI Forge Dönem Planı</h3>
+              <div class="announcement-list">
+                <div class="announcement-item">
+                  <div class="announcement-meta">
+                    <strong>1. Sıradaki Canlı Ders — Modül 1: Problem Tanımlama ve LLM Mimarisi</strong>
+                    <span class="badge-outline">Tarih açıklanacak</span>
+                  </div>
+                  <p class="info-card-text">
+                    Oturum Saati: <strong>Açıklanacak</strong> · Canlı Ders Bağlantısı: <strong>Açıklanacak</strong> (Teyitli ders bağlantısı henüz tanımlanmadı).
+                  </p>
+                </div>
+
+                <div class="announcement-item">
+                  <div class="announcement-meta">
+                    <strong>2. Ara Proje Kontrolü ve Mimari İnceleme Oturumu</strong>
+                    <span class="badge-outline">Tarih açıklanacak</span>
+                  </div>
+                  <p class="info-card-text">
+                    Oturum Saati: <strong>Açıklanacak</strong> · Çıktı: API servis şeması ve RAG veri akışı kontrolü.
+                  </p>
+                </div>
+
+                <div class="announcement-item">
+                  <div class="announcement-meta">
+                    <strong>3. Bitirme Projesi Son Teslim ve Canlı Sunum Günü</strong>
+                    <span class="badge-outline">Tarih açıklanacak</span>
+                  </div>
+                  <p class="info-card-text">
+                    Teslim Tarihi ve Sunum Saati: <strong>Açıklanacak</strong> · Çıktı: Çalışan portföy uygulaması ve teknik dokümantasyon sunumu.
+                  </p>
+                </div>
+              </div>
+
+              <div class="success-actions" style="margin-top: 20px;">
+                <a href="egitim-takvimi.html" class="btn btn-secondary">Genel Eğitim Takvimini Gör</a>
+                <button type="button" class="btn btn-primary" data-panel-tab="egitimim">
+                  Eğitimim Ekranına Dön
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- ============================================================
+               BÖLÜM 3: MATERYALLER (Demo + Proje İçi Çalışan Önizleme)
+               ============================================================ -->
+          <div class="panel-tab-view" data-panel-view="materyaller" hidden>
+            <div class="panel-header-card">
+              <div class="panel-badge-row">
+                <span class="section-badge">Demo öğrenci görünümü</span>
+                <span class="badge-outline">Örnek Materyaller (Demo)</span>
+              </div>
+              <h2 class="page-title">Materyaller</h2>
+              <p class="page-lead">
+                Ders notları, sunum özetleri ve proje hazırlık şablonları. Aşağıdaki örnek materyalleri sayfa içinde önizleyebilirsiniz.
+              </p>
+            </div>
+
+            <!-- Proje İçi Örnek Materyal Önizleme Kutusu -->
+            <article class="panel-content-card" id="materialPreviewBox">
+              <div class="preview-card-top">
+                <span class="badge-accent" id="materialPreviewCategory">Ders Notu · Önizleme (Demo)</span>
+                <span class="stitch-code-tag">Proje İçi Örnek Kaynak</span>
+              </div>
+              <h3 class="panel-card-title" id="materialPreviewTitle">
+                Modül 1 Ders Notu: Gerçek İş Senaryolarında LLM Kullanım Kontrol Listesi
+              </h3>
+              <div class="nested-well-box" id="materialPreviewBody">
+                <p class="info-card-text" style="margin-bottom: 10px;">
+                  <strong>1. Problem Sınırları:</strong> Çözülecek iş probleminin girdi formatını, doğruluk kriterlerini ve kabul edilebilir yanıt süresini tanımlayın.
+                </p>
+                <p class="info-card-text" style="margin-bottom: 10px;">
+                  <strong>2. Yapılandırılmış Çıktı Şeması:</strong> Model yanıtlarını serbest metin yerine JSON şeması ile doğrulayarak uygulama katmanına aktarın.
+                </p>
+                <p class="info-card-text">
+                  <strong>3. Hata ve Yedekleme (Fallback) Planı:</strong> Harici API gecikmelerinde veya beklenmeyen çıktılarda kullanıcıya güvenli durum mesajı döndürün.
+                </p>
+              </div>
+            </article>
+
+            <!-- Materyal Listesi -->
+            <article class="panel-content-card">
+              <h3 class="panel-card-title" style="margin-top: 0; margin-bottom: 14px;">Kaynak Listesi (Demo)</h3>
+              <div class="announcement-list">
+                <div class="announcement-item">
+                  <div class="announcement-meta">
+                    <strong>1. Ders Notu: Gerçek İş Senaryolarında LLM Kullanım Kontrol Listesi</strong>
+                    <span class="badge-outline">Ders Notu · Demo</span>
+                  </div>
+                  <p class="info-card-text" style="margin-bottom: 12px;">
+                    Problem tanımlama, yapılandırılmış JSON şemaları ve hata yönetimi özet notları.
+                  </p>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-material-preview="not-1"
+                  >
+                    Materyali Önizle (Demo)
+                  </button>
+                </div>
+
+                <div class="announcement-item">
+                  <div class="announcement-meta">
+                    <strong>2. Sunum Özeti: Bilgi Erişimi Destekli Sistemler (RAG) Mimarisi</strong>
+                    <span class="badge-outline">Sunum · Demo</span>
+                  </div>
+                  <p class="info-card-text" style="margin-bottom: 12px;">
+                    Doküman parçalama, vektör arama ve kaynak doğrulamalı yanıt üretimi adımları.
+                  </p>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-material-preview="sunum-2"
+                  >
+                    Materyali Önizle (Demo)
+                  </button>
+                </div>
+
+                <div class="announcement-item">
+                  <div class="announcement-meta">
+                    <strong>3. Örnek Kaynak: Portföy Projesi README ve Sunum Şablonu</strong>
+                    <span class="badge-outline">Örnek Kaynak · Demo</span>
+                  </div>
+                  <p class="info-card-text" style="margin-bottom: 12px;">
+                    Bitirme projenizi teknik mülakatlarda sunarken kullanabileceğiniz standart dokümantasyon yapısı.
+                  </p>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-material-preview="kaynak-3"
+                  >
+                    Materyali Önizle (Demo)
+                  </button>
+                </div>
+              </div>
+
+              <div class="success-actions" style="margin-top: 20px;">
+                <button type="button" class="btn btn-primary" data-panel-tab="egitimim">
+                  Eğitimim Ekranına Dön
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- ============================================================
+               BÖLÜM 4: PROJELER (Demo + Tarayıcı İçi Teslim Simülasyonu)
+               ============================================================ -->
+          <div class="panel-tab-view" data-panel-view="projeler" hidden>
+            <div class="panel-header-card">
+              <div class="panel-badge-row">
+                <span class="section-badge">Demo öğrenci görünümü</span>
+                <span class="badge-outline">Proje Yönetimi (Demo)</span>
+              </div>
+              <h2 class="page-title">Projeler</h2>
+              <p class="page-lead">
+                Bitirme projesi yönergesi, son teslim tarihi, teslim durumu ve mentor geri bildirim alanı. Gerçek dosya yüklemesi veya veri kaydı yapılmaz.
+              </p>
+            </div>
+
+            <article class="panel-content-card">
+              <div class="preview-card-top">
+                <span class="badge-accent">AI Forge Bitirme Projesi (Demo)</span>
+                <span id="projectStatusBadge" class="status-pill status-pill-pending">
+                  Teslim Durumu: Teslim Bekleniyor (Demo)
+                </span>
+              </div>
+
+              <h3 class="panel-card-title">
+                Uçtan Uca Kaynak Doğrulamalı Yapay Zekâ Asistanı
+              </h3>
+              <p class="info-card-text" style="margin-bottom: 16px;">
+                <strong>Proje Yönergesi:</strong> Belirlenen bir iş senaryosu için harici doküman kaynağından bilgi çekerek (RAG) yapılandırılmış yanıt üreten, hata yönetimine sahip çalışan bir servis ve teknik dokümantasyon hazırlayın.
+              </p>
+
+              <dl class="panel-meta-grid" style="margin-bottom: 20px;">
+                <div class="basic-info-item">
+                  <dt>Son Teslim Tarihi</dt>
+                  <dd>Açıklanacak</dd>
+                </div>
+                <div class="basic-info-item">
+                  <dt>Teslim Durumu</dt>
+                  <dd id="projectStatusText">Teslim Bekleniyor (Demo)</dd>
+                </div>
+                <div class="basic-info-item">
+                  <dt>Değerlendirme Ölçütü</dt>
+                  <dd>Mimari Kurgu · Kod Kalitesi · Dokümantasyon</dd>
+                </div>
+                <div class="basic-info-item">
+                  <dt>Mentor Geri Bildirimi</dt>
+                  <dd id="projectFeedbackText">Teslim sonrasında mentor değerlendirmesi burada görüntülenir (Demo).</dd>
+                </div>
+              </dl>
+
+              <!-- Tarayıcı İçi Örnek Proje Teslim Simülasyonu -->
+              <div class="nested-well-box">
+                <h4 class="info-card-title">Örnek Proje Teslimini Simüle Et (Demo)</h4>
+                <p class="info-card-text" style="margin-bottom: 14px;">
+                  Bu alan yalnızca tarayıcıda teslim durumunun nasıl güncellendiğini gösterir; gerçek dosya yüklenmez ve veri kaydedilmez.
+                </p>
+                <form id="demoProjectSubmitForm" class="login-form" novalidate>
+                  <div class="form-field">
+                    <label for="projectRepoNote" class="form-label">
+                      Örnek Proje Özeti / Kod Deposu Notu <span class="required-mark" aria-hidden="true">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="projectRepoNote"
+                      class="form-control"
+                      placeholder="Örn. AI Forge bitirme projesi mimari dokümanı ve örnek repo özeti"
+                      value="AI Forge Bitirme Projesi — Örnek Mimari ve Uygulama Teslimi (Demo)"
+                      required
+                      aria-describedby="error-projectRepoNote"
+                    />
+                    <p id="error-projectRepoNote" class="field-error" role="alert" hidden></p>
+                  </div>
+                  <div id="projectSimNotice" class="free-notice-banner" role="status" aria-live="polite" hidden></div>
+                  <div class="success-actions" style="justify-content: flex-start;">
+                    <button type="submit" class="btn btn-primary">
+                      Örnek Teslimi Simüle Et
+                    </button>
+                    <button type="button" id="resetProjectSimBtn" class="btn btn-secondary">
+                      Durumu Sıfırla
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <div class="success-actions" style="margin-top: 20px;">
+                <button type="button" class="btn btn-primary" data-panel-tab="egitimim">
+                  Eğitimim Ekranına Dön
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- ============================================================
+               BÖLÜM 5: STAJ FIRSATLARI (Demo: İlan Listesi, Detay ve Başvurularım)
+               ============================================================ -->
+          <div class="panel-tab-view" data-panel-view="staj" hidden>
+            <div class="panel-header-card">
+              <div class="panel-badge-row">
+                <span class="section-badge">Demo öğrenci görünümü</span>
+                <span class="badge-outline">Staj Süreci (Demo)</span>
+              </div>
+              <h2 class="page-title">Staj Fırsatları ve Başvurularım</h2>
+              <p class="page-lead">
+                Eğitimi ve projesini başarıyla tamamlayan uygun öğrencilerin inceleyebileceği örnek staj ilanları ve başvuru takip adımları.
+              </p>
+              <div class="stitch-info-callout" style="margin-top: 16px; margin-bottom: 0;">
+                <p>
+                  <strong>Önemli Süreç Bilgisi:</strong> Öğrenci kendi staj başvurusunu ve resmi evrak sürecini doğrudan kendisi yürütür; Upnext AI bu süreçte portföy ve hazırlık <strong>mentorluğu</strong> sağlar. Doğrudan staj veya işe yerleşme garantisi verilmez; kabul kararı ilgili şirkete aittir.
+                </p>
+              </div>
+            </div>
+
+            <!-- 5A. Başvurularım ve 4 Aşama Görünümü (Demo) -->
+            <article class="panel-content-card">
+              <div class="preview-card-top">
+                <span class="badge-accent">Başvurularım (Demo)</span>
+                <span class="stitch-code-tag">4 Aşamalı Süreç Takibi</span>
+              </div>
+              <h3 class="panel-card-title">Örnek Staj Başvuru Aşamaları</h3>
+              <p class="info-card-text" style="margin-bottom: 16px;">
+                Bir staj ilanına başvurduğunuzda süreç aşağıdaki 4 bağımsız adımda ilerler:
+              </p>
+
+              <div class="four-step-grid" style="margin-bottom: 18px;">
+                <div class="step-box">
+                  <span class="step-number">1. Aşama</span>
+                  <h4 class="step-title">Başvuru</h4>
+                  <p class="step-text">Öğrenci, tamamladığı portföy projesi ve kendi evraklarıyla ilana başvurur.</p>
+                </div>
+                <div class="step-box">
+                  <span class="step-number">2. Aşama</span>
+                  <h4 class="step-title">Değerlendirme</h4>
+                  <p class="step-text">İlgili şirketin teknik ekibi adayın proje çıktısını ve başvurusunu inceler.</p>
+                </div>
+                <div class="step-box">
+                  <span class="step-number">3. Aşama</span>
+                  <h4 class="step-title">Görüşme</h4>
+                  <p class="step-text">Uygun bulunan adaylarla şirket tarafından teknik ve tanışma mülakatı yapılır.</p>
+                </div>
+                <div class="step-box">
+                  <span class="step-number">4. Aşama</span>
+                  <h4 class="step-title">Sonuç</h4>
+                  <p class="step-text">Nihai kabul veya ret kararı ilgili şirket tarafından adaya bildirilir.</p>
+                </div>
+              </div>
+
+              <div class="nested-well-box">
+                <div class="announcement-meta">
+                  <strong id="myInternshipTitle">Örnek Başvuru Kaydı: Yapay Zekâ Uygulama Stajyeri (Demo)</strong>
+                  <span id="myInternshipStageBadge" class="badge-accent">Aşama: 2. Değerlendirme (Demo)</span>
+                </div>
+                <p id="myInternshipNote" class="info-card-text">
+                  Bu kayıt örnek bir <strong>Demo</strong> gösterimdir; gerçek bir şirkete başvuru gönderilmemiştir.
+                </p>
+              </div>
+            </article>
+
+            <!-- 5B. Örnek İlan Listesi ve İlan Detayı (Demo) -->
+            <article class="panel-content-card">
+              <span class="badge-accent">Örnek İlan Listesi (Demo)</span>
+              <h3 class="panel-card-title">Açık Staj İlanı Örnekleri</h3>
+
+              <div class="announcement-list">
+                <!-- Örnek İlan 1 -->
+                <div class="announcement-item">
+                  <div class="announcement-meta">
+                    <strong>1. Yapay Zekâ Uygulama Geliştirme Stajyeri (Örnek İlan — Demo)</strong>
+                    <span class="badge-outline">AI Forge &amp; AI Agent Uygun</span>
+                  </div>
+                  <p class="info-card-text" style="margin-bottom: 10px;">
+                    Kurumsal bilgi asistanı ve API entegrasyon süreçlerinde görev alacak stajyer aday ilanı örneği.
+                  </p>
+                  <details class="faq-item" style="margin-bottom: 12px;">
+                    <summary class="faq-question">İlan Detayı ve Başvuru Koşullarını Gör (Demo)</summary>
+                    <div class="faq-answer">
+                      <ul class="check-list">
+                        <li><strong>Koşul 1:</strong> İlgili bootcamp müfredatını ve bitirme projesini başarıyla tamamlamış olmak.</li>
+                        <li><strong>Koşul 2:</strong> Çalışan proje kod deposunu ve teknik dokümantasyonunu başvuruya eklemek.</li>
+                        <li><strong>Süreç:</strong> Başvuru ve staj evrakları öğrenci tarafından yürütülür; Upnext AI portföy mentorluğu sunar.</li>
+                      </ul>
+                    </div>
+                  </details>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-internship-simulate="Yapay Zekâ Uygulama Geliştirme Stajyeri (Demo)"
+                  >
+                    Başvuru Takibinde Simüle Et (Demo)
+                  </button>
+                </div>
+
+                <!-- Örnek İlan 2 -->
+                <div class="announcement-item">
+                  <div class="announcement-meta">
+                    <strong>2. Sistem ve Ağ Altyapı Stajyeri (Örnek İlan — Demo)</strong>
+                    <span class="badge-outline">System &amp; Network Uygun</span>
+                  </div>
+                  <p class="info-card-text" style="margin-bottom: 10px;">
+                    Linux sunucu operasyonları, konteyner altyapısı ve ağ izleme süreçleri için örnek staj ilanı.
+                  </p>
+                  <details class="faq-item" style="margin-bottom: 12px;">
+                    <summary class="faq-question">İlan Detayı ve Başvuru Koşullarını Gör (Demo)</summary>
+                    <div class="faq-answer">
+                      <ul class="check-list">
+                        <li><strong>Koşul 1:</strong> System &amp; Network laboratuvar ve bitirme projesini tamamlamış olmak.</li>
+                        <li><strong>Koşul 2:</strong> Temel Linux yönetimi ve ağ topolojisi raporunu sunabilmek.</li>
+                        <li><strong>Süreç:</strong> Başvuru ve resmi staj işlemleri öğrenci tarafından yürütülür; kabul kararı ilgili şirkete aittir.</li>
+                      </ul>
+                    </div>
+                  </details>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-internship-simulate="Sistem ve Ağ Altyapı Stajyeri (Demo)"
+                  >
+                    Başvuru Takibinde Simüle Et (Demo)
+                  </button>
+                </div>
+              </div>
+
+              <div class="success-actions" style="margin-top: 20px;">
+                <button type="button" class="btn btn-primary" data-panel-tab="egitimim">
+                  Eğitimim Ekranına Dön
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- ============================================================
+               BÖLÜM 6: DUYURULAR VE DESTEK (Demo + İletişim Sayfası Bağlantısı)
+               ============================================================ -->
+          <div class="panel-tab-view" data-panel-view="destek" hidden>
+            <div class="panel-header-card">
+              <div class="panel-badge-row">
+                <span class="section-badge">Demo öğrenci görünümü</span>
+                <span class="badge-outline">Duyurular ve Destek (Demo)</span>
+              </div>
+              <h2 class="page-title">Duyurular ve Destek</h2>
+              <p class="page-lead">
+                Dönem içi önemli duyurular ve eğitim ekibimize ulaşabileceğiniz iletişim bağlantısı.
+              </p>
+            </div>
+
+            <article class="panel-content-card">
+              <span class="badge-accent">Dönem Duyuruları (Demo)</span>
+              <h3 class="panel-card-title">Son Bilgilendirmeler</h3>
+              <div class="announcement-list">
+                <div class="announcement-item">
+                  <div class="announcement-meta">
+                    <strong>Proje Mentorluk Seansları ve Geri Bildirim Düzeni</strong>
+                    <span class="badge-outline">Demo Duyuru</span>
+                  </div>
+                  <p class="info-card-text">
+                    Bitirme projesi geliştirme sürecinde sorularınızı canlı oturumlarda ve proje değerlendirme saatlerinde mentorlarla paylaşabilirsiniz.
+                  </p>
+                </div>
+
+                <div class="announcement-item">
+                  <div class="announcement-meta">
+                    <strong>Staj Başvuru Rehberi ve Portföy Kontrolü</strong>
+                    <span class="badge-outline">Demo Duyuru</span>
+                  </div>
+                  <p class="info-card-text">
+                    Mezuniyet aşamasına gelen öğrencilerimiz, kendi yürütecekleri staj başvuruları öncesinde portföy inceleme mentorluğundan yararlanabilir.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel-content-card">
+              <span class="badge-accent">Öğrenci Destek Hattı</span>
+              <h3 class="panel-card-title">Sorularınız İçin İletişime Geçin</h3>
+              <p class="info-card-text" style="margin-bottom: 18px;">
+                Eğitim takvimi, materyaller veya teknik süreçlerle ilgili sorularınızı doğrudan iletişim sayfamızdaki <strong>“Öğrenci Sorusu”</strong> seçeneği üzerinden iletebilirsiniz.
+              </p>
+              <div class="success-actions" style="justify-content: flex-start;">
+                <a href="iletisim.html" class="btn btn-primary">
+                  İletişim Sayfasına Git &rarr;
+                </a>
+                <button type="button" class="btn btn-secondary" data-panel-tab="egitimim">
+                  Eğitimim Ekranına Dön
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="stitch-footer">
+    <div class="container stitch-footer-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+      <div class="stitch-footer-links">
+        <a href="bootcampler.html">Bootcamp’ler</a>
+        <a href="egitim-takvimi.html">Eğitim Takvimi</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="is-birliklerimiz.html">İş Birliklerimiz</a>
+        <a href="blog.html">Blog</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="on-basvuru.html">Ön Başvuru Yap</a>
+        <a href="ogrenci-girisi.html">Öğrenci Girişi</a>
+      </div>
+      <p class="stitch-footer-note">
+        Upnext AI Web Prototipi · Uygulamalı Teknoloji Eğitimleri
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

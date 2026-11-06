@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Upnext AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <!-- Üst Menü -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        aria-expanded="false"
+        aria-controls="mainNavWrapper"
+        aria-label="Menüyü aç veya kapat"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <div class="nav-wrapper" id="mainNavWrapper">
+        <nav class="main-nav" aria-label="Ana Menü">
+          <ul class="nav-list">
+            <li><a href="bootcampler.html" class="nav-link">Bootcamp’ler</a></li>
+            <li><a href="egitim-takvimi.html" class="nav-link">Eğitim Takvimi</a></li>
+            <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+            <li><a href="is-birliklerimiz.html" class="nav-link">İş Birliklerimiz</a></li>
+            <li><a href="blog.html" class="nav-link is-active" aria-current="page">Blog</a></li>
+            <li><a href="iletisim.html" class="nav-link">İletişim</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="ogrenci-girisi.html" class="btn btn-secondary">
+            Öğrenci Girişi
+          </a>
+          <a href="on-basvuru.html" class="btn btn-primary">
+            Ön Başvuru Yap
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Sayfa Başlığı -->
+    <section class="page-intro-section" aria-labelledby="blog-page-heading">
+      <div class="container">
+        <span class="section-badge">Bilgi ve İçgörü · Demo İçerikler</span>
+        <h1 id="blog-page-heading" class="page-title">Upnext AI Blog</h1>
+        <p class="page-lead">
+          Yapay zekâ, uygulamalı proje geliştirme ve teknoloji kariyerine hazırlık
+          başlıklarında hazırlanan örnek içerikler.
+        </p>
+
+        <!-- Kategori Filtreleri -->
+        <div class="filter-chip-group" id="blogFilterGroup" role="group" aria-label="Blog Kategorileri">
+          <button type="button" class="filter-chip is-selected" data-blog-filter="all">
+            Tümü
+          </button>
+          <button type="button" class="filter-chip" data-blog-filter="yapay-zeka">
+            Yapay Zekâ
+          </button>
+          <button type="button" class="filter-chip" data-blog-filter="proje-gelistirme">
+            Proje Geliştirme
+          </button>
+          <button type="button" class="filter-chip" data-blog-filter="kariyere-hazirlik">
+            Kariyere Hazırlık
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Kartları -->
+    <section class="bootcamps-list-section" aria-label="Örnek Blog Yazıları">
+      <div class="container">
+        <div class="bootcamps-grid" id="blogPostsGrid">
+          <!-- Yazı 1: Yapay Zekâ -->
+          <article class="bootcamp-card bootcamp-list-card" data-blog-category="yapay-zeka">
+            <div class="bootcamp-card-body">
+              <div class="bootcamp-tag-row">
+                <span class="badge-accent">Yapay Zekâ</span>
+                <span class="stitch-code-tag">Örnek Yazı (Demo)</span>
+              </div>
+              <h2 class="bootcamp-title">
+                Üretken Yapay Zekâ Projelerinde Gerçek İş Senaryosu Kurgulama
+              </h2>
+              <p class="bootcamp-description">
+                Model API çağrılarının ötesine geçerek veri doğrulama, yapılandırılmış
+                çıktılar ve kullanıcı senaryosu odaklı yapay zekâ uygulaması geliştirme adımları.
+              </p>
+            </div>
+            <div class="bootcamp-card-actions">
+              <a href="blog-detay.html?yazi=yapay-zeka" class="btn btn-secondary btn-block">
+                <span>Yazıyı Oku</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Yazı 2: Proje Geliştirme -->
+          <article class="bootcamp-card bootcamp-list-card" data-blog-category="proje-gelistirme">
+            <div class="bootcamp-card-body">
+              <div class="bootcamp-tag-row">
+                <span class="badge-accent">Proje Geliştirme</span>
+                <span class="stitch-code-tag">Örnek Yazı (Demo)</span>
+              </div>
+              <h2 class="bootcamp-title">
+                Teknik Mülakatlarda Öne Çıkan Bir Portföy Projesi Nasıl Dokümante Edilir?
+              </h2>
+              <p class="bootcamp-description">
+                Mimari kararlar, kurulum adımları, problem tanımı ve test çıktılarıyla
+                projenizi mühendislik ekiplerine anlaşılır biçimde sunma rehberi.
+              </p>
+            </div>
+            <div class="bootcamp-card-actions">
+              <a href="blog-detay.html?yazi=proje-gelistirme" class="btn btn-secondary btn-block">
+                <span>Yazıyı Oku</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Yazı 3: Kariyere Hazırlık -->
+          <article class="bootcamp-card bootcamp-list-card" data-blog-category="kariyere-hazirlik">
+            <div class="bootcamp-card-body">
+              <div class="bootcamp-tag-row">
+                <span class="badge-accent">Kariyere Hazırlık</span>
+                <span class="stitch-code-tag">Örnek Yazı (Demo)</span>
+              </div>
+              <h2 class="bootcamp-title">
+                Üniversiteden Teknoloji Kariyerine Geçişte Uygulamalı Deneyimin Rolü
+              </h2>
+              <p class="bootcamp-description">
+                Üniversite öğrencileri ve yeni mezunların canlı online çalışma disiplini,
+                proje üretimi ve staj başvurusu hazırlığında dikkat etmesi gerekenler.
+              </p>
+            </div>
+            <div class="bootcamp-card-actions">
+              <a href="blog-detay.html?yazi=kariyere-hazirlik" class="btn btn-secondary btn-block">
+                <span>Yazıyı Oku</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="stitch-footer">
+    <div class="container stitch-footer-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+      <div class="stitch-footer-links">
+        <a href="bootcampler.html">Bootcamp’ler</a>
+        <a href="egitim-takvimi.html">Eğitim Takvimi</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="is-birliklerimiz.html">İş Birliklerimiz</a>
+        <a href="blog.html">Blog</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="on-basvuru.html">Ön Başvuru Yap</a>
+        <a href="ogrenci-girisi.html">Öğrenci Girişi</a>
+      </div>
+      <p class="stitch-footer-note">
+        Upnext AI Web Prototipi · Uygulamalı Teknoloji Eğitimleri
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

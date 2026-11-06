@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İletişim — Upnext AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="top">
+  <!-- Üst Menü -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+
+      <button
+        type="button"
+        class="mobile-menu-toggle"
+        id="mobileMenuToggle"
+        aria-expanded="false"
+        aria-controls="mainNavWrapper"
+        aria-label="Menüyü aç veya kapat"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <div class="nav-wrapper" id="mainNavWrapper">
+        <nav class="main-nav" aria-label="Ana Menü">
+          <ul class="nav-list">
+            <li><a href="bootcampler.html" class="nav-link">Bootcamp’ler</a></li>
+            <li><a href="egitim-takvimi.html" class="nav-link">Eğitim Takvimi</a></li>
+            <li><a href="hakkimizda.html" class="nav-link">Hakkımızda</a></li>
+            <li><a href="is-birliklerimiz.html" class="nav-link">İş Birliklerimiz</a></li>
+            <li><a href="blog.html" class="nav-link">Blog</a></li>
+            <li><a href="iletisim.html" class="nav-link is-active" aria-current="page">İletişim</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="ogrenci-girisi.html" class="btn btn-secondary">
+            Öğrenci Girişi
+          </a>
+          <a href="on-basvuru.html" class="btn btn-primary">
+            Ön Başvuru Yap
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="application-page-section" aria-labelledby="contact-page-heading">
+      <div class="container application-container">
+        <!-- İletişim Formu Görünümü -->
+        <div id="contactFormView" class="application-card-shell">
+          <div class="application-header">
+            <span class="section-badge">İletişim ve Destek</span>
+            <h1 id="contact-page-heading" class="page-title">Bizimle İletişime Geçin</h1>
+            <p class="page-lead">
+              Eğitim programları hakkında öğrenci sorularınız veya kurumsal/topluluk
+              iş birliği talepleriniz için aşağıdaki formu kullanabilirsiniz.
+            </p>
+          </div>
+
+          <div class="prototype-disclaimer-box" role="note">
+            <strong>Prototip Bilgilendirmesi:</strong> Bu form yalnızca tarayıcıda simüle edilir; gerçek mesaj gönderilmez ve bilgiler kaydedilmez. Doğrulanmış harici iletişim kanalları kesinleştiğinde eklenecektir.
+          </div>
+
+          <form id="contactForm" class="application-form" novalidate>
+            <div class="form-grid">
+              <!-- 1. Ad Soyad -->
+              <div class="form-field">
+                <label for="contactName" class="form-label">
+                  Ad Soyad <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="contactName"
+                  name="contactName"
+                  class="form-control"
+                  placeholder="Adınız ve Soyadınız"
+                  required
+                  aria-describedby="error-contactName"
+                />
+                <p id="error-contactName" class="field-error" role="alert" hidden></p>
+              </div>
+
+              <!-- 2. E-posta -->
+              <div class="form-field">
+                <label for="contactEmail" class="form-label">
+                  E-posta <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="contactEmail"
+                  name="contactEmail"
+                  class="form-control"
+                  placeholder="ornek@eposta.com"
+                  required
+                  aria-describedby="error-contactEmail"
+                />
+                <p id="error-contactEmail" class="field-error" role="alert" hidden></p>
+              </div>
+
+              <!-- 3. İletişim Konusu (Öğrenci Sorusu / İş Birliği Talebi) -->
+              <div class="form-field">
+                <label for="contactTopic" class="form-label">
+                  İletişim Konusu <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <select
+                  id="contactTopic"
+                  name="contactTopic"
+                  class="form-control"
+                  required
+                  aria-describedby="contactTopicHint error-contactTopic"
+                >
+                  <option value="">Konu seçiniz</option>
+                  <option value="Öğrenci Sorusu">Öğrenci Sorusu</option>
+                  <option value="İş Birliği Talebi">İş Birliği Talebi</option>
+                </select>
+                <p id="contactTopicHint" class="field-hint" hidden>
+                  İş Birliklerimiz sayfasından geldiğiniz için <strong>İş Birliği Talebi</strong> otomatik seçildi.
+                </p>
+                <p id="error-contactTopic" class="field-error" role="alert" hidden></p>
+              </div>
+
+              <!-- 4. Kurum / Üniversite / Topluluk (İsteğe Bağlı) -->
+              <div class="form-field">
+                <label for="contactOrg" class="form-label">
+                  Üniversite / Kurum / Topluluk (İsteğe bağlı)
+                </label>
+                <input
+                  type="text"
+                  id="contactOrg"
+                  name="contactOrg"
+                  class="form-control"
+                  placeholder="Varsa kurum veya topluluk adı"
+                />
+              </div>
+            </div>
+
+            <!-- 5. Mesaj -->
+            <div class="form-field" style="margin-bottom: 24px;">
+              <label for="contactMessage" class="form-label">
+                Mesajınız <span class="required-mark" aria-hidden="true">*</span>
+              </label>
+              <textarea
+                id="contactMessage"
+                name="contactMessage"
+                class="form-control form-textarea"
+                rows="5"
+                placeholder="Sorunuzu veya iş birliği talebinizi kısaca açıklayınız..."
+                required
+                aria-describedby="error-contactMessage"
+              ></textarea>
+              <p id="error-contactMessage" class="field-error" role="alert" hidden></p>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn btn-primary btn-lg btn-submit">
+                Mesajı Gönder (Demo)
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Gönderim Sonrası Demo Onay Görünümü -->
+        <div
+          id="contactSuccessView"
+          class="application-card-shell"
+          role="region"
+          aria-labelledby="contact-success-heading"
+          hidden
+        >
+          <div class="success-badge-row">
+            <span class="status-pill status-pill-success">Demo Onay Görünümü</span>
+          </div>
+          <h2 id="contact-success-heading" class="page-title">
+            İletişim mesajınız simüle edildi
+          </h2>
+
+          <div class="prototype-disclaimer-box" role="note">
+            <strong>Prototip Bilgilendirmesi:</strong> Bu ekran bir tarayıcı simülasyonudur; gerçek mesaj gönderilmemiş ve girdiğiniz bilgiler kaydedilmemiştir.
+          </div>
+
+          <dl class="submitted-summary info-program-summary" aria-label="Simüle Edilen İletişim Özeti">
+            <div class="summary-item">
+              <dt>Gönderen</dt>
+              <dd id="contactSummaryName">—</dd>
+            </div>
+            <div class="summary-item">
+              <dt>Seçilen Konu</dt>
+              <dd id="contactSummaryTopic">—</dd>
+            </div>
+          </dl>
+
+          <div class="next-steps-card">
+            <h3 class="info-card-title">Gerçek Süreçte Nasıl İşler?</h3>
+            <p class="info-card-text">
+              Öğrenci sorularına eğitim danışmanlarımız, iş birliği taleplerine ise kurumsal ilişkiler ekibimiz ilgili konu başlığı kapsamında yanıt verir.
+            </p>
+          </div>
+
+          <div class="success-actions">
+            <button type="button" id="resetContactBtn" class="btn btn-secondary">
+              Yeni Mesaj Simülasyonu
+            </button>
+            <a href="index.html" class="btn btn-primary">
+              Ana Sayfaya Dön
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="stitch-footer">
+    <div class="container stitch-footer-inner">
+      <a href="index.html" class="brand-logo" aria-label="Upnext AI Ana Sayfa">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Upnext AI</span>
+      </a>
+      <div class="stitch-footer-links">
+        <a href="bootcampler.html">Bootcamp’ler</a>
+        <a href="egitim-takvimi.html">Eğitim Takvimi</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="is-birliklerimiz.html">İş Birliklerimiz</a>
+        <a href="blog.html">Blog</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="on-basvuru.html">Ön Başvuru Yap</a>
+        <a href="ogrenci-girisi.html">Öğrenci Girişi</a>
+      </div>
+      <p class="stitch-footer-note">
+        Upnext AI Web Prototipi · Uygulamalı Teknoloji Eğitimleri
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
