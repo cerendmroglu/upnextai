@@ -611,8 +611,274 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // İlk Ekran: Açık Başvuru Ay Etiketi ve Sağdaki Kaydırılabilir Program Kartı (index.html)
+  const heroProgramSlider = document.getElementById("heroProgramSlider");
+  const openCohortBadge = document.getElementById("openCohortBadge");
+
+  if (heroProgramSlider) {
+    const slides = Array.from(heroProgramSlider.querySelectorAll("[data-hero-slide]"));
+    const dots = Array.from(heroProgramSlider.querySelectorAll("[data-hero-dot]"));
+    const prevBtn = document.getElementById("heroSlidePrev");
+    const nextBtn = document.getElementById("heroSlideNext");
+    const pauseBtn = document.getElementById("heroSlidePauseBtn");
+    const controlsWrap = document.getElementById("heroSliderControls");
+
+    // 1. Açık dönem kontrolü: Gerçekten başvuruya açık ve ayı teyitli bir dönem varsa göster, yoksa gizle
+    const updateOpenCohortBadge = () => {
+      if (!openCohortBadge) return;
+      const openSlide = slides.find((slide) => {
+        const isOpen = slide.getAttribute("data-cohort-open") === "true";
+        const month = (slide.getAttribute("data-cohort-month") || "").trim();
+        return isOpen && isConfirmedCohort(month);
+      });
+
+      if (openSlide) {
+        const monthName = openSlide.getAttribute("data-cohort-month").trim();
+        openCohortBadge.textContent = `${monthName} dönemi ön başvuruları açık.`;
+        openCohortBadge.hidden = false;
+      } else {
+        openCohortBadge.textContent = "";
+        openCohortBadge.hidden = true;
+      }
+    };
+
+    updateOpenCohortBadge();
+
+    // 2. Kaydırılabilir Program Kartı (3 saniyede bir otomatik geçiş, oklar, noktalar, duraklatma ve mobil kaydırma)
+    let currentIndex = 0;
+    let isUserPaused = false;
+    let isHoverOrFocusPaused = false;
+    let autoSlideTimer = null;
+
+    const showSlide = (index) => {
+      if (!slides.length) return;
+      currentIndex = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        const isActive = i === currentIndex;
+        slide.hidden = !isActive;
+        slide.classList.toggle("is-active", isActive);
+        slide.setAttribute("aria-hidden", String(!isActive));
+      });
+      dots.forEach((dot, i) => {
+        const isActive = i === currentIndex;
+        dot.classList.toggle("is-active", isActive);
+        dot.setAttribute("aria-selected", String(isActive));
+      });
+    };
+
+    const stopAutoSlide = () => {
+      if (autoSlideTimer) {
+        clearInterval(autoSlideTimer);
+        autoSlideTimer = null;
+      }
+    };
+
+    const startAutoSlide = () => {
+      stopAutoSlide();
+      if (slides.length <= 1 || isUserPaused || isHoverOrFocusPaused) return;
+      autoSlideTimer = setInterval(() => {
+        showSlide(currentIndex + 1);
+      }, 3000);
+    };
+
+    if (slides.length <= 1) {
+      if (controlsWrap) controlsWrap.hidden = true;
+    } else {
+      startAutoSlide();
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+          showSlide(currentIndex - 1);
+          startAutoSlide();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+          showSlide(currentIndex + 1);
+          startAutoSlide();
+        });
+      }
+
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          const targetIdx = Number(dot.getAttribute("data-hero-dot") || 0);
+          showSlide(targetIdx);
+          startAutoSlide();
+        });
+      });
+
+      if (pauseBtn) {
+        pauseBtn.addEventListener("click", () => {
+          isUserPaused = !isUserPaused;
+          pauseBtn.setAttribute("aria-pressed", String(isUserPaused));
+          pauseBtn.textContent = isUserPaused ? "Oynat" : "Duraklat";
+          pauseBtn.setAttribute(
+            "aria-label",
+            isUserPaused ? "Otomatik geçişi başlat" : "Otomatik geçişi duraklat"
+          );
+          if (isUserPaused) {
+            stopAutoSlide();
+          } else {
+            startAutoSlide();
+          }
+        });
+      }
+
+      // Kullanıcı kartın üstündeyken veya klavyeyle karta geçtiğinde otomatik kayma dursun
+      heroProgramSlider.addEventListener("mouseenter", () => {
+        isHoverOrFocusPaused = true;
+        stopAutoSlide();
+      });
+
+      heroProgramSlider.addEventListener("mouseleave", () => {
+        isHoverOrFocusPaused = false;
+        startAutoSlide();
+      });
+
+      heroProgramSlider.addEventListener("focusin", () => {
+        isHoverOrFocusPaused = true;
+        stopAutoSlide();
+      });
+
+      heroProgramSlider.addEventListener("focusout", (event) => {
+        if (!heroProgramSlider.contains(event.relatedTarget)) {
+          isHoverOrFocusPaused = false;
+          startAutoSlide();
+        }
+      });
+
+      // Mobilde elle kaydırma (touch swipe) desteği
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      heroProgramSlider.addEventListener(
+        "touchstart",
+        (event) => {
+          if (event.changedTouches && event.changedTouches.length > 0) {
+            touchStartX = event.changedTouches[0].screenX;
+          }
+        },
+        { passive: true }
+      );
+
+      heroProgramSlider.addEventListener(
+        "touchend",
+        (event) => {
+          if (event.changedTouches && event.changedTouches.length > 0) {
+            touchEndX = event.changedTouches[0].screenX;
+            const deltaX = touchEndX - touchStartX;
+            if (Math.abs(deltaX) > 40) {
+              if (deltaX < 0) {
+                showSlide(currentIndex + 1);
+              } else {
+                showSlide(currentIndex - 1);
+              }
+              startAutoSlide();
+            }
+          }
+        },
+        { passive: true }
+      );
+    }
+  }
+
+  // Ana Sayfa: Seçilebilir Öne Çıkan Bootcamp Kartları (index.html)
+  const selectableBootcampsGrid = document.getElementById("selectableBootcampsGrid");
+  const bootcampsSection = document.getElementById("bootcampler");
+  const selectableBootcampCards = Array.from(
+    document.querySelectorAll("[data-selectable-bootcamp]")
+  );
+  if (selectableBootcampCards.length > 0) {
+    // Son tıklanan kartı takip et; hiç tıklanmadıysa varsayılan olarak ilk kart (AI Forge)
+    let lastClickedCard = selectableBootcampCards[0];
+    let isTouchInteraction = false;
+
+    const applyBootcampHighlight = (activeCard) => {
+      selectableBootcampCards.forEach((card) => {
+        const isMatch = card === activeCard;
+        card.classList.remove("bootcamp-card-featured");
+        card.classList.toggle("is-selected", isMatch);
+
+        const badge = card.querySelector(".js-card-badge");
+        if (badge) {
+          badge.textContent = isMatch ? "Canlı Online · Seçili" : "Canlı Online";
+        }
+
+        const actionBtn = card.querySelector(".js-bootcamp-detail-btn");
+        if (actionBtn) {
+          actionBtn.classList.toggle("btn-primary", isMatch);
+          actionBtn.classList.toggle("btn-secondary", !isMatch);
+        }
+      });
+    };
+
+    // İlk yüklemede ilk kartı vurgula ve sabit sınıfları temizle
+    applyBootcampHighlight(lastClickedCard);
+
+    selectableBootcampCards.forEach((card) => {
+      card.addEventListener(
+        "touchstart",
+        () => {
+          isTouchInteraction = true;
+        },
+        { passive: true }
+      );
+
+      // Masaüstünde fare kartın üzerine gelince mavi vurgu o karta geçsin
+      card.addEventListener("mouseenter", () => {
+        if (isTouchInteraction) return;
+        applyBootcampHighlight(card);
+      });
+
+      // Karta tıklanınca veya mobilde gövdesine dokunulunca seçimi kalıcı olarak güncelle;
+      // yalnızca "Programı İncele" bağlantısı detay sayfasını açsın.
+      card.addEventListener("click", (event) => {
+        lastClickedCard = card;
+        applyBootcampHighlight(card);
+        if (event.target.closest(".js-bootcamp-detail-btn")) {
+          return;
+        }
+      });
+
+      card.addEventListener("keydown", (event) => {
+        if (event.target.closest(".js-bootcamp-detail-btn")) {
+          return;
+        }
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          lastClickedCard = card;
+          applyBootcampHighlight(card);
+        }
+      });
+    });
+
+    // Fare bölümden/kart ızgarasından çıkınca son tıklanan karta (hiç tıklanmadıysa ilk karta) dönsün
+    const restoreLastClickedHighlight = () => {
+      if (isTouchInteraction) return;
+      applyBootcampHighlight(lastClickedCard);
+    };
+
+    if (selectableBootcampsGrid) {
+      selectableBootcampsGrid.addEventListener("mouseleave", restoreLastClickedHighlight);
+    }
+    if (bootcampsSection) {
+      bootcampsSection.addEventListener("mouseleave", restoreLastClickedHighlight);
+    }
+
+    // Masaüstünde fare hareket ettiğinde dokunma bayrağını sıfırla
+    window.addEventListener(
+      "mousemove",
+      () => {
+        isTouchInteraction = false;
+      },
+      { passive: true }
+    );
+  }
+
   // Blog Kategori Filtresi (blog.html)
-  const blogGrid = document.getElementById("blogGrid");
+  const blogGrid =
+    document.getElementById("blogPostsGrid") || document.getElementById("blogGrid");
   if (blogGrid) {
     const filterButtons = document.querySelectorAll("[data-blog-filter]");
     const blogCards = blogGrid.querySelectorAll("[data-blog-category]");
@@ -620,7 +886,9 @@ document.addEventListener("DOMContentLoaded", () => {
     filterButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
         const selected = btn.getAttribute("data-blog-filter") || "all";
-        filterButtons.forEach((b) => b.classList.remove("is-active"));
+        filterButtons.forEach((b) => {
+          b.classList.remove("is-active", "is-selected");
+        });
         btn.classList.add("is-active");
 
         blogCards.forEach((card) => {
@@ -635,8 +903,82 @@ document.addEventListener("DOMContentLoaded", () => {
   const blogDetailPage = document.getElementById("blogDetailPage");
   if (blogDetailPage) {
     const blogArticles = {
+      "ai-agent-nedir": {
+        category: "Yapay Zekâ",
+        sourceTag: "upnextai.com.tr",
+        externalUrl: "https://upnextai.com.tr/",
+        title: "AI Agent Nedir? Sıfırdan Kurulum İçin Adım Adım Rehber",
+        bodyHtml: `
+          <p class="info-card-text" style="margin-bottom: 16px;">
+            Otonom yapay zekâ ajanları (AI Agent), yalnızca sorulan sorulara yanıt üreten klasik sohbet botlarından farklı olarak belirli bir hedefe ulaşmak için karar alabilen ve harici araçları (tools) kullanarak iş akışlarını yürüten sistemlerdir.
+          </p>
+          <h2 class="info-card-title" style="margin-top: 22px;">1. Tetikleyici (Trigger) Mekanizması</h2>
+          <p class="info-card-text" style="margin-bottom: 16px;">
+            Her ajan iş akışı, süreci başlatan bir olayla (örneğin yeni bir form kaydı, e-posta veya API çağrısı) tetiklenir ve gelen veriyi yapılandırılmış olarak teslim alır.
+          </p>
+          <h2 class="info-card-title" style="margin-top: 22px;">2. İşlem ve Karar Katmanı</h2>
+          <p class="info-card-text" style="margin-bottom: 16px;">
+            Dil modeli, gelen veriyi hedef doğrultusunda analiz eder, gerekli alt adımları planlar ve hangi aracın veya veri kaynağının çağrılacağına karar verir.
+          </p>
+          <h2 class="info-card-title" style="margin-top: 22px;">3. Aksiyon ve Çıktı</h2>
+          <p class="info-card-text">
+            Üretilen sonuç, ilgili hedef sisteme yazılır veya ilgili iş sürecini tamamlayacak aksiyona dönüştürülür.
+          </p>
+        `,
+      },
+      "otomasyon-nedir": {
+        category: "Proje Geliştirme",
+        sourceTag: "upnextai.com.tr",
+        externalUrl: "https://upnextai.com.tr/",
+        title: "Otomasyon Nedir? Yapay Zekâ ile İş Süreçleri Nasıl Otomatikleştirilir?",
+        bodyHtml: `
+          <p class="info-card-text" style="margin-bottom: 16px;">
+            İş dünyasında tekrarlayan veri girişi, sınıflandırma, raporlama ve bildirim süreçleri, yapay zekâ destekli otomasyon senaryolarıyla daha hızlı ve hatasız yürütülebilir.
+          </p>
+          <h2 class="info-card-title" style="margin-top: 22px;">1. Doğru Süreci Seçmek</h2>
+          <p class="info-card-text" style="margin-bottom: 16px;">
+            Otomasyona başlarken kuralları net, girdi ve çıktısı tekrar eden operasyonel adımları belirlemek en hızlı kazanımı sağlar.
+          </p>
+          <h2 class="info-card-title" style="margin-top: 22px;">2. Yapay Zekâ ve Otomasyon Araçlarının Entegrasyonu</h2>
+          <p class="info-card-text">
+            Modern otomasyon platformları ile dil modeli API’leri birleştirildiğinde, yapılandırılmamış metinler bile anlamlandırılarak otomatik iş akışlarına dahil edilebilir.
+          </p>
+        `,
+      },
+      "yapay-zeka-caginda-kariyer": {
+        category: "Kariyere Hazırlık",
+        sourceTag: "upnextai.com.tr",
+        externalUrl: "https://upnextai.com.tr/",
+        title: "Yapay Zekâ Çağında Kariyer: Öne Çıkan 7 Yetkinlik",
+        bodyHtml: `
+          <p class="info-card-text" style="margin-bottom: 16px;">
+            Yapay zekâ destekli çalışma düzeninde teknik ve iş ekipleri için yalnızca araçları tanımak değil, onları gerçek problemlere uyarlayabilmek kritik hale gelmiştir.
+          </p>
+          <h2 class="info-card-title" style="margin-top: 22px;">Öne Çıkan Temel Yetkinlik Alanları</h2>
+          <p class="info-card-text" style="margin-bottom: 16px;">
+            Prompt okuryazarlığı, veriyle düşünme, iş akışı otomasyonu kurgulama, çıktı doğrulama ve somut proje portföyü oluşturma becerileri yeni mezunları ve genç profesyonelleri öne çıkarır.
+          </p>
+        `,
+      },
+      "bootcamp-mi-yuksek-lisans-mi": {
+        category: "Kariyere Hazırlık",
+        sourceTag: "upnextai.com.tr",
+        externalUrl: "https://upnextai.com.tr/",
+        title: "Bootcamp mi, Yüksek Lisans mı? Yeni Mezunlar İçin Karşılaştırma",
+        bodyHtml: `
+          <p class="info-card-text" style="margin-bottom: 16px;">
+            Mezuniyet sonrasında kariyer yönünü belirlerken adaylar akademik derinlik ile sektörel uygulama pratiği arasında seçim yapar.
+          </p>
+          <h2 class="info-card-title" style="margin-top: 22px;">Süre, Uygulama Yoğunluğu ve Portföy Çıktısı</h2>
+          <p class="info-card-text">
+            Akademik uzmanlaşma hedefleyenler için yüksek lisans uzun soluklu bir teorik temel sunarken; kısa sürede gerçek iş senaryolarıyla proje üretmek ve portföy hazırlamak isteyenler için bootcamp modeli odaklı bir alternatif oluşturur.
+          </p>
+        `,
+      },
       "yapay-zeka": {
         category: "Yapay Zekâ",
+        sourceTag: "Örnek Yazı (Demo)",
+        externalUrl: "https://upnextai.com.tr/",
         title: "Üretken Yapay Zekâ Projelerinde Gerçek İş Senaryosu Kurgulama",
         bodyHtml: `
           <p class="info-card-text" style="margin-bottom: 16px;">
@@ -658,6 +1000,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       "proje-gelistirme": {
         category: "Proje Geliştirme",
+        sourceTag: "Örnek Yazı (Demo)",
+        externalUrl: "https://upnextai.com.tr/",
         title: "Teknik Portföy İçin Uçtan Uca Proje Dokümantasyonu Nasıl Hazırlanır?",
         bodyHtml: `
           <p class="info-card-text" style="margin-bottom: 16px;">
@@ -679,6 +1023,8 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       "kariyere-hazirlik": {
         category: "Kariyere Hazırlık",
+        sourceTag: "Örnek Yazı (Demo)",
+        externalUrl: "https://upnextai.com.tr/",
         title: "Teknoloji Staj ve İş Başvurularında Proje Sunumu Rehberi",
         bodyHtml: `
           <p class="info-card-text" style="margin-bottom: 16px;">
@@ -701,25 +1047,33 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const params = new URLSearchParams(window.location.search);
-    const slug = (params.get("yazi") || "yapay-zeka").trim().toLowerCase();
-    const article = blogArticles[slug] || blogArticles["yapay-zeka"];
+    const slug = (params.get("yazi") || "ai-agent-nedir").trim().toLowerCase();
+    const article = blogArticles[slug] || blogArticles["ai-agent-nedir"];
 
     const breadcrumbEl = document.getElementById("blogDetailBreadcrumb");
     const badgeEl = document.getElementById("blogDetailCategoryBadge");
+    const sourceTagEl = document.getElementById("blogDetailSourceTag");
     const titleEl = document.getElementById("blogDetailTitle");
     const contentEl = document.getElementById("blogDetailContent");
+    const extLinkEl = document.getElementById("blogDetailExternalLink");
 
     if (breadcrumbEl) breadcrumbEl.textContent = article.category;
     if (badgeEl) badgeEl.textContent = article.category;
+    if (sourceTagEl) sourceTagEl.textContent = article.sourceTag || "upnextai.com.tr";
     if (titleEl) titleEl.textContent = article.title;
     if (contentEl) contentEl.innerHTML = article.bodyHtml;
+    if (extLinkEl) extLinkEl.href = article.externalUrl || "https://upnextai.com.tr/";
   }
 
-  // Öğrenci Girişi Prototipi (ogrenci-girisi.html)
+  // Öğrenci Girişi, Şifremi Unuttum ve Yeni Kayıt & Ödeme Demosu (ogrenci-girisi.html)
   const studentLoginForm = document.getElementById("studentLoginForm");
   if (studentLoginForm) {
     const studentLoginCard = document.getElementById("studentLoginCard");
     const forgotPasswordView = document.getElementById("forgotPasswordView");
+    const regFlowInviteView = document.getElementById("regFlowInviteView");
+    const regFlowEnrollmentView = document.getElementById("regFlowEnrollmentView");
+    const regFlowPasswordView = document.getElementById("regFlowPasswordView");
+
     const forgotPasswordForm = document.getElementById("forgotPasswordForm");
     const resetEmail = document.getElementById("resetEmail");
     const resetDemoResult = document.getElementById("resetDemoResult");
@@ -727,6 +1081,43 @@ document.addEventListener("DOMContentLoaded", () => {
     const loginEmail = document.getElementById("loginEmail");
     const loginPassword = document.getElementById("loginPassword");
     const forgotPasswordBtn = document.getElementById("forgotPasswordBtn");
+
+    const tryRegBtn = document.getElementById("tryRegistrationFlowBtn");
+    const tryRegBtnTop = document.getElementById("tryRegistrationFlowBtnTop");
+    const openLimitedEnrollmentBtn = document.getElementById("openLimitedEnrollmentBtn");
+    const proceedToPosDemoBtn = document.getElementById("proceedToPosDemoBtn");
+    const regPosSimControls = document.getElementById("regPosSimControls");
+    const regEnrollmentStatusText = document.getElementById("regEnrollmentStatusText");
+    const regOutcomeSuccess = document.getElementById("regOutcomeSuccess");
+    const regOutcomePending = document.getElementById("regOutcomePending");
+    const regOutcomeFailed = document.getElementById("regOutcomeFailed");
+    const goToCreatePasswordBtn = document.getElementById("goToCreatePasswordBtn");
+    const backToEnrollmentViewBtn = document.getElementById("backToEnrollmentViewBtn");
+    const createPermanentPasswordForm = document.getElementById("createPermanentPasswordForm");
+    const newPermanentPass = document.getElementById("newPermanentPass");
+    const confirmPermanentPass = document.getElementById("confirmPermanentPass");
+
+    let isPaymentSuccessVerified = false;
+
+    const showLoginFlowView = (viewName) => {
+      if (studentLoginCard) studentLoginCard.hidden = viewName !== "login";
+      if (forgotPasswordView) forgotPasswordView.hidden = viewName !== "forgot";
+      if (regFlowInviteView) regFlowInviteView.hidden = viewName !== "invite";
+      if (regFlowEnrollmentView) regFlowEnrollmentView.hidden = viewName !== "enrollment";
+      if (regFlowPasswordView) regFlowPasswordView.hidden = viewName !== "password";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    const resetRegEnrollmentState = () => {
+      isPaymentSuccessVerified = false;
+      if (regPosSimControls) regPosSimControls.hidden = true;
+      if (regOutcomeSuccess) regOutcomeSuccess.hidden = true;
+      if (regOutcomePending) regOutcomePending.hidden = true;
+      if (regOutcomeFailed) regOutcomeFailed.hidden = true;
+      if (regEnrollmentStatusText) {
+        regEnrollmentStatusText.textContent = "Ödeme Bekleniyor (Kayıt Henüz Tamamlanmadı)";
+      }
+    };
 
     const setLoginError = (inputEl, errorId, message) => {
       const errEl = document.getElementById(errorId);
@@ -742,19 +1133,134 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    if (forgotPasswordBtn && studentLoginCard && forgotPasswordView) {
+    if (forgotPasswordBtn) {
       forgotPasswordBtn.addEventListener("click", () => {
-        studentLoginCard.hidden = true;
-        forgotPasswordView.hidden = false;
+        showLoginFlowView("forgot");
         if (resetDemoResult) resetDemoResult.hidden = true;
         if (resetEmail) resetEmail.focus();
       });
     }
 
-    if (backToLoginBtn && studentLoginCard && forgotPasswordView) {
+    if (backToLoginBtn) {
       backToLoginBtn.addEventListener("click", () => {
-        forgotPasswordView.hidden = true;
-        studentLoginCard.hidden = false;
+        showLoginFlowView("login");
+      });
+    }
+
+    [tryRegBtn, tryRegBtnTop].forEach((btn) => {
+      if (!btn) return;
+      btn.addEventListener("click", () => {
+        resetRegEnrollmentState();
+        showLoginFlowView("invite");
+      });
+    });
+
+    document.querySelectorAll("[data-reg-back-login]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        resetRegEnrollmentState();
+        showLoginFlowView("login");
+      });
+    });
+
+    if (openLimitedEnrollmentBtn) {
+      openLimitedEnrollmentBtn.addEventListener("click", () => {
+        resetRegEnrollmentState();
+        showLoginFlowView("enrollment");
+      });
+    }
+
+    if (proceedToPosDemoBtn) {
+      proceedToPosDemoBtn.addEventListener("click", () => {
+        if (regPosSimControls) {
+          regPosSimControls.hidden = false;
+          regPosSimControls.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+      });
+    }
+
+    document.querySelectorAll("[data-reg-payment-state]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const state = btn.getAttribute("data-reg-payment-state");
+        isPaymentSuccessVerified = state === "success";
+
+        if (regOutcomeSuccess) regOutcomeSuccess.hidden = state !== "success";
+        if (regOutcomePending) regOutcomePending.hidden = state !== "pending";
+        if (regOutcomeFailed) regOutcomeFailed.hidden = state !== "failed";
+
+        if (regEnrollmentStatusText) {
+          if (state === "success") {
+            regEnrollmentStatusText.textContent = "Ödeme Onaylandı · Kesin Kayıt Tamamlandı";
+          } else if (state === "pending") {
+            regEnrollmentStatusText.textContent = "Ödeme Doğrulanıyor · Kayıt Henüz Tamamlanmadı";
+          } else {
+            regEnrollmentStatusText.textContent = "Ödeme Tamamlanmadı · Kayıt Oluşturulmadı";
+          }
+        }
+      });
+    });
+
+    if (goToCreatePasswordBtn) {
+      goToCreatePasswordBtn.addEventListener("click", () => {
+        // Yalnızca başarılı ödeme durumunda kalıcı şifre ekranına geçilebilir
+        if (!isPaymentSuccessVerified) return;
+        showLoginFlowView("password");
+      });
+    }
+
+    if (backToEnrollmentViewBtn) {
+      backToEnrollmentViewBtn.addEventListener("click", () => {
+        showLoginFlowView("enrollment");
+      });
+    }
+
+    if (createPermanentPasswordForm) {
+      if (newPermanentPass) {
+        newPermanentPass.addEventListener("input", () =>
+          setLoginError(newPermanentPass, "error-newPermanentPass", "")
+        );
+      }
+      if (confirmPermanentPass) {
+        confirmPermanentPass.addEventListener("input", () =>
+          setLoginError(confirmPermanentPass, "error-confirmPermanentPass", "")
+        );
+      }
+
+      createPermanentPasswordForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!isPaymentSuccessVerified) return;
+
+        const p1 = (newPermanentPass ? newPermanentPass.value : "").trim();
+        const p2 = (confirmPermanentPass ? confirmPermanentPass.value : "").trim();
+
+        let valid = true;
+        if (!p1 || p1.length < 6) {
+          setLoginError(
+            newPermanentPass,
+            "error-newPermanentPass",
+            "Lütfen en az 6 karakterli bir örnek şifre giriniz."
+          );
+          valid = false;
+        } else {
+          setLoginError(newPermanentPass, "error-newPermanentPass", "");
+        }
+
+        if (!p2 || p1 !== p2) {
+          setLoginError(
+            confirmPermanentPass,
+            "error-confirmPermanentPass",
+            "Girilen örnek şifreler birbiriyle eşleşmelidir."
+          );
+          valid = false;
+        } else {
+          setLoginError(confirmPermanentPass, "error-confirmPermanentPass", "");
+        }
+
+        if (!valid) return;
+
+        // Gerçek şifre saklama yapmadan alanları temizle ve öğrenci paneline yönlendir
+        if (newPermanentPass) newPermanentPass.value = "";
+        if (confirmPermanentPass) confirmPermanentPass.value = "";
+        window.location.href = "ogrenci-paneli.html";
       });
     }
 

@@ -551,6 +551,37 @@ a.nav-link.is-active {
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.02);
 }
 
+.preview-card-meta-header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-bottom: 8px;
+  margin-bottom: -2px;
+  border-bottom: 1px dashed #DBEAFE;
+}
+
+.preview-card-meta-caption {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.sample-data-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: #EFF6FF;
+  border: 1px solid #93C5FD;
+  color: #1D4ED8;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 2px 9px;
+  border-radius: 999px;
+}
+
 .meta-item dt {
   font-size: 0.76rem;
   font-weight: 600;
@@ -2000,6 +2031,341 @@ a.nav-link.is-active {
   padding: 16px 18px;
 }
 
+.nested-well-box[hidden] {
+  display: none !important;
+}
+
+.simulation-controls-card[hidden],
+.next-steps-card[hidden] {
+  display: none !important;
+}
+
+.demo-entry-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   8C. İlk Ekran Açık Dönem Etiketi, Program Slayt Kartı, Seçilebilir Kartlar
+       ve 3 Eğitmen Kartı Taslağı
+   ========================================================================== */
+.hero-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.open-cohort-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #DCFCE7;
+  border: 1px solid #86EFAC;
+  color: #166534;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.open-cohort-pill[hidden] {
+  display: none !important;
+}
+
+/* Sağdaki Kaydırılabilir Program Kartı */
+.hero-slider-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  touch-action: pan-y;
+}
+
+.hero-slider-viewport {
+  position: relative;
+}
+
+.hero-slide {
+  transition: opacity 0.28s ease;
+}
+
+.hero-slide[hidden] {
+  display: none !important;
+}
+
+.hero-slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #DBEAFE;
+}
+
+.hero-slider-nav-btns {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-slider-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background-color: #FFFFFF;
+  border: 1px solid #BFDBFE;
+  color: var(--primary-hover);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.hero-slider-btn:hover,
+.hero-slider-btn:focus-visible {
+  background-color: var(--accent-bg);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.hero-slider-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-slider-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background-color: #CBD5E1;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.hero-slider-dot.is-active {
+  width: 22px;
+  background-color: var(--primary);
+}
+
+.hero-slider-pause-btn {
+  background-color: #FFFFFF;
+  border: 1px solid #BFDBFE;
+  color: var(--text-muted);
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.hero-slider-pause-btn:hover,
+.hero-slider-pause-btn:focus-visible,
+.hero-slider-pause-btn[aria-pressed="true"] {
+  background-color: var(--accent-bg);
+  border-color: var(--primary);
+  color: var(--primary-hover);
+}
+
+/* Seçilebilir Bootcamp Kartları (Ana Sayfa) */
+[data-selectable-bootcamp] {
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+[data-selectable-bootcamp]:not(.is-selected),
+[data-selectable-bootcamp]:not(.is-selected):hover {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+}
+
+[data-selectable-bootcamp]:not(.is-selected) .bootcamp-icon-box {
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+  border-color: #BFDBFE;
+  color: #1D4ED8;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.1);
+}
+
+[data-selectable-bootcamp]:not(.is-selected) .bootcamp-specs {
+  background-color: var(--bg-page);
+  border-color: var(--border-color);
+}
+
+[data-selectable-bootcamp].is-selected {
+  background: linear-gradient(180deg, #E8F2FF 0%, #F1F7FF 46%, #F9FBFF 100%);
+  border: 1.5px solid #2563EB;
+  box-shadow:
+    inset 0 3px 0 0 #2563EB,
+    0 16px 32px -10px rgba(37, 99, 235, 0.18),
+    0 4px 10px -3px rgba(15, 23, 42, 0.05);
+}
+
+[data-selectable-bootcamp].is-selected:hover {
+  border-color: #1D4ED8;
+  box-shadow:
+    inset 0 3px 0 0 #1D4ED8,
+    0 20px 36px -10px rgba(37, 99, 235, 0.22),
+    0 6px 14px -4px rgba(15, 23, 42, 0.06);
+  transform: translateY(-4px);
+}
+
+[data-selectable-bootcamp].is-selected .bootcamp-icon-box {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  border-color: #1D4ED8;
+  color: #FFFFFF;
+  box-shadow: 0 6px 14px -3px rgba(37, 99, 235, 0.35);
+}
+
+[data-selectable-bootcamp].is-selected .bootcamp-specs {
+  background-color: #FFFFFF;
+  border-color: #DBEAFE;
+}
+
+[data-selectable-bootcamp]:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Eğitmenler ve Mentorlar — 3 Farklı Kart Taslağı */
+.instructor-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  border: 1px solid #DBEAFE;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.instructor-card:hover {
+  transform: translateY(-2px);
+  border-color: #93C5FD;
+  box-shadow: 0 12px 24px -8px rgba(37, 99, 235, 0.12);
+}
+
+.instructor-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+  border: 1.5px solid #93C5FD;
+  color: #1D4ED8;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.instructor-avatar-lg {
+  width: 58px;
+  height: 58px;
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+
+.instructor-side-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.instructor-side-titles {
+  min-width: 0;
+}
+
+.instructor-top-titles {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.instructor-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.instructor-specialty {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.instructor-side-titles .instructor-specialty,
+.instructor-top-titles .instructor-specialty {
+  margin-bottom: 0;
+}
+
+.instructor-bio {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.instructor-bio-two-line {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.instructor-footer-meta {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.instructor-meta-label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.instructor-meta-value {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.instructor-linkedin-placeholder {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary-hover);
+  background-color: var(--accent-bg);
+  border: 1px dashed #93C5FD;
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin-top: 2px;
+}
+
 /* ==========================================================================
    9. Yakında Bildirimleri & Ortak Alt Bilgi (Footer)
    ========================================================================== */
@@ -2256,6 +2622,12 @@ a.nav-link.is-active {
   }
 
   .demo-entry-banner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .demo-entry-actions {
+    width: 100%;
     flex-direction: column;
     align-items: stretch;
   }
