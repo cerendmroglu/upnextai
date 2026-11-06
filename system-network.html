@@ -222,114 +222,172 @@
       </div>
     </section>
 
-    <!-- 3. Müfredat -->
+    <!-- 3. Eğitim Programı -->
     <section id="mufredat" class="detail-section detail-section-alt" aria-labelledby="heading-mufredat">
       <div class="container">
         <div class="section-header">
           <span class="section-badge">3. Bölüm</span>
-          <h2 id="heading-mufredat" class="section-title">Müfredat</h2>
+          <h2 id="heading-mufredat" class="section-title">Eğitim Programı</h2>
           <p class="section-subtitle">
-            Oturum bazlı modül yapısı. Kesinleşmeyen gün ve saat bilgileri “Açıklanacak” olarak işaretlenmiştir.
+            Her aşamada öğrenilen konuları, yapılan uygulamayı ve ortaya çıkan somut çıktıyı gösteren adım adım eğitim akışı.
           </p>
         </div>
 
-        <div class="curriculum-list">
-          <article class="curriculum-card">
+        <ol class="curriculum-list learning-flow-list">
+          <!-- Aşama 01 -->
+          <li class="curriculum-card program-stage-card">
             <div class="curriculum-header">
-              <span class="badge-accent">Modül 1</span>
-              <h3 class="curriculum-title">Linux Sistem Yönetimi ve Komut Satırı Pratiği</h3>
+              <span class="roadmap-step-badge">01</span>
+              <h3 class="curriculum-title">Linux sunucu ortamını yapılandır ve yetkilendir</h3>
             </div>
-            <p class="curriculum-desc">
-              Dosya sistemi hiyerarşisi, kullanıcı/grup yetkileri, süreç yönetimi ve servis yapılandırmaları.
-            </p>
-            <dl class="curriculum-meta">
-              <div class="curriculum-meta-item">
-                <dt>Gün</dt>
-                <dd>Açıklanacak</dd>
-              </div>
-              <div class="curriculum-meta-item">
-                <dt>Oturum Saati</dt>
-                <dd>Açıklanacak</dd>
-              </div>
-              <div class="curriculum-meta-item">
-                <dt>Oturum Çıktısı</dt>
-                <dd>Yapılandırılmış ve sıkılaştırılmış örnek Linux sunucu ortamı</dd>
-              </div>
-            </dl>
-          </article>
 
-          <article class="curriculum-card">
-            <div class="curriculum-header">
-              <span class="badge-accent">Modül 2</span>
-              <h3 class="curriculum-title">Ağ Protokolleri, Alt Ağlar ve Trafik Analizi</h3>
-            </div>
-            <p class="curriculum-desc">
-              IP adresleme, alt ağ planlaması (subnetting), yönlendirme tabloları, DNS/DHCP ve paket analizi.
-            </p>
-            <dl class="curriculum-meta">
-              <div class="curriculum-meta-item">
-                <dt>Gün</dt>
-                <dd>Açıklanacak</dd>
+            <div class="program-stage-grid">
+              <div class="program-stage-block">
+                <h4 class="program-stage-label">Ne öğreneceksin?</h4>
+                <ul class="check-list stage-topic-list">
+                  <li>Dosya sistemi hiyerarşisi ve temel komut satırı pratiği</li>
+                  <li>Kullanıcı ve grup yetkileri ile erişim kontrolü</li>
+                  <li>Süreç yönetimi ve sistem servislerinin yapılandırması</li>
+                </ul>
               </div>
-              <div class="curriculum-meta-item">
-                <dt>Oturum Saati</dt>
-                <dd>Açıklanacak</dd>
-              </div>
-              <div class="curriculum-meta-item">
-                <dt>Oturum Çıktısı</dt>
-                <dd>Çok katmanlı ağ topolojisi ve trafik doğrulama raporu</dd>
-              </div>
-            </dl>
-          </article>
 
-          <article class="curriculum-card">
-            <div class="curriculum-header">
-              <span class="badge-accent">Modül 3</span>
-              <h3 class="curriculum-title">Konteyner Altyapısı ve Servis Dağıtımı</h3>
+              <div class="program-stage-block">
+                <h4 class="program-stage-label">Ne yapacaksın?</h4>
+                <p class="program-stage-text">
+                  Komut satırı üzerinden kullanıcı yetkilerini, süreçleri ve sistem servislerini ayarlayarak güvenli bir sunucu ortamı kuracaksın.
+                </p>
+              </div>
             </div>
-            <p class="curriculum-desc">
-              İzole uygulama çalışma ortamları, konteyner ağları, ters vekil (reverse proxy) ve yük dengeleme.
-            </p>
-            <dl class="curriculum-meta">
-              <div class="curriculum-meta-item">
-                <dt>Gün</dt>
-                <dd>Açıklanacak</dd>
-              </div>
-              <div class="curriculum-meta-item">
-                <dt>Oturum Saati</dt>
-                <dd>Açıklanacak</dd>
-              </div>
-              <div class="curriculum-meta-item">
-                <dt>Oturum Çıktısı</dt>
-                <dd>Çoklu servis içeren konteyner ağ ve dağıtım şablonu</dd>
-              </div>
-            </dl>
-          </article>
 
-          <article class="curriculum-card">
-            <div class="curriculum-header">
-              <span class="badge-accent">Modül 4</span>
-              <h3 class="curriculum-title">İzleme, Sorun Giderme ve Bitirme Projesi Sunumu</h3>
+            <div class="program-stage-footer">
+              <div class="program-stage-outcome">
+                <span class="program-stage-meta-title">Aşama sonunda</span>
+                <span class="program-stage-meta-value">Yapılandırılmış ve sıkılaştırılmış örnek Linux sunucu ortamı</span>
+              </div>
+              <div class="program-stage-tools">
+                <span class="program-stage-meta-title">Kullanılan araçlar</span>
+                <div class="stage-tool-chips">
+                  <span class="stage-tool-chip">Linux</span>
+                  <span class="stage-tool-chip">Komut Satırı (CLI)</span>
+                </div>
+              </div>
             </div>
-            <p class="curriculum-desc">
-              Kayıt (log) yönetimi, sistem metriklerinin izlenmesi, kesinti analizi ve altyapı projesinin sunumu.
-            </p>
-            <dl class="curriculum-meta">
-              <div class="curriculum-meta-item">
-                <dt>Gün</dt>
-                <dd>Açıklanacak</dd>
+          </li>
+
+          <!-- Aşama 02 -->
+          <li class="curriculum-card program-stage-card">
+            <div class="curriculum-header">
+              <span class="roadmap-step-badge">02</span>
+              <h3 class="curriculum-title">Ağ topolojisini planla ve paket trafiğini analiz et</h3>
+            </div>
+
+            <div class="program-stage-grid">
+              <div class="program-stage-block">
+                <h4 class="program-stage-label">Ne öğreneceksin?</h4>
+                <ul class="check-list stage-topic-list">
+                  <li>IP adresleme ve alt ağ planlaması (subnetting)</li>
+                  <li>Yönlendirme tabloları ile DNS ve DHCP servis yapıları</li>
+                  <li>Ağ protokolleri ve paket trafiği analizi</li>
+                </ul>
               </div>
-              <div class="curriculum-meta-item">
-                <dt>Oturum Saati</dt>
-                <dd>Açıklanacak</dd>
+
+              <div class="program-stage-block">
+                <h4 class="program-stage-label">Ne yapacaksın?</h4>
+                <p class="program-stage-text">
+                  Alt ağları, yönlendirme tablolarını ve temel ağ servislerini kurgulayarak katmanlı ağ trafiğini doğrulayacaksın.
+                </p>
               </div>
-              <div class="curriculum-meta-item">
-                <dt>Oturum Çıktısı</dt>
-                <dd>Uçtan uca dokümante edilmiş System &amp; Network portföy projesi</dd>
+            </div>
+
+            <div class="program-stage-footer">
+              <div class="program-stage-outcome">
+                <span class="program-stage-meta-title">Aşama sonunda</span>
+                <span class="program-stage-meta-value">Çok katmanlı ağ topolojisi ve trafik doğrulama raporu</span>
               </div>
-            </dl>
-          </article>
-        </div>
+              <div class="program-stage-tools">
+                <span class="program-stage-meta-title">Kullanılan araçlar</span>
+                <div class="stage-tool-chips">
+                  <span class="stage-tool-chip">TCP/IP</span>
+                  <span class="stage-tool-chip">DNS</span>
+                  <span class="stage-tool-chip">DHCP</span>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Aşama 03 -->
+          <li class="curriculum-card program-stage-card">
+            <div class="curriculum-header">
+              <span class="roadmap-step-badge">03</span>
+              <h3 class="curriculum-title">Konteyner çalışma ortamını ve servis dağıtımını kur</h3>
+            </div>
+
+            <div class="program-stage-grid">
+              <div class="program-stage-block">
+                <h4 class="program-stage-label">Ne öğreneceksin?</h4>
+                <ul class="check-list stage-topic-list">
+                  <li>İzole uygulama çalışma ortamları ve konteyner mimarisi</li>
+                  <li>Konteyner ağları ve servisler arası iletişim</li>
+                  <li>Ters vekil (reverse proxy) ve yük dengeleme yapılandırması</li>
+                </ul>
+              </div>
+
+              <div class="program-stage-block">
+                <h4 class="program-stage-label">Ne yapacaksın?</h4>
+                <p class="program-stage-text">
+                  Servisleri izole konteyner ağında çalıştırıp ters vekil ve yük dengeleme kurallarıyla dağıtım şablonunu oluşturacaksın.
+                </p>
+              </div>
+            </div>
+
+            <div class="program-stage-footer">
+              <div class="program-stage-outcome">
+                <span class="program-stage-meta-title">Aşama sonunda</span>
+                <span class="program-stage-meta-value">Çoklu servis içeren konteyner ağ ve dağıtım şablonu</span>
+              </div>
+              <div class="program-stage-tools">
+                <span class="program-stage-meta-title">Kullanılan araçlar</span>
+                <div class="stage-tool-chips">
+                  <span class="stage-tool-chip">Konteyner Altyapısı</span>
+                  <span class="stage-tool-chip">Reverse Proxy</span>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Aşama 04 -->
+          <li class="curriculum-card program-stage-card">
+            <div class="curriculum-header">
+              <span class="roadmap-step-badge">04</span>
+              <h3 class="curriculum-title">Sistem kayıtlarını izle, sorun gider ve projeyi sun</h3>
+            </div>
+
+            <div class="program-stage-grid">
+              <div class="program-stage-block">
+                <h4 class="program-stage-label">Ne öğreneceksin?</h4>
+                <ul class="check-list stage-topic-list">
+                  <li>Kayıt (log) yönetimi ve sistem metriklerinin izlenmesi</li>
+                  <li>Kesinti analizi ve adım adım sorun giderme süreçleri</li>
+                  <li>Altyapı bitirme projesinin dokümantasyonu ve sunumu</li>
+                </ul>
+              </div>
+
+              <div class="program-stage-block">
+                <h4 class="program-stage-label">Ne yapacaksın?</h4>
+                <p class="program-stage-text">
+                  Kayıt ve metrik verileriyle kesinti senaryolarını analiz edip altyapı projesini çalışma raporuyla sunuma hazırlayacaksın.
+                </p>
+              </div>
+            </div>
+
+            <div class="program-stage-footer">
+              <div class="program-stage-outcome">
+                <span class="program-stage-meta-title">Aşama sonunda</span>
+                <span class="program-stage-meta-value">Uçtan uca dokümante edilmiş System &amp; Network portföy projesi</span>
+              </div>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -552,6 +610,7 @@
         <a href="hakkimizda.html">Hakkımızda</a>
         <a href="is-birliklerimiz.html">İş Birliklerimiz</a>
         <a href="blog.html">Blog</a>
+        <a href="sss.html">Sıkça Sorulan Sorular</a>
         <a href="iletisim.html">İletişim</a>
         <a href="on-basvuru.html">Ön Başvuru Yap</a>
         <a href="ogrenci-girisi.html">Öğrenci Girişi</a>

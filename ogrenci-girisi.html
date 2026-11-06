@@ -75,15 +75,20 @@
             <strong>Prototip Bilgilendirmesi:</strong> Bu ekran bir tarayıcı prototipidir; gerçek hesap doğrulama, şifre saklama veya e-posta gönderimi yapılmaz. Tasarımı doğrudan incelemek için aşağıdaki <strong>“Demo Panele Gir”</strong> butonunu kullanabilirsiniz.
           </div>
 
-          <!-- Demo Panele Doğrudan Giriş Kutusu -->
+          <!-- Demo Panele Doğrudan Giriş ve Kayıt Akışı Demosu Kutusu -->
           <div class="demo-entry-banner">
             <div class="demo-entry-text">
-              <strong>Tasarımı Hemen Deneyin</strong>
-              <p>E-posta veya şifre girmeden örnek öğrenci panelini açabilirsiniz.</p>
+              <strong>Tasarımı ve Kayıt Akışını Deneyin</strong>
+              <p>Bilgi girmeden örnek öğrenci panelini açabilir veya görüşme sonrası tek kullanımlık kayıt ve ödeme demosunu adım adım inceleyebilirsiniz.</p>
             </div>
-            <a href="ogrenci-paneli.html" class="btn btn-primary">
-              Demo Panele Gir &rarr;
-            </a>
+            <div class="demo-entry-actions">
+              <a href="ogrenci-paneli.html" class="btn btn-primary">
+                Demo Panele Gir &rarr;
+              </a>
+              <button type="button" id="tryRegistrationFlowBtnTop" class="btn btn-secondary">
+                Kayıt Akışını Dene
+              </button>
+            </div>
           </div>
 
           <form id="studentLoginForm" class="login-form" novalidate>
@@ -140,6 +145,9 @@
               <a href="ogrenci-paneli.html" class="btn btn-secondary btn-lg btn-block">
                 Demo Panele Gir
               </a>
+              <button type="button" id="tryRegistrationFlowBtn" class="btn btn-secondary btn-lg btn-block">
+                Kayıt Akışını Dene (Tek Kullanımlık Bağlantı &amp; Ödeme Demosu)
+              </button>
             </div>
           </form>
         </div>
@@ -188,6 +196,198 @@
             </div>
           </form>
         </div>
+
+        <!-- 3. YENİ KAYIT VE ÖDEME DEMOSU: ADIM 1 — Tek Kullanımlık Giriş Bağlantısı Simülasyonu -->
+        <div class="application-card-shell" id="regFlowInviteView" role="region" aria-labelledby="reg-invite-heading" hidden>
+          <div class="application-header">
+            <span class="section-badge">Kayıt Akışı Demosu · 1. Adım</span>
+            <h2 id="reg-invite-heading" class="page-title">Tek Kullanımlık Kayıt Bağlantısı Simülasyonu</h2>
+            <p class="page-lead">
+              Tanışma ve program bilgilendirme görüşmesinden sonra, programa katılmak isteyen öğrenciye gönderilecek tek kullanımlık giriş bağlantısını temsil eder.
+            </p>
+          </div>
+
+          <div class="prototype-disclaimer-box" role="note">
+            <strong>Prototip Bilgilendirmesi:</strong> Gerçek e-posta veya tek kullanımlık bağlantı oluşturulmaz. Aşağıdaki örnek bağlantı kartıyla sınırlı kayıt ekranına geçişi test edebilirsiniz.
+          </div>
+
+          <div class="nested-well-box" style="margin-bottom: 22px;">
+            <span class="badge-accent" style="margin-bottom: 10px;">Örnek Davet Bildirimi (Demo)</span>
+            <h3 class="info-card-title">AI Forge — Kesin Kayıt ve Ödeme Adımı Daveti</h3>
+            <p class="info-card-text" style="margin-bottom: 12px;">
+              Bilgilendirme görüşmeniz tamamlandı. Sınırlı kayıt ekranınızı açmak ve ödeme adımını incelemek için aşağıdaki tek kullanımlık demo bağlantısını kullanabilirsiniz.
+            </p>
+            <p class="stitch-code-tag">Bağlantı Durumu: Tek Kullanımlık Oturum · Demo</p>
+          </div>
+
+          <div class="login-actions-stack">
+            <button type="button" id="openLimitedEnrollmentBtn" class="btn btn-primary btn-lg btn-block">
+              Tek Kullanımlık Bağlantıyı Aç (Sınırlı Kayıt Ekranı) &rarr;
+            </button>
+            <button type="button" class="btn btn-secondary btn-lg btn-block" data-reg-back-login>
+              &larr; Öğrenci Girişine Dön
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. YENİ KAYIT VE ÖDEME DEMOSU: ADIM 2 & 3 — Sınırlı Kayıt Ekranı ve POS Ödeme Durumları -->
+        <div class="application-card-shell" id="regFlowEnrollmentView" role="region" aria-labelledby="reg-enroll-heading" hidden>
+          <div class="application-header">
+            <span class="section-badge">Kayıt Akışı Demosu · 2. Adım (Sınırlı Kayıt Ekranı)</span>
+            <h2 id="reg-enroll-heading" class="page-title">Sınırlı Kayıt ve Ödeme Durumu</h2>
+            <p class="page-lead">
+              Tek kullanımlık bağlantıyla açılan bu ekranda öğrenci yalnızca kendi programını, dönemini, ücret bilgisini ve ödeme durumunu görür; ödeme onaylanmadan öğrenci paneli açılmaz.
+            </p>
+          </div>
+
+          <div class="prototype-disclaimer-box" role="note">
+            <strong>Canlı Sistem Notu:</strong> Kesin kayıt ve öğrenci paneli erişimi, tarayıcıdaki dönüş ekranına göre değil; sunucuda doğrulanan ödeme sonucuna göre açılacaktır. Bu ekranda gerçek kart bilgisi veya ödeme alınmaz.
+          </div>
+
+          <dl class="payment-summary-grid" aria-label="Sınırlı Kayıt Özeti">
+            <div class="payment-summary-row">
+              <dt>Program</dt>
+              <dd>AI Forge (Canlı Online)</dd>
+            </div>
+            <div class="payment-summary-row">
+              <dt>Dönem</dt>
+              <dd>Açıklanacak</dd>
+            </div>
+            <div class="payment-summary-row">
+              <dt>Ücret</dt>
+              <dd>Açıklanacak</dd>
+            </div>
+            <div class="payment-summary-row payment-total-row">
+              <dt>Ödeme Durumu</dt>
+              <dd id="regEnrollmentStatusText">Ödeme Bekleniyor (Kayıt Henüz Tamamlanmadı)</dd>
+            </div>
+          </dl>
+
+          <!-- Ödemeye Devam Et (POS Yönlendirme Demosu) -->
+          <div id="regPosLaunchBox" class="next-steps-card">
+            <h3 class="info-card-title">POS Ödeme Adımı (Demo)</h3>
+            <p class="info-card-text" style="margin-bottom: 16px;">
+              Aşağıdaki buton güvenli POS ekranına yönlendirmeyi demo olarak temsil eder. Tıkladığınızda başarılı, bekleyen ve başarısız ödeme sonuçlarını test edebilirsiniz.
+            </p>
+            <button type="button" id="proceedToPosDemoBtn" class="btn btn-primary btn-lg btn-block">
+              Ödemeye Devam Et (POS Demosu) &rarr;
+            </button>
+          </div>
+
+          <!-- POS Simülasyon Seçenekleri -->
+          <div id="regPosSimControls" class="simulation-controls-card" hidden>
+            <span class="badge-accent" style="margin-bottom: 8px;">POS Dönüş Simülasyonu (Demo)</span>
+            <h3 class="info-card-title">Ödeme Sonucunu Seçin</h3>
+            <p class="info-card-text" style="margin-bottom: 14px;">
+              Yalnızca <strong>Başarılı</strong> ödeme sonucunda kalıcı şifre oluşturma ekranına geçilebilir. Bekleyen veya başarısız durumda öğrenci paneli açılmaz.
+            </p>
+            <div class="simulation-btn-grid">
+              <button type="button" class="btn btn-primary" data-reg-payment-state="success">
+                1. Başarılı Ödeme
+              </button>
+              <button type="button" class="btn btn-secondary" data-reg-payment-state="pending">
+                2. Beklemede
+              </button>
+              <button type="button" class="btn btn-secondary" data-reg-payment-state="failed">
+                3. Başarısız
+              </button>
+            </div>
+          </div>
+
+          <!-- Durum 3A: Başarılı Ödeme Sonucu -->
+          <div id="regOutcomeSuccess" class="nested-well-box" style="margin-bottom: 20px;" hidden>
+            <span class="status-pill status-pill-success" style="margin-bottom: 10px;">Başarılı · Sunucu Doğrulaması Simüle Edildi</span>
+            <h3 class="info-card-title">Ödeme onaylandı. Kesin kaydın tamamlandı.</h3>
+            <p class="info-card-text" style="margin-bottom: 16px;">
+              Ödeme sonucu onaylandığı için tek kullanımlık oturumunuzu kalıcı öğrenci hesabına dönüştürmek üzere şifrenizi oluşturabilirsiniz.
+            </p>
+            <button type="button" id="goToCreatePasswordBtn" class="btn btn-primary btn-lg btn-block">
+              Kalıcı Şifreni Oluştur &rarr;
+            </button>
+          </div>
+
+          <!-- Durum 3B: Bekleyen Ödeme Sonucu (Panel veya şifre ekranı açılmaz) -->
+          <div id="regOutcomePending" class="nested-well-box" style="margin-bottom: 20px;" hidden>
+            <span class="status-pill status-pill-pending" style="margin-bottom: 10px;">Beklemede · Doğrulama Sürüyor</span>
+            <h3 class="info-card-title">Ödeme doğrulanıyor. Kesin kaydın henüz tamamlanmadı.</h3>
+            <p class="info-card-text">
+              Ödeme onayı sunucu tarafında tamamlanmadan kalıcı şifre oluşturma adımı ve öğrenci paneli açılmaz. Yukarıdan başka bir ödeme durumu deneyebilirsiniz.
+            </p>
+          </div>
+
+          <!-- Durum 3C: Başarısız Ödeme Sonucu (Panel veya şifre ekranı açılmaz) -->
+          <div id="regOutcomeFailed" class="nested-well-box" style="margin-bottom: 20px;" hidden>
+            <span class="status-pill status-pill-failed" style="margin-bottom: 10px;">Başarısız · İşlem Tamamlanmadı</span>
+            <h3 class="info-card-title">Ödeme tamamlanmadı. Kesin kaydın oluşturulmadı.</h3>
+            <p class="info-card-text">
+              Ödeme gerçekleşmediği için öğrenci paneli erişimi açılmaz. Yukarıdaki POS simülasyon butonlarından ödemeyi yeniden deneyebilirsiniz.
+            </p>
+          </div>
+
+          <div class="login-actions-stack">
+            <button type="button" class="btn btn-secondary btn-block" data-reg-back-login>
+              &larr; Öğrenci Girişine Dön
+            </button>
+          </div>
+        </div>
+
+        <!-- 5. YENİ KAYIT VE ÖDEME DEMOSU: ADIM 4 — Kalıcı Şifre Oluşturma (Yalnızca Başarılı Ödeme Sonrası) -->
+        <div class="application-card-shell" id="regFlowPasswordView" role="region" aria-labelledby="reg-pass-heading" hidden>
+          <div class="application-header">
+            <span class="section-badge">Kayıt Akışı Demosu · Son Adım</span>
+            <h2 id="reg-pass-heading" class="page-title">Kalıcı Şifreni Oluştur</h2>
+            <p class="page-lead">
+              Ödemeniz onaylandı. Öğrenci paneline sonraki girişlerinizde kullanacağınız kalıcı şifreyi oluşturma adımını simüle edin.
+            </p>
+          </div>
+
+          <div class="prototype-disclaimer-box" role="note">
+            <strong>Prototip Güvenlik Notu:</strong> Bu adımda girdiğiniz şifre hiçbir yere kaydedilmez ve saklanmaz. Tamamlandığında mevcut demo öğrenci paneline yönlendirilirsiniz.
+          </div>
+
+          <form id="createPermanentPasswordForm" class="login-form" novalidate>
+            <div class="form-field">
+              <label for="newPermanentPass" class="form-label">
+                Yeni Şifre (Demo) <span class="required-mark" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="password"
+                id="newPermanentPass"
+                class="form-control"
+                placeholder="En az 6 karakterli örnek şifre"
+                autocomplete="off"
+                required
+                aria-describedby="error-newPermanentPass"
+              />
+              <p id="error-newPermanentPass" class="field-error" role="alert" hidden></p>
+            </div>
+
+            <div class="form-field">
+              <label for="confirmPermanentPass" class="form-label">
+                Yeni Şifre Tekrar (Demo) <span class="required-mark" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="password"
+                id="confirmPermanentPass"
+                class="form-control"
+                placeholder="Örnek şifreyi tekrar giriniz"
+                autocomplete="off"
+                required
+                aria-describedby="error-confirmPermanentPass"
+              />
+              <p id="error-confirmPermanentPass" class="field-error" role="alert" hidden></p>
+            </div>
+
+            <div class="login-actions-stack">
+              <button type="submit" class="btn btn-primary btn-lg btn-block">
+                Şifreyi Oluştur ve Öğrenci Paneline Geç (Demo) &rarr;
+              </button>
+              <button type="button" id="backToEnrollmentViewBtn" class="btn btn-secondary btn-block">
+                &larr; Ödeme Durumu Ekranına Dön
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -204,6 +404,7 @@
         <a href="hakkimizda.html">Hakkımızda</a>
         <a href="is-birliklerimiz.html">İş Birliklerimiz</a>
         <a href="blog.html">Blog</a>
+        <a href="sss.html">Sıkça Sorulan Sorular</a>
         <a href="iletisim.html">İletişim</a>
         <a href="on-basvuru.html">Ön Başvuru Yap</a>
         <a href="ogrenci-girisi.html">Öğrenci Girişi</a>

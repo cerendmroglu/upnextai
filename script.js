@@ -783,9 +783,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Ana Sayfa: Seçilebilir Öne Çıkan Bootcamp Kartları (index.html)
+  // Ana Sayfa ve Bootcamp Listeleme Sayfası: Ortak Seçilebilir Bootcamp Kartları (index.html & bootcampler.html)
   const selectableBootcampsGrid = document.getElementById("selectableBootcampsGrid");
-  const bootcampsSection = document.getElementById("bootcampler");
+  const bootcampsSection =
+    document.getElementById("bootcampler") ||
+    document.querySelector(".bootcamps-list-section");
   const selectableBootcampCards = Array.from(
     document.querySelectorAll("[data-selectable-bootcamp]")
   );
@@ -802,7 +804,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const badge = card.querySelector(".js-card-badge");
         if (badge) {
-          badge.textContent = isMatch ? "Canlı Online · Seçili" : "Canlı Online";
+          const defaultLabel = badge.getAttribute("data-badge-default") || "Canlı Online";
+          const selectedLabel =
+            badge.getAttribute("data-badge-selected") || "Canlı Online · Seçili";
+          badge.textContent = isMatch ? selectedLabel : defaultLabel;
         }
 
         const actionBtn = card.querySelector(".js-bootcamp-detail-btn");
@@ -832,17 +837,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       // Karta tıklanınca veya mobilde gövdesine dokunulunca seçimi kalıcı olarak güncelle;
-      // yalnızca "Programı İncele" bağlantısı detay sayfasını açsın.
+      // yalnızca aksiyon bağlantıları ("Programı İncele" / "Detayları İncele" / "Ön Başvuru Yap") sayfayı açsın.
       card.addEventListener("click", (event) => {
         lastClickedCard = card;
         applyBootcampHighlight(card);
-        if (event.target.closest(".js-bootcamp-detail-btn")) {
+        if (event.target.closest("a.btn")) {
           return;
         }
       });
 
       card.addEventListener("keydown", (event) => {
-        if (event.target.closest(".js-bootcamp-detail-btn")) {
+        if (event.target.closest("a.btn")) {
           return;
         }
         if (event.key === "Enter" || event.key === " ") {

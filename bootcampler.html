@@ -74,12 +74,21 @@
     <!-- Bootcamp Listesi -->
     <section class="bootcamps-list-section" aria-label="Bootcamp Kartları">
       <div class="container">
-        <div class="bootcamps-grid">
+        <div class="bootcamps-grid" id="selectableBootcampsGrid">
           <!-- 1. Kart: AI Forge -->
-          <article class="bootcamp-card bootcamp-list-card bootcamp-card-featured">
+          <article
+            class="bootcamp-card bootcamp-list-card is-selected"
+            data-selectable-bootcamp="ai-forge"
+            tabindex="0"
+            aria-label="AI Forge kartı (Seçmek için karta, detay sayfası için Detayları İncele butonuna tıklayın)"
+          >
             <div class="bootcamp-card-body">
               <div class="bootcamp-tag-row">
-                <span class="badge-accent">Bootcamp · Öne Çıkan</span>
+                <span
+                  class="badge-accent js-card-badge"
+                  data-badge-default="Bootcamp"
+                  data-badge-selected="Bootcamp · Seçili"
+                >Bootcamp · Seçili</span>
                 <div class="bootcamp-icon-box bootcamp-icon-forge" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 2L2 7l10 5 10-5-10-5z" />
@@ -115,8 +124,8 @@
 
             <div class="bootcamp-card-actions">
               <div class="card-button-group">
-                <a href="ai-forge.html" class="btn btn-secondary">Detayları İncele</a>
-                <a href="on-basvuru.html?program=ai-forge" class="btn btn-primary">
+                <a href="ai-forge.html" class="btn btn-primary js-bootcamp-detail-btn">Detayları İncele</a>
+                <a href="on-basvuru.html?program=ai-forge" class="btn btn-secondary js-bootcamp-apply-btn">
                   Ön Başvuru Yap
                 </a>
               </div>
@@ -124,10 +133,19 @@
           </article>
 
           <!-- 2. Kart: AI Agent -->
-          <article class="bootcamp-card bootcamp-list-card">
+          <article
+            class="bootcamp-card bootcamp-list-card"
+            data-selectable-bootcamp="ai-agent"
+            tabindex="0"
+            aria-label="AI Agent kartı (Seçmek için karta, detay sayfası için Detayları İncele butonuna tıklayın)"
+          >
             <div class="bootcamp-card-body">
               <div class="bootcamp-tag-row">
-                <span class="badge-accent">Bootcamp</span>
+                <span
+                  class="badge-accent js-card-badge"
+                  data-badge-default="Bootcamp"
+                  data-badge-selected="Bootcamp · Seçili"
+                >Bootcamp</span>
                 <div class="bootcamp-icon-box bootcamp-icon-agent" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="3" width="7" height="7" rx="1.5" />
@@ -164,8 +182,8 @@
 
             <div class="bootcamp-card-actions">
               <div class="card-button-group">
-                <a href="ai-agent.html" class="btn btn-secondary">Detayları İncele</a>
-                <a href="on-basvuru.html?program=ai-agent" class="btn btn-primary">
+                <a href="ai-agent.html" class="btn btn-secondary js-bootcamp-detail-btn">Detayları İncele</a>
+                <a href="on-basvuru.html?program=ai-agent" class="btn btn-secondary js-bootcamp-apply-btn">
                   Ön Başvuru Yap
                 </a>
               </div>
@@ -173,10 +191,19 @@
           </article>
 
           <!-- 3. Kart: System & Network -->
-          <article class="bootcamp-card bootcamp-list-card">
+          <article
+            class="bootcamp-card bootcamp-list-card"
+            data-selectable-bootcamp="system-network"
+            tabindex="0"
+            aria-label="System & Network kartı (Seçmek için karta, detay sayfası için Detayları İncele butonuna tıklayın)"
+          >
             <div class="bootcamp-card-body">
               <div class="bootcamp-tag-row">
-                <span class="badge-accent">Bootcamp</span>
+                <span
+                  class="badge-accent js-card-badge"
+                  data-badge-default="Bootcamp"
+                  data-badge-selected="Bootcamp · Seçili"
+                >Bootcamp</span>
                 <div class="bootcamp-icon-box bootcamp-icon-network" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="3" width="20" height="6" rx="1.5" />
@@ -214,8 +241,8 @@
 
             <div class="bootcamp-card-actions">
               <div class="card-button-group">
-                <a href="system-network.html" class="btn btn-secondary">Detayları İncele</a>
-                <a href="on-basvuru.html?program=system-network" class="btn btn-primary">
+                <a href="system-network.html" class="btn btn-secondary js-bootcamp-detail-btn">Detayları İncele</a>
+                <a href="on-basvuru.html?program=system-network" class="btn btn-secondary js-bootcamp-apply-btn">
                   Ön Başvuru Yap
                 </a>
               </div>
@@ -238,6 +265,7 @@
         <a href="hakkimizda.html">Hakkımızda</a>
         <a href="is-birliklerimiz.html">İş Birliklerimiz</a>
         <a href="blog.html">Blog</a>
+        <a href="sss.html">Sıkça Sorulan Sorular</a>
         <a href="iletisim.html">İletişim</a>
         <a href="on-basvuru.html">Ön Başvuru Yap</a>
         <a href="ogrenci-girisi.html">Öğrenci Girişi</a>

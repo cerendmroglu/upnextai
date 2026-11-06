@@ -64,53 +64,42 @@
         <article class="application-card-shell">
           <nav class="breadcrumb" aria-label="Sayfa Konumu">
             <a href="blog.html">Blog</a>
+        <a href="sss.html">Sıkça Sorulan Sorular</a>
             <span aria-hidden="true">/</span>
             <span id="blogDetailBreadcrumb">Yapay Zekâ</span>
           </nav>
 
           <div class="preview-card-top">
             <span id="blogDetailCategoryBadge" class="section-badge">Yapay Zekâ</span>
-            <span class="stitch-code-tag">Örnek Yazı (Demo)</span>
+            <span id="blogDetailSourceTag" class="stitch-code-tag">upnextai.com.tr</span>
           </div>
 
           <h1 id="blogDetailTitle" class="page-title">
-            Üretken Yapay Zekâ Projelerinde Gerçek İş Senaryosu Kurgulama
+            AI Agent Nedir? Sıfırdan Kurulum İçin Adım Adım Rehber
           </h1>
 
-          <div class="prototype-disclaimer-box" role="note">
-            <strong>Örnek İçerik (Demo):</strong> Bu sayfa, Upnext AI blog detay görünümünü göstermek üzere hazırlanmış örnek bir eğitim yazısıdır.
+          <div id="blogDetailDisclaimer" class="prototype-disclaimer-box" role="note">
+            <strong>İçerik Özeti:</strong> Bu sayfa, Upnext AI blogunda yer alan rehberin özgün özetini sunar. Orijinal kaynağa aşağıdaki bağlantıdan ulaşabilirsiniz.
           </div>
 
           <div id="blogDetailContent" class="blog-article-body">
             <p class="info-card-text" style="margin-bottom: 16px;">
               Modern yazılım geliştirme süreçlerinde büyük dil modellerini (LLM) bir projeye dahil etmek, yalnızca tekil bir API çağrısı yapmaktan ibaret değildir. Gerçek iş senaryolarında başarılı bir uygulama; net bir problem tanımı, yapılandırılmış veri akışı ve ölçülebilir çıktı doğrulaması gerektirir.
             </p>
-            <h2 class="info-card-title" style="margin-top: 22px;">1. Problem Tanımı ve Kapsam</h2>
-            <p class="info-card-text" style="margin-bottom: 16px;">
-              Portföy projesi geliştirirken ilk adım, çözümün hangi iş problemini hedeflediğini açıkça ortaya koymaktır. Kullanıcının girdisi, sistemin uygulayacağı kurallar ve beklenen çıktı şeması baştan tanımlandığında hem mimari tasarım hem de test süreci çok daha sağlıklı ilerler.
-            </p>
-            <h2 class="info-card-title" style="margin-top: 22px;">2. Yapılandırılmış Çıktı ve Doğrulama</h2>
-            <p class="info-card-text" style="margin-bottom: 16px;">
-              Serbest metin yanıtları yerine şema doğrulamalı JSON çıktılar üretmek ve harici bilgi kaynaklarıyla (RAG) yanıtları desteklemek, kurumsal senaryolarda güvenilirliği artırır.
-            </p>
-            <h2 class="info-card-title" style="margin-top: 22px;">3. Portföy Sunumu</h2>
-            <p class="info-card-text">
-              Geliştirdiğiniz projeyi teknik dokümantasyon, mimari diyagram ve örnek senaryo çıktılarıyla bir araya getirdiğinizde, iş ve staj başvurularında somut bir mühendislik çıktısı sunabilirsiniz.
-            </p>
           </div>
 
-          <!-- Diğer Örnek Yazılara Geçiş -->
+          <!-- Diğer Blog Yazılarına Geçiş -->
           <div class="next-steps-card" style="margin-top: 28px;">
-            <h2 class="info-card-title">Diğer Örnek Blog Yazıları (Demo)</h2>
+            <h2 class="info-card-title">Diğer Upnext AI Blog Özetleri</h2>
             <div class="simulation-btn-grid" style="margin-top: 12px;">
-              <a href="blog-detay.html?yazi=yapay-zeka" class="btn btn-secondary">
-                Yapay Zekâ Yazısı
+              <a href="blog-detay.html?yazi=ai-agent-nedir" class="btn btn-secondary">
+                AI Agent Nedir?
               </a>
-              <a href="blog-detay.html?yazi=proje-gelistirme" class="btn btn-secondary">
-                Proje Geliştirme Yazısı
+              <a href="blog-detay.html?yazi=otomasyon-nedir" class="btn btn-secondary">
+                Otomasyon Nedir?
               </a>
-              <a href="blog-detay.html?yazi=kariyere-hazirlik" class="btn btn-secondary">
-                Kariyere Hazırlık Yazısı
+              <a href="blog-detay.html?yazi=yapay-zeka-caginda-kariyer" class="btn btn-secondary">
+                YZ Çağında Kariyer
               </a>
             </div>
           </div>
@@ -119,8 +108,14 @@
             <a href="blog.html" class="btn btn-secondary">
               &larr; Blog Listesine Dön
             </a>
-            <a href="bootcampler.html" class="btn btn-primary">
-              Bootcamp’leri İncele
+            <a
+              id="blogDetailExternalLink"
+              href="https://upnextai.com.tr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+            >
+              Orijinal Kaynağı Ziyaret Et &nearr;
             </a>
           </div>
         </article>
